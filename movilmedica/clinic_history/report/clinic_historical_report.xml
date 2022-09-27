@@ -721,7 +721,7 @@
                                 </div>
                                 <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
                                     <div style="text-align: center;">______________________</div>
-                                    <br/>
+                                    <span t-field="doc.user_id.employee_id.employee_registro"/><br/>
                                     <div style="text-align: center;">Registro</div>
                                 </div>
                             </div>
@@ -832,7 +832,7 @@
                                     </div>
                                     <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
                                         <div style="text-align: center;">______________________</div>
-                                        <br/>
+                                        <span t-field="doc.user_id.employee_id.employee_registro"/><br/>
                                         <div style="text-align: center;">Registro</div>
                                     </div>
                                 </div>
@@ -929,7 +929,7 @@
                                 </div>
                                 <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
                                     <div style="text-align: center;">______________________</div>
-                                    <br/>
+                                    <span t-field="doc.user_id.employee_id.employee_registro"/><br/>
                                     <div style="text-align: center;">Registro</div>
                                 </div>
                             </div>
@@ -1025,7 +1025,7 @@
                                 </div>
                                 <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
                                     <div style="text-align: center;">______________________</div>
-                                    <br/>
+                                    <span t-field="doc.user_id.employee_id.employee_registro"/><br/>
                                     <div style="text-align: center;">Registro</div>
                                 </div>
                             </div>
@@ -1128,7 +1128,7 @@
                                 </div>
                                 <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
                                     <div style="text-align: center;">______________________</div>
-                                    <br/>
+                                    <span t-field="doc.user_id.employee_id.employee_registro"/><br/>
                                     <div style="text-align: center;">Registro</div>
                                 </div>
                             </div>
@@ -1231,7 +1231,7 @@
                                 </div>
                                 <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
                                     <div style="text-align: center;">______________________</div>
-                                    <br/>
+                                    <span t-field="doc.user_id.employee_id.employee_registro"/><br/>
                                     <div style="text-align: center;">Registro</div>
                                 </div>
                             </div>
