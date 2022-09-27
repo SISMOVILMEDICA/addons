@@ -12,6 +12,7 @@
                                 <field name="employee_modality" />
                                 <field name="employee_type" />
                                 <field name="employee_rut" />
+                                <field name="employee_registro"/>
                                 <field name="bank_ids" invisible="True" />
                                 <field name="specialties_ids" widget="many2many_tags" />
                             </group>

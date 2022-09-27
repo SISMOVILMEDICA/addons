@@ -644,10 +644,10 @@
                                 </tr>
                                 <tr>
                                     <td style="text-align: left; height: 50px; width: 60%">
-                                        <span>ESPECIALIDADES:<span t-field="doc.history_id.interconsultas"/></span>
+                                        <span>ESPECIALIDADES: <span t-field="doc.history_id.interconsultas"/></span>
                                     </td>
                                     <td style="text-align: left; height: 50px;">
-                                        <span>TERAPIAS<span t-field="doc.history_id.interconsultas_terapias"/></span>
+                                        <span>TERAPIAS: <span t-field="doc.history_id.interconsultas_terapias"/></span>
                                     </td>
                                 </tr>
                             </table>
@@ -704,30 +704,534 @@
                             </div>
                             <br/>
                             <div style="width: 100%; height: 40px; display: flex; justify-content: space-between;">
-                                <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small;">
-                                    <t t-field="doc.user_id.employee_id.signature_file">
-                                        <img t-att-src="image_data_uri(doc.user_id.employee_id.signature_file)"
-                                             style="max-height: 4cm; max-width: 8cm;"/>
-                                    </t><br/>
+                                <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
                                     <div style="text-align: center;">______________________</div>
                                     <div style="text-align: center;">Firmado por:<span
                                             t-field="doc.user_id.name"/></div>
                                     <div>C.C. <span t-field="doc.user_id.employee_id.identification_id"/></div>
+                                    <t t-if="doc.user_id.employee_id.signature_file">
+                                        <img t-att-src="image_data_uri(doc.user_id.employee_id.signature_file)"
+                                             style="max-height: 2cm; max-width: 6cm;"/>
+                                    </t>
                                 </div>
-                                <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small;">
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <span t-field="doc.user_id.employee_id.specialties_ids"/>
+                                <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
                                     <div style="text-align: center;">______________________</div>
+                                    <span t-field="doc.user_id.employee_id.specialties_ids"/>
                                     <div style="text-align: center;">Profesion</div>
                                 </div>
-                                <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small;">
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <br/>
+                                <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
                                     <div style="text-align: center;">______________________</div>
+                                    <br/>
+                                    <div style="text-align: center;">Registro</div>
+                                </div>
+                            </div>
+                        </div>
+                        <t t-if="doc.history_id.incapacidad">
+                            <div class="page" style="font-size: x-small; margin: 10px; page-break-after: always;">
+                                <h5 style="text-align: center;">INCAPACIDAD</h5>
+                                <table>
+                                    <tr>
+                                        <th style="background: #df8400; width: 20%">
+                                            <span>FECHA</span>
+                                        </th>
+                                        <th style="background: #df8400; width: 20%">
+                                            <span>ENTIDAD</span>
+                                        </th>
+                                        <th style="background: #df8400; width: 20%">
+                                            <span>EDAD</span>
+                                        </th>
+                                        <th style="background: #df8400; width: 40%">
+                                            <span>DOCUMENTO</span>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span t-field="doc.planned_date_begin"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="doc.project_id.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="doc.partner_age"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="doc.partner_vat"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th style="background: #df8400; width: 20%">
+                                            <span>PRIMER APELLIDO</span>
+                                        </th>
+                                        <th style="background: #df8400; width: 20%">
+                                            <span>SEGUNDO APELLIDO</span>
+                                        </th>
+                                        <th style="background: #df8400; width: 60%" colspan="2">
+                                            <span>NOMBRES</span>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span t-field="doc.partner_id.x_lastname1"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="doc.partner_id.x_lastname2"/>
+                                        </td>
+                                        <td colspan="2">
+                                            <span t-field="doc.partner_id.x_name1"/> <span
+                                                t-field="doc.partner_id.x_name2"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br/>
+                                <table>
+                                    <tr>
+                                        <th style="background: #df8400;">
+                                            <span>SE GENERA INCAPACIDAD MEDICA POR:</span>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left; height: 150px;">
+                                            <span>DIAGNOSTICO: </span><span
+                                                t-field="doc.history_id.impresion_principal.code"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: left; height: 150px;">
+                                            <strong><span>DESCRIPCION: </span></strong><br/>
+                                            <span>Duracion: </span><span t-field="doc.history_id.incapacidad_desde"/>
+                                            - <span t-field="doc.history_id.incapacidad_hasta"/><br/>
+                                            <span>Numero de Dias: </span><span
+                                                t-field="doc.history_id.incapacidad_dias"/><br/>
+                                            <span>Dias en Letras: </span><span
+                                                t-field="doc.history_id.incapacidad_dias_char"/><br/>
+                                            <span>Justificacion Medica: </span><span
+                                                t-field="doc.history_id.incapacidad_excuse"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br/>
+                                <div style="width: 100%; text-align: center; background: #df8400">
+                                    <span>MEDICO QUE ORDENA</span>
+                                </div>
+                                <br/>
+                                <div style="width: 100%; height: 40px; display: flex; justify-content: space-between;">
+                                    <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
+                                        <div style="text-align: center;">______________________</div>
+                                        <div style="text-align: center;">Firmado por:<span
+                                                t-field="doc.user_id.name"/></div>
+                                        <div>C.C. <span t-field="doc.user_id.employee_id.identification_id"/></div>
+                                        <t t-if="doc.user_id.employee_id.signature_file">
+                                            <img t-att-src="image_data_uri(doc.user_id.employee_id.signature_file)"
+                                                 style="max-height: 2cm; max-width: 6cm;"/>
+                                        </t>
+                                    </div>
+                                    <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
+                                        <div style="text-align: center;">______________________</div>
+                                        <span t-field="doc.user_id.employee_id.specialties_ids"/>
+                                        <div style="text-align: center;">Profesion</div>
+                                    </div>
+                                    <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
+                                        <div style="text-align: center;">______________________</div>
+                                        <br/>
+                                        <div style="text-align: center;">Registro</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                        <div class="page" style="font-size: x-small; margin: 10px; page-break-after: always;">
+                            <h5 style="text-align: center;">MEDICAMENTOS PBS</h5>
+                            <table>
+                                <tr>
+                                    <th style="background: #df8400; width: 20%">
+                                        <span>FECHA</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 20%">
+                                        <span>ENTIDAD</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 20%">
+                                        <span>EDAD</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 40%">
+                                        <span>DOCUMENTO</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span t-field="doc.planned_date_begin"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.project_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.partner_age"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.partner_vat"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="background: #df8400; width: 20%">
+                                        <span>PRIMER APELLIDO</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 20%">
+                                        <span>SEGUNDO APELLIDO</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 60%" colspan="2">
+                                        <span>NOMBRES</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span t-field="doc.partner_id.x_lastname1"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.partner_id.x_lastname2"/>
+                                    </td>
+                                    <td colspan="2">
+                                        <span t-field="doc.partner_id.x_name1"/> <span
+                                            t-field="doc.partner_id.x_name2"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <table>
+                                <tr>
+                                    <th style="background: #df8400;">
+                                        <span></span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; height: 300px;">
+                                        <span>RX: </span><span t-field="doc.history_id.medicines_pbs"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <div style="width: 100%; text-align: center; background: #df8400">
+                                <span>MEDICO QUE ORDENA</span>
+                            </div>
+                            <br/>
+                            <div style="width: 100%; height: 40px; display: flex; justify-content: space-between;">
+                                <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
+                                    <div style="text-align: center;">______________________</div>
+                                    <div style="text-align: center;">Firmado por:<span
+                                            t-field="doc.user_id.name"/></div>
+                                    <div>C.C. <span t-field="doc.user_id.employee_id.identification_id"/></div>
+                                    <t t-if="doc.user_id.employee_id.signature_file">
+                                        <img t-att-src="image_data_uri(doc.user_id.employee_id.signature_file)"
+                                             style="max-height: 2cm; max-width: 6cm;"/>
+                                    </t>
+                                </div>
+                                <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
+                                    <div style="text-align: center;">______________________</div>
+                                    <span t-field="doc.user_id.employee_id.specialties_ids"/>
+                                    <div style="text-align: center;">Profesion</div>
+                                </div>
+                                <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
+                                    <div style="text-align: center;">______________________</div>
+                                    <br/>
+                                    <div style="text-align: center;">Registro</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page" style="font-size: x-small; margin: 10px; page-break-after: always;">
+                            <h5 style="text-align: center;">MEDICAMENTOS NO PBS</h5>
+                            <table>
+                                <tr>
+                                    <th style="background: #df8400; width: 20%">
+                                        <span>FECHA</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 20%">
+                                        <span>ENTIDAD</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 20%">
+                                        <span>EDAD</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 40%">
+                                        <span>DOCUMENTO</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span t-field="doc.planned_date_begin"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.project_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.partner_age"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.partner_vat"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="background: #df8400; width: 20%">
+                                        <span>PRIMER APELLIDO</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 20%">
+                                        <span>SEGUNDO APELLIDO</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 60%" colspan="2">
+                                        <span>NOMBRES</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span t-field="doc.partner_id.x_lastname1"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.partner_id.x_lastname2"/>
+                                    </td>
+                                    <td colspan="2">
+                                        <span t-field="doc.partner_id.x_name1"/> <span
+                                            t-field="doc.partner_id.x_name2"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <table>
+                                <tr>
+                                    <th style="background: #df8400;">
+                                        <span></span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; height: 300px;">
+                                        <span>RX: </span><span t-field="doc.history_id.medicines_no_pbs"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <div style="width: 100%; text-align: center; background: #df8400">
+                                <span>MEDICO QUE ORDENA</span>
+                            </div>
+                            <br/>
+                            <div style="width: 100%; height: 40px; display: flex; justify-content: space-between;">
+                                <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
+                                    <div style="text-align: center;">______________________</div>
+                                    <div style="text-align: center;">Firmado por:<span
+                                            t-field="doc.user_id.name"/></div>
+                                    <div>C.C. <span t-field="doc.user_id.employee_id.identification_id"/></div>
+                                    <t t-if="doc.user_id.employee_id.signature_file">
+                                        <img t-att-src="image_data_uri(doc.user_id.employee_id.signature_file)"
+                                             style="max-height: 2cm; max-width: 6cm;"/>
+                                    </t>
+                                </div>
+                                <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
+                                    <div style="text-align: center;">______________________</div>
+                                    <span t-field="doc.user_id.employee_id.specialties_ids"/>
+                                    <div style="text-align: center;">Profesion</div>
+                                </div>
+                                <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
+                                    <div style="text-align: center;">______________________</div>
+                                    <br/>
+                                    <div style="text-align: center;">Registro</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page" style="font-size: x-small; margin: 10px; page-break-after: always;">
+                            <h5 style="text-align: center;">AYUDAS DIAGNOSTICAS</h5>
+                            <table>
+                                <tr>
+                                    <th style="background: #df8400; width: 20%">
+                                        <span>FECHA</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 20%">
+                                        <span>ENTIDAD</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 20%">
+                                        <span>EDAD</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 40%">
+                                        <span>DOCUMENTO</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span t-field="doc.planned_date_begin"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.project_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.partner_age"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.partner_vat"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="background: #df8400; width: 20%">
+                                        <span>PRIMER APELLIDO</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 20%">
+                                        <span>SEGUNDO APELLIDO</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 60%" colspan="2">
+                                        <span>NOMBRES</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span t-field="doc.partner_id.x_lastname1"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.partner_id.x_lastname2"/>
+                                    </td>
+                                    <td colspan="2">
+                                        <span t-field="doc.partner_id.x_name1"/> <span
+                                            t-field="doc.partner_id.x_name2"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <table>
+                                <tr>
+                                    <th style="background: #df8400;">
+                                        <span>SE GENERA INCAPACIDAD MEDICA POR:</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; height: 150px;">
+                                        <span>DIAGNOSTICO: </span><span
+                                            t-field="doc.history_id.impresion_principal.code"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; height: 150px;">
+                                        <strong><span>DESCRIPCION: </span></strong><br/>
+                                        <span t-field="doc.history_id.interconsultas_imagenes"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <div style="width: 100%; text-align: center; background: #df8400">
+                                <span>MEDICO QUE ORDENA</span>
+                            </div>
+                            <br/>
+                            <div style="width: 100%; height: 40px; display: flex; justify-content: space-between;">
+                                <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
+                                    <div style="text-align: center;">______________________</div>
+                                    <div style="text-align: center;">Firmado por:<span
+                                            t-field="doc.user_id.name"/></div>
+                                    <div>C.C. <span t-field="doc.user_id.employee_id.identification_id"/></div>
+                                    <t t-if="doc.user_id.employee_id.signature_file">
+                                        <img t-att-src="image_data_uri(doc.user_id.employee_id.signature_file)"
+                                             style="max-height: 2cm; max-width: 6cm;"/>
+                                    </t>
+                                </div>
+                                <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
+                                    <div style="text-align: center;">______________________</div>
+                                    <span t-field="doc.user_id.employee_id.specialties_ids"/>
+                                    <div style="text-align: center;">Profesion</div>
+                                </div>
+                                <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
+                                    <div style="text-align: center;">______________________</div>
+                                    <br/>
+                                    <div style="text-align: center;">Registro</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="page" style="font-size: x-small; margin: 10px; page-break-after: always;">
+                            <h5 style="text-align: center;">INTERCONSULTAS</h5>
+                            <table>
+                                <tr>
+                                    <th style="background: #df8400; width: 20%">
+                                        <span>FECHA</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 20%">
+                                        <span>ENTIDAD</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 20%">
+                                        <span>EDAD</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 40%">
+                                        <span>DOCUMENTO</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span t-field="doc.planned_date_begin"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.project_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.partner_age"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.partner_vat"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="background: #df8400; width: 20%">
+                                        <span>PRIMER APELLIDO</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 20%">
+                                        <span>SEGUNDO APELLIDO</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 60%" colspan="2">
+                                        <span>NOMBRES</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span t-field="doc.partner_id.x_lastname1"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.partner_id.x_lastname2"/>
+                                    </td>
+                                    <td colspan="2">
+                                        <span t-field="doc.partner_id.x_name1"/> <span
+                                            t-field="doc.partner_id.x_name2"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <table>
+                                <tr>
+                                    <th style="background: #df8400;">
+                                        <span>SE GENERA INCAPACIDAD MEDICA POR:</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; height: 150px;">
+                                        <span>DIAGNOSTICO: </span><span
+                                            t-field="doc.history_id.impresion_principal.code"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; height: 150px;">
+                                        <strong><span>DESCRIPCION: </span></strong><br/>
+                                        <span t-field="doc.history_id.interconsultas"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <div style="width: 100%; text-align: center; background: #df8400">
+                                <span>MEDICO QUE ORDENA</span>
+                            </div>
+                            <br/>
+                            <div style="width: 100%; height: 40px; display: flex; justify-content: space-between;">
+                                <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
+                                    <div style="text-align: center;">______________________</div>
+                                    <div style="text-align: center;">Firmado por:<span
+                                            t-field="doc.user_id.name"/></div>
+                                    <div>C.C. <span t-field="doc.user_id.employee_id.identification_id"/></div>
+                                    <t t-if="doc.user_id.employee_id.signature_file">
+                                        <img t-att-src="image_data_uri(doc.user_id.employee_id.signature_file)"
+                                             style="max-height: 2cm; max-width: 6cm;"/>
+                                    </t>
+                                </div>
+                                <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
+                                    <div style="text-align: center;">______________________</div>
+                                    <span t-field="doc.user_id.employee_id.specialties_ids"/>
+                                    <div style="text-align: center;">Profesion</div>
+                                </div>
+                                <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small; text-align: center;">
+                                    <div style="text-align: center;">______________________</div>
+                                    <br/>
                                     <div style="text-align: center;">Registro</div>
                                 </div>
                             </div>
@@ -736,6 +1240,5 @@
                 </t>
             </t>
         </template>
-
     </data>
 </odoo>

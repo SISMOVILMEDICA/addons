@@ -312,6 +312,9 @@
               </page>
               <page string="Análisis y Plan de manejo">
                 <group>
+                  <group string="Analisis">
+                    <field name="plan_analisis" nolabel="1" required="True"/>
+                  </group>
                   <group string="Plan de manejo">
                     <field name="plan_manejo" nolabel="1" required="True"/>
                   </group>

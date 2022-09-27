@@ -220,6 +220,7 @@ class ClinicHistory(models.Model):
     analisis_resultados = fields.Text("Resultados de laboratorios", default=valor_predeterminado)
 
     plan = fields.Text("Plan")
+    plan_analisis = fields.Text(string='Analisis', default=valor_predeterminado)
     plan_manejo = fields.Text("Plan de manejo", default=valor_predeterminado)
     plan_medicamentos = fields.Text("Medicamentos", default=valor_predeterminado)
     plan_recomendaciones = fields.Many2many(

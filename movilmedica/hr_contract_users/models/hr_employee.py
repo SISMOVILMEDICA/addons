@@ -23,6 +23,7 @@ class HrEmployee(models.Model):
         [("presence", "Presence"), ("virtual", "Virtual")], "Modality", default="presence"
     )
     employee_rut = fields.Char("RUT")
+    employee_registro = fields.Char(string='Registro')
     employee_type = fields.Selection(
         [("internal", "Internal"), ("external", "External")], "Employee Type", default="internal"
     )
