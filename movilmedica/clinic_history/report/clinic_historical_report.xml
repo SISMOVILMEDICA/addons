@@ -548,7 +548,7 @@
                                         <span t-field="doc.history_id.impresion_principal.code"/>
                                     </td>
                                     <td rowspan="5">
-                                        <span># VALOR #</span>
+                                        <span t-field="doc.history_id.plan_analisis"/>
                                     </td>
                                 </tr>
                                 <tr>
