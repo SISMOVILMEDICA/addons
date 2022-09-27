@@ -23,7 +23,7 @@
         "views/cie_rips.xml",
         "views/clinic_history_recommendation_view.xml",
         "views/clinic_history_view.xml",
-        # "report/historias_clinicas_reports.xml",
+        "report/historias_clinicas_reports.xml",
         'report/clinic_historical_report.xml',
         "views/historia_clinica_general.xml",
     ],
