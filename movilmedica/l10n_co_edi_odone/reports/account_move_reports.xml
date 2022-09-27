@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="paperformat_einvoicing_report" model="report.paperformat">
+            <field name="name">Factura Electrónica</field>
+            <field name="default" eval="True"/>
+            <field name="format">Letter</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">25</field>
+            <field name="margin_bottom">25</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">20</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <report
+            string="Factura Electrónica"
+            id="action_report_einvoicing_print"
+            model="account.move"
+            report_type="qweb-pdf"
+            paperformat="l10n_co_edi_odone.paperformat_einvoicing_report"
+            name="l10n_co_edi_odone.report_account_move_einvoicing_document"
+            file="l10n_co_edi_odone.report_account_move_einvoicing_document"
+        />
+    </data>
+</odoo>

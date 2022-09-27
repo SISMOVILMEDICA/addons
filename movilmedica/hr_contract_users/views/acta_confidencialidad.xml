@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- Template IPS -->
+	<template id="report_hr_employee_acta_confidencialidad">
+		<t t-call="web.html_container">
+			<t t-foreach="docs" t-as="doc">
+				<div class="header o_company_#{doc.company_id.id}_layout" style="border: 0px solid red; width: 100%; font-family: sans-serif; font-size: 12px; height: 105px;">
+					<style type="text/css">
+						.page {
+							padding: 0px 20px;
+						}
+						strong, span, b {
+						color: #3F3F3F;
+						line-height:8px;
+						}
+						.tabla-datos-factura thead td, .tabla-datos-factura tbody td {
+						text-align: center;
+						vertical-align:middle;
+						line-height:9px;
+						font-size:8px;
+						}
+						.tabla-datos-factura thead td {
+						background-color: #7A7979;
+						}
+
+						.tabla-datos-factura thead strong, .tabla-datos-factura thead b {
+						color: white;
+						}
+						h7 {
+						font-size:10px;
+						}
+						h6 {
+						font-size:11px;
+						}
+						.col-4 {
+						padding:1px;
+						margin: 0px 15px 0px 15px;
+						}
+						.col-6, .col-2 {
+						padding:3px;
+						}
+
+						.seccion-journal {
+						font-size:8px;
+						}
+					</style>
+					<div class="container">
+						<div class="row" style="vertical-align:middle">
+							<div class="col-4 text-center">
+								<table class="table tabla-datos-factura table-bordered table-sm">
+									<tr>
+										<td>
+											<img t-if="doc.company_id.logo" t-att-src="image_data_uri(doc.company_id.logo)" style="width: 100%; display: block; margin: auto;" alt="Logo" />
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<h7>
+												<b>
+													NIT:
+												</b>
+												<span t-esc="doc.company_id.partner_id.vat" />
+											</h7>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="col-8 text-center">
+								<h2 alig="center" style="font-size:18px">
+									<b>
+										ACTA DE CONFIDENCIALIDAD
+									</b>
+								</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="article" t-att-data-oe-model="doc and doc._name" t-att-data-oe-id="doc and doc.id" t-att-data-oe-lang="doc and doc.env.context.get('lang')">
+					<!--
+					<br/>
+					<br/>
+					-->
+					<div t-attf-class="watermark" class="watermark_report o_company_#{doc.company_id.id}_layout" align="center" style="position:fixed; opacity:0; width: 96%; height: 400px; border: 0px solid red; padding: 30px">
+						<img t-att-src="image_data_uri(doc.company_id.logo)" style="width:80%;" />
+					</div>
+					<div class="page" style="border: 0px solid black;">
+						<style>
+							p {
+								text-align:justify;
+							}
+							span, strong, b, p {
+							font-size:12px;
+							}
+						</style>
+						<div class="container">
+							<div class="row">
+								<div class="col-12">
+									<p class="western" align="justify">
+										Entre <b>IPS MOVILMEDICA ATENCION DOMICILIARIA INTEGRAL S.A.S</b> representada por <b t-field="doc.coach_id">LINA PAOLA BOTERO DAZA</b> identificada con documento de cedula de <t t-if="doc.country_id == 'Colombia'">ciudadanía</t> <t t-if="doc.country_id != 'Colombia'">extranjería</t>  <span>52.730.503</span> de Bogotá y <span t-field="o.identification"/> identificado(a) con cédula de ciudadanía <span t-field="o.name"/> 52.929.610 de <span t-field="o.place_of_birth"/>, existe una relación CONTRATANTE- CONTRATISTA, la cual está regida las cláusulas propias del contrato suscrito por las partes.
+									</p>
+									<p>
+										En atención a lo anterior, este documento que suscriben las partes en mención se entenderá como el acuerdo de confidencialidad. Este documento contiene las siguientes clausulas:
+									</p>
+									<p>
+										<b>PRIMERA.</b> El CONTRATISTA se obliga a no divulgar a terceras partes, la “Información confidencial”, que reciba por parte de IPS MOVIL MEDICA ATENCION DOMICILIARIA S.A.S. y a darle a dicha información el mismo tratamiento que le darían a la información confidencial de su propiedad. Para efectos de la presente acta, “Información Confidencial” comprende toda la información divulgada por IPS MOVIL MEDICA ATENCION DOMICILIARIA S.A.S.  ya sea en forma oral, visual, escrita, grabada en medios magnéticos o en cualquier otra forma tangible y que se encuentre claramente marcada como tal al ser entregada a la parte receptora. Los documentos que intervienen en esta información confidencial, hacen referencia a: bases de datos de usuarios, valores de bienes y servicios, información técnica, financiera, económica o comercial del contratante o sus clientes y software y aplicativos que se manejan.
+									</p>
+									<p>
+										Parágrafo: Es obligación del CONTRATISTA, entregar una vez terminado el contrato, toda la información como bases de datos de usuarios, claves de acceso, paginas información y toda aquella información que el CONTRATISTA Y/O EMPLEADO haya recibido por parte de IPS MOVIL MEDICA ATENCION DOMICILIARIA S.A.S.  para ejecutar sus actividades.
+									</p>
+									<p>
+										<b>SEGUNDA.</b> La parte receptora se obliga a mantener de manera confidencial la “Información confidencial” que reciba de IPS MOVIL MEDICA ATENCION DOMICILIARIA S.A.S. y a no darla a una tercera parte diferente de su equipo de trabajo y asesores que tengan la necesidad de conocer dicha información para los propósitos autorizados, y quienes deberán estar de acuerdo en mantener de manera confidencial dicha información.
+									</p>
+									<p>
+										<b>TERCERA.</b> Es obligación del CONTRATISTA no divulgar la “Información confidencial”, incluyendo, mas no limitando, el informar a su CONTRATANTE que la maneje, y que dicha información es confidencial y que no deberá ser divulgada a terceras partes.
+									</p>
+									<p>
+										<b>CUARTA.</b> El CONTRATISTA se obliga a utilizar la “Información confidencial” recibida, únicamente para el desarrollo del objeto del contrato o cumplimiento de sus funciones en de IPS MOVIL MEDICA ATENCION DOMICILIARIA S.A.S.
+									</p>
+									<p>
+										<b>QUINTA.</b> El CONTRATISTA se compromete a efectuar una adecuada custodia y reserva de la información y gestión -es decir tratamiento- de los datos suministrados por de IPS MOVIL MEDICA ATENCION DOMICILIARIA S.A.S. al interior de las redes y bases de datos (físicas y/o electrónicas) en donde se realice su recepción y tratamiento en general.
+									</p>
+									<p>
+										<b>SEXTA.</b> Para el caso del manejo de información que incluya datos personales, el CONTRATISTA dará estricto cumplimiento a las disposiciones constitucionales y legales sobre la protección del derecho fundamental de habeas data, en particular lo dispuesto en el artículo 15 de la Constitución Política y la ley 1581 de 2012, así como dará un manejo confidencial y reservado de los datos registrados en las Historias Clínicas.
+									</p>
+									<p>
+										<b>SÉPTIMA.</b> En caso de que el CONTRATISTA incumpla parcial o totalmente con las obligaciones establecidas en la presente acta éste será responsable de los daños y perjuicios que dicho incumplimiento llegase a ocasionar a de IPS MOVIL MEDICA ATENCION DOMICILIARIA S.A.S.
+									</p>
+									<p>
+										<b>OCTAVA.</b> La vigencia de la presente acta será indefinida y permanecerá vigente mientras exista relación contractual.
+									</p>
+									<p>
+										<span t-field="doc.address_id.city_id"/> <span t-field="doc.create_date" t-options='{"widget": "date", "format": "dd"}'/> <span t-field="doc.create_date" t-options='{"widget": "date", "format": "MMMM"}'/> de <span t-field="doc.create_date" t-options='{"widget": "date", "format": "YYYY"}'/>.
+									</p>
+									<div class="container">
+										<div class="row">
+											<div class="col-6">
+												<p>
+													<br />
+													<br />
+													<br />
+													<br />
+													<br />
+													<br />
+													<br />
+													<span>
+														____________________________________________
+													</span>
+													<br />
+													<b>
+														LINA PAOLA BOTERO DAZA
+													</b>
+													<br />
+													<span>
+														C.C. 52.730.503 de Bogotá
+													</span>
+													<br />
+													<span>
+														GERENTE GENERAL Y REPRESENTANTE LEGAL MOVILMEDICA ATENCION INTEGRAL DOMICILIARIA S.A.S
+													</span>
+													<br />
+													<span t-field="doc.company_id.street">
+														<!-- Cra 30#25b19 Bogotá -->
+													</span>
+													<span t-field="doc.company_id.city">
+														<!-- Cra 30#25b19 Bogotá -->
+													</span>
+												</p>
+											</div>
+											<div class="col-6">
+												<p>
+													<br />
+													<br />
+													<br />
+													<br />
+													<br />
+													<br />
+													<br />
+													<span>
+														____________________________________________
+													</span>
+													<br />
+													<b t-field="doc.name">
+														<!-- ANGY KATHERINE MANTILLA ACEVEDO -->
+													</b>
+													<br />
+													<span>
+														CONTRATISTA
+													</span>
+													<span>
+														C.C.
+													</span>
+													<span t-field="doc.identification_id" />
+													de
+													<span t-field="doc.address_id.city_id" />
+													<span>
+														Dirección Notificación
+													</span>
+													<span t-field="doc.work_location">
+														<!-- Cra 87k#55-84 sur Bogotá -->
+													</span>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer" align="center">
+					<style>
+						#div_f {
+						font-family: sans-serif;
+						font-size: 9px;
+						line-height:9px;
+						}
+					</style>
+					<div id="div_f" class="text-center" style="border-top: 1px solid black;">
+						<ul class="list-inline mb4">
+							<li t-if="doc.company_id.phone" class="list-inline-item d-inline">
+								Teléfono:
+								<span t-field="doc.company_id.phone" />
+							</li>
+							<li t-if="doc.company_id.website" class="list-inline-item d-inline">
+								Sitio web:
+								<span t-field="doc.company_id.website" />
+							</li>
+							<li t-if="doc.company_id.partner_id.vat" class="list-inline-item d-inline">
+								<t t-esc="doc.company_id.country_id.vat_label or 'Tax ID'" />
+								:
+								<span t-field="doc.company_id.partner_id.vat" />
+								<br />
+							</li>
+							<li t-if="doc.company_id.street" class="list-inline-item d-inline">
+								Dirección:
+								<span t-field="doc.company_id.street" />
+								<span t-field="doc.company_id.street2" />
+								<span t-field="doc.company_id.state_id.name" />
+								<span t-field="doc.company_id.country_id.name" />
+							</li>
+						</ul>
+						<div t-if="report_type == 'pdf'" class="text-muted">
+							Página:
+							<span class="page" />
+							/
+							<span class="topage" />
+						</div>
+					</div>
+				</div>
+			</t>
+		</t>
+	</template>
+</odoo>

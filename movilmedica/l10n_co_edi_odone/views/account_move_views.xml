@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="invoice_tree_inherit_l10n_co_edi" model="ir.ui.view">
+            <field name="name">account.move.tree.l10n_co_edi</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_invoice_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="l10n_co_edi_invoice_name" decoration-bf="1" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="invoice_form_inherit_l10n_co_edi" model="ir.ui.view">
+            <field name="name">account.move.form.l10n_co_edi</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/div[@class='oe_title']" position="attributes">
+                    <attribute name="style">border: 0px solid red; width: 80%; height: 100px; float: left;</attribute>
+                </xpath>
+                <xpath expr="//sheet/div[@class='oe_title']/h1[2]/field[@name='name']" position="replace">
+                    <field name="name" attrs="{'readonly': [('state', '!=', 'draft')], 'invisible': [('l10n_co_edi_invoice_name','!=',False)]}" placeholder="JRNL/2016/00001"/>
+                    <field name="l10n_co_edi_invoice_name" attrs="{'readonly': [('state', '!=', 'draft')], 'invisible': [('l10n_co_edi_invoice_name','=',False)]}" />
+                </xpath>
+                <div class="oe_title" position="after">
+                    <div style="border: 0px solid green; width: 20%; float: left;">
+                        <field name="edi_qr_image" widget="image" width="120" height="120" attrs="{'invisible': [('is_einvoicing_journal','=',False)]}"/>
+                    </div>
+                </div>
+                <xpath expr="//notebook" position="inside">
+                    <page string="Factura Electrónica" name="einvoicing" attrs="{'invisible': [('is_einvoicing_journal','=',False)]}">
+                        <div name="edi_button_box" class="oe_button_box">
+                            <button name="get_xml_edi_files" string="Recalcular XML" type="object" class="oe_stat_button"/>
+                            <button name="action_sent_zipped_file" string="Enviar Doc." type="object" class="oe_stat_button" attrs="{'invisible': ['|', '|', ('edi_xml_file', '=', False), ('edi_zipped_file', '=', False), ('l10n_co_edi_state', '=', '00')]}"/>
+                            <button name="action_GetStatusZip" string="GetStatusZip" type="object" class="oe_stat_button" attrs="{'invisible': [('edi_zip_key', '=', False)]}"/>
+                            <button name="action_GetStatus" string="GetStatus" type="object" class="oe_stat_button" attrs="{'invisible': ['|', '|', ('edi_cufe_cude_ref', '=', False), ('edi_xml_file', '=', False), ('edi_zipped_file', '=', False)]}"/>
+                            <!-- <button name="action_reprocess" string="Reprocesar" type="object" class="btn-primary" attrs="{'invisible': [('profile_execution_id', '=', '1')]}"/> -->
+                            <button name="action_send_mail" string="Reenviar Correo" type="object" class="oe_stat_button"/>
+                            <!-- <button name="action_zip_create" string="Generar ZIP" type="object" class="oe_stat_button"/> -->
+
+                            <!-- <button name="open_reconcile_view" class="oe_stat_button" icon="fa-bars" type="object" attrs="{'invisible': ['|', '|', ('move_type', '!=', 'entry'), ('id', '=', False), ('has_reconciled_entries', '=', False)]}" string="Reconciled Entries"> -->
+                            <!-- </button> -->
+                        </div>
+                        <group string="Respuesta DIAN">
+                            <field name="mail_sent" readonly="1"/>
+                            <field name="l10n_co_edi_state" readonly="1"/>
+                            <field name="l10n_co_edi_response" readonly="1"/>
+                        </group>
+                        <group>
+                            <group string="Archivos">
+                                <field name="edi_pdf_filename" invisible="1"/>
+                                <field name="edi_pdf_file" widget="binary" filename="edi_pdf_filename" readonly="0"/>
+                                <field name="edi_xml_filename" invisible="1"/>
+                                <field name="edi_xml_file" widget="binary" filename="edi_xml_filename" readonly="0"/>
+                                <field name="edi_attachment_filename" invisible="1"/>
+                                <field name="edi_attachment_file" widget="binary" filename="edi_attachment_filename" readonly="0"/>
+                                <field name="edi_zipped_filename" invisible="1"/>
+                                <field name="edi_zipped_file" widget="binary" filename="edi_zipped_filename" readonly="1"/>
+                                <field name="edi_ar_filename" invisible="1"/>
+                                <field name="edi_ar_file" widget="binary" filename="ar_xml_filename" readonly="1"/>
+                                <field name="edi_zip_key" readonly="1"/>
+                            </group>
+                            <group string="Factura Referencia" attrs="{'invisible': [('is_external_invoice','=',False)]}">
+                                <field name="name_invoice_reference"/>
+                                <field name="uuid_invoice_reference"/>
+                                <field name="issue_date_invoice_reference"/>
+                                <field name="operation_type_invoice_reference"/>
+                            </group>
+                        </group>
+                        <group string="Códigos">
+                            <field name="edi_url" widget="url" readonly="1"/>
+                            <field name="edi_unencoded_cufe_cude" readonly="1"/>
+                            <field name="edi_cufe_cude_ref" readonly="1"/>
+                            <field name="edi_unencoded_soft_security_code" readonly="1"/>
+                            <field name="edi_soft_security_code" readonly="1"/>
+                        </group>
+
+                    </page>
+                </xpath>
+                <xpath expr="//group[@id='header_right_group']" position="after">
+                    <group string="Factura Electrónica" name="l10n_co_edi_fields" attrs="{'invisible': ['|', ('move_type', 'not in', ['out_invoice', 'out_refund']), ('country_code', '!=', 'CO')]}">
+                        <field name="country_code" invisible="1"/>
+                        <field name="is_einvoicing_journal" invisible="1"/>
+                        <field name="type_note" readonly="1" attrs="{'invisible': [('type_note', '=', False)]}"/>
+                        <!-- <field name="l10n_co_edi_invoice_name"/> -->
+                        <field name="l10n_co_edi_datetime_invoice" readonly="1"/>
+                        <field name="l10n_co_edi_type"/>
+                        <field name="l10n_co_edi_operation_type" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        <field name="l10n_co_edi_mandante_id" attrs="{'required': [('l10n_co_edi_operation_type','=','11')], 'invisible': [('l10n_co_edi_operation_type','!=','11')]}"/>
+                        <field name="is_external_invoice"
+                                attrs="{'invisible': ['|',('move_type', 'not in', ('out_invoice','out_refund')),('l10n_co_edi_operation_type', 'not in', ('20','30'))],
+                                        'readonly': [('state', '!=', 'draft')]}"/>
+                        <field name="l10n_co_edi_is_direct_payment" invisible="1"/>
+                        <field name="l10n_co_edi_payment_option_id" attrs="{'required': [('l10n_co_edi_is_direct_payment', '=', True)], 'readonly': [('state', '!=', 'draft')]}"/>
+                        <field name="l10n_co_edi_discrepancy_response_id" domain="[('type', '=', type_note)]"  attrs="{'required': [('type_note','!=',False)], 'invisible': [('type_note','=',False)]}"/>
+                        <!-- <field name="l10n_co_edi_invoice_name"/> -->
+                        <!-- <field name="l10n_co_edi_invoice_status" attrs="{'invisible': [('l10n_co_edi_invoice_status', '=', 'not_sent')]}"/> -->
+                        <!-- <field name="l10n_co_edi_attachment_url" widget="url"/> -->
+                        <!-- <field name="l10n_co_edi_cufe_cude_ref" attrs="{'required': [('l10n_co_edi_invoice_status', '=', 'accepted')], 'invisible': [('l10n_co_edi_invoice_status', '=', 'not_sent')]}" groups="base.group_no_one"/> -->
+                    </group>
+                </xpath>
+                <div class="oe_button_box" position="inside">
+                    <button type="object" class="oe_stat_button" name="action_view_credit_notes" icon="fa-minus" attrs="{'invisible': [('credit_note_count', '=', 0)]}">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value"><field name="credit_note_count"/></span>
+                            <span class="o_stat_text">Notas Crédito</span>
+                        </div>
+                    </button>
+                </div>
+                <xpath expr="//field[@name='invoice_has_outstanding']" position="after">
+                    <field name="l10n_co_edi_warning" invisible="1"/>
+                    <field name="is_inactive_resolution" invisible="1"/>
+                </xpath>
+                <xpath expr="//sheet" position="before">
+                    <div class="alert alert-error"
+                        role="alert"
+                        style="margin-bottom:0px; background-color:#ff7583;"
+                        attrs="{'invisible': [('l10n_co_edi_warning', '!=', True)]}">
+                        <span style="font-weight:bold;">La resolución de facturación activa para este diario está a punto de vencer o la numeración se está agotando.</span><br/>
+                    </div>
+                    <div class="alert alert-error"
+                        role="alert"
+                        style="margin-bottom:0px; background-color:#ff7583;"
+                        attrs="{'invisible': [('is_inactive_resolution', '!=', True)]}">
+                        <span style="font-weight:bold;">No existe una resolución activa de facturación para el diario seleccionado.</span><br/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Acciones de vista para tipo de factura de venta -->
+        <!-- Factura de venta -->
+        <record id="account.action_move_out_invoice_type" model="ir.actions.act_window">
+            <field name="domain" eval="[('move_type', '=', 'out_invoice'),('type_note','=',False)]"/>
+            <field name="context" eval="{'default_move_type': 'out_invoice', 'default_type_note': False}"/>
+        </record>
+
+        <!-- Nota Crédito -->
+        <record id="account.action_move_out_refund_type" model="ir.actions.act_window">
+            <field name="domain" eval="[('move_type', '=', 'out_refund')]"/> <!-- ,('type_note','=','credit') -->
+            <field name="context" eval="{'default_move_type': 'out_refund', 'default_type_note': 'credit'}"/>
+        </record>
+
+        <!-- Nota Débito -->
+        <record id="action_move_out_debit_note_type" model="ir.actions.act_window">
+            <field name="name">Notas Débito</field>
+            <field name="res_model">account.move</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="view_id" ref="account.view_invoice_tree"/>
+            <field name="search_view_id" ref="account.view_account_invoice_filter"/>
+            <field name="domain">[('move_type', '=', 'out_invoice'),('type_note','=','debit')]</field>
+            <field name="context">{'default_move_type': 'out_invoice', 'default_type_note': 'debit'}</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Crear una nota Débito
+              </p><p>
+                <!-- texto -->
+              </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_act_out_debit_note" name="Notas Débito" parent="account.menu_finance_receivables" action="action_move_out_debit_note_type" sequence="1"/>
+    </data>
+</odoo>

@@ -1,0 +1,61 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_hr_employee_form">
+            <field name="name">view.hr.employee.form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='personal_information']" position="after">
+                    <page name="employee_information" string="Employee Information" groups="hr.group_hr_user">
+                        <group>
+                            <group string="Employee">
+                                <field name="employee_modality" />
+                                <field name="employee_type" />
+                                <field name="employee_rut" />
+                                <field name="bank_ids" invisible="True" />
+                                <field name="specialties_ids" widget="many2many_tags" />
+                            </group>
+                            <group string="Health">
+                                <field name="allergies_ids" widget="many2many_tags" />
+                                <field name="illness_ids" widget="many2many_tags" />
+                                <field name="blood_type" />
+                            </group>
+                            <group string="Signature">
+                                <field widget="binary" name="signature_file" filename="signature_name" />
+                                <field name="signature_name" invisible="True" />
+                                <field widget="binary" name="stamp_file" filename="stamp_name" />
+                                <field name="stamp_name" invisible="True" />
+                            </group>
+                            <group></group>
+                            <separator string="Documents" />
+                            <field name="documents_ids">
+                                <tree editable="bottom">
+                                    <field name="employee_id" invisible="True" />
+                                    <field name="type_id" />
+                                    <field name="document_id" domain="[('type_id','=',type_id)]" />
+                                    <field name="name" />
+                                    <field name="file_data" filename="file_name" />
+                                    <field name="file_name" invisible="True" />
+                                </tree>
+                                <form>
+                                    <sheet>
+                                        <group>
+                                            <group>
+                                                <field name="employee_id" invisible="True" />
+                                                <field name="type_id" />
+                                                <field name="document_id" />
+                                                <field name="name" />
+                                                <field name="file_data" filename="file_name" />
+                                                <field name="file_name" invisible="True" />
+                                            </group>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

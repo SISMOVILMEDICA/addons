@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- Template IPS -->
+	<template id="report_hr_employee_oferta_contrato_ops">
+		<t t-call="web.html_container">
+			<t t-foreach="docs" t-as="doc">
+				<div class="header o_company_#{doc.company_id.id}_layout" style="border: 0px solid red; width: 100%; font-family: sans-serif; font-size: 12px; height: 105px;">
+					<style type="text/css">
+						.page {
+							padding: 0px 20px;
+						}
+						strong, span, b {
+						color: #3F3F3F;
+						line-height:8px;
+						}
+						.tabla-datos-factura thead td, .tabla-datos-factura tbody td {
+						text-align: center;
+						vertical-align:middle;
+						line-height:9px;
+						font-size:8px;
+						}
+						.tabla-datos-factura thead td {
+						background-color: #7A7979;
+						}
+
+						.tabla-datos-factura thead strong, .tabla-datos-factura thead b {
+						color: white;
+						}
+						h7 {
+						font-size:10px;
+						}
+						h6 {
+						font-size:11px;
+						}
+						.col-4 {
+						padding:1px;
+						margin: 0px 15px 0px 15px;
+						}
+						.col-6, .col-2 {
+						padding:3px;
+						}
+
+						.seccion-journal {
+						font-size:8px;
+						}
+					</style>
+					<div class="container">
+						<div class="row" style="vertical-align:middle">
+							<div class="col-4 text-center">
+								<table class="table tabla-datos-factura table-bordered table-sm">
+									<tr>
+										<td>
+											<img t-if="doc.company_id.logo" t-att-src="image_data_uri(doc.company_id.logo)" style="width: 100%; display: block; margin: auto;" alt="Logo" />
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<h7>
+												<b>
+													NIT:
+												</b>
+												<span t-esc="doc.company_id.partner_id.vat" />
+											</h7>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="col-8 text-center">
+								<h2 alig="center" style="font-size:18px">
+									<b>
+										ACTA DE CONFIDENCIALIDAD
+									</b>
+								</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="article" t-att-data-oe-model="doc and doc._name" t-att-data-oe-id="doc and doc.id" t-att-data-oe-lang="doc and doc.env.context.get('lang')">
+					<!--
+					<br/>
+					<br/>
+					-->
+					<div t-attf-class="watermark" class="watermark_report o_company_#{doc.company_id.id}_layout" align="center" style="position:fixed; opacity:0; width: 96%; height: 400px; border: 0px solid red; padding: 30px">
+						<img t-att-src="image_data_uri(doc.company_id.logo)" style="width:80%;" />
+					</div>
+					<div class="page" style="border: 0px solid black;">
+						<style>
+							p {
+								text-align:justify;
+							}
+							span, strong, b, p {
+							font-size:12px;
+							}
+						</style>
+						<div class="container">
+							<div class="row">
+								<div class="col-12">
+									<p class="western" align="justify">
+										Señores
+										<b>MOVILMEDICA ATENCION INTEGRAL DOMICILIARIA S.A.S <br/>
+										Ciudad.</b>
+									</p>
+									<p>
+										<b>REF: OFERTA DE PRESTACIÓN DE SERVICIOS COMO ASISTENTE CONTABLE.</b>
+									</p>
+									<p>
+										Yo <b t-field="doc.name"/> identificada con la cédula de Ciudadanía  <span t-field="doc.identification_id"/> de Bogotá por medio de la presente me permito presentar a su consideración la propuesta de prestación de servicios como <span t-field="doc.job_id"/> , en mi calidad de Contratista independiente, a fin de desempeñarme con plena autonomía técnica, administrativa e independencia, por mi cuenta y bajo mi exclusiva responsabilidad.
+									</p>
+									<p>OBJETO DE LA PROPUESTA:
+									1.- Ofrezco prestar los servicios como <span t-field="doc.job_id"/> de manera independiente, excluyendo toda relación de tipo laboral.
+									2.- Ofrezco los servicios en el marco de una relación contractual no subordinada, ya que mi actividad es de índole independiente y con absoluta autonomía.
+									3.- En mi desempeño como <span t-field="doc.job_id"/> ofrezco realizar Conciliaciones Bancarias mensuales
+									4. - Realizar los registros contables de facturas de ventas, compras y Gastos.
+									5.- Mi actividad comprende realizar las facturas de venta a los operadores.
+									6.- Realizar los reembolsos de caja menor y caja general de la compañía.
+									7.- Realizar las notas de contabilidad y notas bancarias para realizar ajustes conforme a las instrucciones del contador público de la compañía.
+									8.- Realizar las conciliaciones con los clientes sobre la cartera que reporta la contabilidad.
+									9.- Ofrezco realizar análisis sobre las cifras digitadas en la contabilidad a fin de que se registre en las respectivas cuentas para su presentación y preparación de los EEFF por parte de contador público de la compañía.
+									10.- Realizar las labores administrativas necesarias para tener la información contable y financiera de manera organizada y secuencial, esta información será completa, clara, oportuna, eficaz y estructurada para la contabilidad. Además, mis servicios como <span t-field="doc.job_id"/> comprenden canalizar la información de manera confidencial y prudente.
+									11.- Realizar y archivar los documentos conforme a los comprobantes que existan en la contabilidad
+									12.- Gestionar pagos a proveedores y pagos de servicios públicos.
+									13.- Llevar el registro y el control del inventario de activos institucionales y de insumos para oficina.
+									14.- Llevar el control de la depreciación de dicho inventario.
+									15.- Registrar todas las facturas que emite la empresa, cumpliendo con las normativas institucionales y legales que apliquen.
+									16.- Mi actividad como <span t-field="doc.job_id"/> comprende elaborar las facturas, ingresarlas en el sistema que tenga la empresa, registrarlas como cuentas por pagar y velar porque el pago sea hecho de acuerdo con las condiciones establecidas por IPS Movilmedica, esto será con estricto orden y exactitud.
+									17.- Conocer con exactitud cómo se encuentran las cuentas bancarias de la empresa y compararlas con el registro de cuentas por cobrar y por pagar de la propia empresa, con el objetivo de que no haya discrepancias entre una cosa y otra.
+									18.-Presentar los informes contables, que son los registros detallados de todos los bienes muebles e inmuebles de la organización.
+									19.-Redactar los informes financieros que detallan en forma textual el dinero que posee la empresa. La periodicidad de estos informes dependerá de las políticas institucionales.
+									20.-Preparar los documentos que servirán de soporte para el contador elabore las proyecciones financieras.
+									21.-Mi actividad como   Asistente Contable comprende apoyar las gestiones que implica el cumplimiento de las obligaciones de la empresa ante el gobierno, alistar la información fiscal de la empresa, llenar formularios y alistar la información para pagar aranceles o impuestos fiscales y tributarios ante el gobierno.
+									22.- Guardar los comprobantes de estas gestiones para luego presentarlos ante las entidades de control que las soliciten.
+									23.– Registrar los créditos pagados o adeudados a la compañía.
+									24.– Monitorear los plazos de vencimiento de las cuentas por cobrar y pagar.
+									25.– Apoyar en la cobranza de deudas.
+									26.– Mantener actualizados los registros de las operaciones financieras.
+									27.– Monitorear el balance de flujo de efectivo de la empresa.
+									28.– Llevar las cuentas T (representación gráfica de la cuenta contable).
+									29.- Ofrezco velar por el desarrollo y seguimiento de los procesos y procedimientos contables y financieros de su empresa garantizando el buen funcionamiento de esta con el fin de cumplir con las necesidades de la empresa.
+									30.- Ofrezco entregar los informes en las fechas establecidas, y reportes solicitados por las directivas.
+									31.- Ofrezco asignar, instruir, capacitar y coordinar al personal perteneciente al área que se me asigne.
+									32.- Ofrezco mis servicios en el proceso de facturación del área que se me asigne.
+									33.- Reportar inmediatamente las novedades que puedan surgir durante la prestación de mi servicio.
+									34.- Ofrezco proporcionar los debidos cuidados, higiene y mantenimiento de los elementos que se me asignen para la prestación de mi servicio.
+									35.- Cumplir con los requisitos de presentación personal propios del servicio.
+									36.- Ofrezco mantener comunicación efectiva con los entes administrativos y delegar en ustedes la programación y cronogramas necesarios para prestar mis servicios de manera independiente, ofrezco llegar oportunamente de acuerdo con esa programación y cumplir con la ejecución del servicio debidamente.
+									</p>
+
+									<p>La experiencia en mi ejercicio como Asistente Contable me permite ofertar los anteriores servicios descritos de manera enunciativa y no limitativa, comprometiéndome por ello a ejercer mi oficio con la máxima dedicación, ética, idoneidad y bajo mi responsabilidad como contratista independiente, y sin exclusividad en la prestación del servicio. Es por ello por lo que conozco el alcance de los compromisos adquiridos en esta Oferta Comercial e igualmente que de la relación Contractual que se pueda desprender, en ningún momento se genera un vínculo laboral, ningún tipo de subordinación ni de exclusividad en mis Servicios como  <span t-field="doc.job_id"/> Independiente.</p>
+
+									<p>
+										<b>PROPUESTA ECONOMICA:</b><br/>
+										El costo de mis honorarios es la suma de Un millón quinientos mil pesos ($1.500.000) mensuales.
+									</p>
+									<p>La vinculación de las partes se haría mediante contrato de prestación de servicios como  <span t-field="doc.job_id"/> independiente.</p>
+									<p>Quiero aprovechar la oportunidad para expresar a usted mi más sincero agradecimiento por haberme tenido en cuenta para presentar a su consideración esta propuesta. </p>
+									<p align="justify">
+										<span>
+											<span>
+												<span>
+													En constancia de lo anterior, se suscribe el presente documento en Bogotá, a los
+												</span>
+												<span t-field="doc.create_date" t-options='{"widget": "date", "format": "dd"}'>
+												<!-- 7 -->
+												</span> días del mes de
+												<span t-field="doc.create_date" t-options='{"widget": "date", "format": "MMMM"}'>
+												<!-- noviembre -->
+												</span>
+												<span> del año</span>
+												<span t-field="doc.create_date" t-options='{"widget": "date", "format": "YYYY"}'>
+												<!-- 2020 -->
+												</span>
+											</span>
+										</span>
+									</p>
+
+									<div class="container">
+										<div class="row">
+											<div class="col-6">
+												<p>
+													<b>EL OFERENTE</b>
+													<br />
+													<br />
+													<br />
+													<br />
+													<br />
+													<br />
+													<br />
+													<span>
+														____________________________________________
+													</span>
+													<br />
+													<b t-field="doc.name">
+													</b>
+													<br />C.C.
+													<span t-field="doc.identification_id"/> de Bogotá
+													<br />
+													<span t-field="doc.company_id.street">
+														<!-- Cra 30#25b19 Bogotá -->
+													</span>
+													<span t-field="doc.company_id.city">
+														<!-- Cra 30#25b19 Bogotá -->
+													</span>
+												</p>
+											</div>
+											<div class="col-6">
+												<p>
+													<br />
+													<br />
+													<br />
+													<br />
+													<br />
+													<br />
+													<br />
+													<span>
+														RECIBE: ____________________________________________
+													</span>
+													<br />
+													<span>
+														DESTINARIO QUE ACEPTA
+													</span><br/>
+													<b>LINA PAOLA BOTERO DAZA</b><br/>
+													<span>
+														C.C.
+													</span>
+													<span t-field="doc.identification_id" />
+													de
+													<span t-field="doc.address_id.city_id" />
+													<span>
+														Dirección Notificación
+													</span>
+													<span t-field="doc.work_location">
+														<!-- Cra 87k#55-84 sur Bogotá -->
+													</span>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer" align="center">
+					<style>
+						#div_f {
+						font-family: sans-serif;
+						font-size: 9px;
+						line-height:9px;
+						}
+					</style>
+					<div id="div_f" class="text-center" style="border-top: 1px solid black;">
+						<ul class="list-inline mb4">
+							<li t-if="doc.company_id.phone" class="list-inline-item d-inline">
+								Teléfono:
+								<span t-field="doc.company_id.phone" />
+							</li>
+							<li t-if="doc.company_id.website" class="list-inline-item d-inline">
+								Sitio web:
+								<span t-field="doc.company_id.website" />
+							</li>
+							<li t-if="doc.company_id.partner_id.vat" class="list-inline-item d-inline">
+								<t t-esc="doc.company_id.country_id.vat_label or 'Tax ID'" />
+								:
+								<span t-field="doc.company_id.partner_id.vat" />
+								<br />
+							</li>
+							<li t-if="doc.company_id.street" class="list-inline-item d-inline">
+								Dirección:
+								<span t-field="doc.company_id.street" />
+								<span t-field="doc.company_id.street2" />
+								<span t-field="doc.company_id.state_id.name" />
+								<span t-field="doc.company_id.country_id.name" />
+							</li>
+						</ul>
+						<div t-if="report_type == 'pdf'" class="text-muted">
+							Página:
+							<span class="page" />
+							/
+							<span class="topage" />
+						</div>
+					</div>
+				</div>
+			</t>
+		</t>
+	</template>
+</odoo>

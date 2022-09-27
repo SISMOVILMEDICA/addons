@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="template_historia_clinica_general">
+    <t t-call="web.html_container">
+      <t t-foreach="docs" t-as="o">
+        <t t-call="web.basic_layout">
+          <style>span { position : absolute; font-size: 8px; }</style>
+          <div class="container-fluid">
+            <img class="formato-pag-1" style="               width:99.9%;               height: auto;               position: absolute;               top:0px;               left:0px;               z-index:-1;" src="https://i.ibb.co/vwY5Ckt/pdf1.jpg"/>
+
+            <span t-field="o.name" style="top: 43px; left: 96px"/>
+            <span t-field="o.authorization_pay_co" style="top: 43px; left: 300px"/>
+            <span t-field="o.partner_mobile" style="top: 43px; left: 490px"/>
+
+            <span t-field="o.user_id.name" style="top: 54px; left: 96px; width: 80px;"/>
+
+            <span t-field="o.responsable_name" style="top: 54px; left: 490px;"/>
+            <span t-field="o.responsable_relationship" style="top: 65px; left: 490px;"/>
+
+            <span t-field="o.partner_id.name" style="top: 115px; left: 5px;"/>
+            <span t-field="o.partner_vat" style="top: 115px; left: 490px;"/>
+
+            <span t-field="o.partner_age" style="top: 140px; left: 5px;"/>
+
+            <t t-if="o.partner_gender == 'male'">
+              <span style="top: 140px; left: 40px;">X</span>
+            </t>
+            <t t-else="">
+              <span style="top: 140px; left: 60px;">X</span>
+            </t>
+
+            <t t-set="partner_birthdate" t-value="str(o.partner_birthdate).split('-')"/>
+            <span t-esc="partner_birthdate[0]" style="top: 140px; left: 90px;"/>
+            <span t-esc="partner_birthdate[1]" style="top: 140px; left: 125px;"/>
+            <span t-esc="partner_birthdate[2]" style="top: 140px; left: 150px;"/>
+
+            <t t-set="planned_date_begin_date" t-value="str(o.planned_date_begin).split(' ')[0].split('-')"/>
+            <t t-set="planned_date_begin_time" t-value="str(o.planned_date_begin).split(' ')[1]"/>
+            <span t-esc="planned_date_begin_date[0]" style="top: 140px; left: 170px;"/>
+            <span t-esc="planned_date_begin_date[1]" style="top: 140px; left: 215px;"/>
+            <span t-esc="planned_date_begin_date[2]" style="top: 140px; left: 250px;"/>
+            <span t-esc="planned_date_begin_time" style="top: 140px; left: 300px;"/>
+
+            <span t-field="o.partner_street" style="top: 140px; left: 360px;"/>
+
+            <span t-field="o.project_id.name" style="top: 178px; left: 5px; width: 100px; font-size: 5px;"/>
+
+            <t t-if="o.partner_martial_status == 'single'">
+              <span style="top: 178px; left: 170px;">X</span>
+            </t>
+            <t t-if="o.partner_martial_status == 'married'">
+              <span style="top: 190px; left: 170px;">X</span>
+            </t>
+            <t t-if="o.partner_martial_status == 'widowed'">
+              <span style="top: 178px; left: 300px;">X</span>
+            </t>
+            <t t-if="o.partner_martial_status == 'free_union'">
+              <span style="top: 190px; left: 300px;">X</span>
+            </t>
+
+            <span t-field="o.partner_phone" style="top: 178px; left: 360px;"/>
+            <span t-field="o.partner_email" style="top: 178px; left: 460px;"/>
+
+            <span t-field="o.initial_reason_for_consultation" style="top: 220px; left: 5px;"/>
+
+            <span t-field="o.history_id.antecedentes_quirugicos" style="top: 370px; left: 5px; width: 100px; font-size: 6px"/>
+            <span t-field="o.history_id.antecedentes_familiares" style="top: 370px; left: 120px; width: 100px; font-size: 6px"/>
+            <span t-field="o.history_id.antecedentes_patologicos" style="top: 370px; left: 380px; width: 100px; font-size: 6px"/>
+            <span t-field="o.history_id.antecedentes_famarcologicos" style="top: 370px; left: 510px; width: 80px; font-size: 6px"/>
+
+            <span t-field="o.history_id.antecedentes_menarquia" style="top: 370px; left: 280px; width: 80px; font-size: 6px"/>
+            <span t-field="o.history_id.antecedentes_fur" style="top: 385px; left: 258px; width: 80px; font-size: 6px"/>
+            <span t-field="o.history_id.antecedentes_fup" style="top: 385px; left: 314px; width: 80px; font-size: 6px"/>
+
+            <span t-field="o.history_id.antecedentes_obstetrica_a" style="top: 410px; left: 245px; width: 80px; font-size: 6px"/>
+            <span t-field="o.history_id.antecedentes_obstetrica_b" style="top: 410px; left: 262px; width: 80px; font-size: 6px"/>
+            <span t-field="o.history_id.antecedentes_obstetrica_c" style="top: 410px; left: 279px; width: 80px; font-size: 6px"/>
+            <span t-field="o.history_id.antecedentes_obstetrica_d" style="top: 410px; left: 300px; width: 80px; font-size: 6px"/>
+            <span t-field="o.history_id.antecedentes_obstetrica_e" style="top: 410px; left: 325px; width: 80px; font-size: 6px"/>
+            <span t-field="o.history_id.antecedentes_obstetrica_f" style="top: 410px; left: 350px; width: 80px; font-size: 6px"/>
+
+            <span t-field="o.history_id.antecedentes_metodo" style="top: 425px; left: 245px; width: 80px; font-size: 6px"/>
+            <span t-field="o.history_id.antecedentes_citologia" style="top: 440px; left: 245px; width: 80px; font-size: 6px"/>
+            <span t-field="o.history_id.antecedentes_mamografia" style="top: 455px; left: 245px; width: 80px; font-size: 6px"/>
+
+            <span t-field="o.history_id.antecedentes_hospitalarios" style="top: 490px; left: 5px; width: 100px; font-size: 6px"/>
+            <span t-field="o.history_id.antecedentes_alergicos" style="top: 490px; left: 120px; width: 100px; font-size: 6px"/>
+            <span t-field="o.history_id.antecedentes_psicosociales" style="top: 490px; left: 240px; width: 130px; font-size: 6px"/>
+            <span t-field="o.history_id.antecedentes_toxicologicos" style="top: 490px; left: 380px; width: 120px; font-size: 6px"/>
+
+            <span t-field="o.history_id.antecedentes_peso" style="top: 490px; left: 560px;"/>
+            <span t-field="o.history_id.antecedentes_gestacion" style="top: 502px; left: 560px;"/>
+            <t t-if="o.history_id.antecedentes_parto == 'vaginal'">
+              <span style="top: 514px; left: 540px;">X</span>
+            </t>
+            <t t-else="">
+              <span style="top: 514px; left: 590px;">X</span>
+            </t>
+            <span t-field="o.history_id.antecedentes_termino" style="top: 530px; left: 535px; font-size: 6px;"/>
+            <span t-field="o.history_id.antecedentes_complicaciones" style="top: 542px; left: 562px; font-size: 6px;"/>
+            <span t-field="o.history_id.antecedentes_inmunizaciones" style="top: 562px; left: 562px; font-size: 6px;"/>
+
+            <span style="top: 585px; left: 5px; font-size: 6px;">Aparato digestivo:</span>
+            <span t-field="o.history_id.revision_digestivo" style="top: 585px; left: 80px; font-size: 6px; width: 300px;"/>
+            <span style="top: 600px; left: 5px; font-size: 6px;">Aparato respiratorio:</span>
+            <span t-field="o.history_id.revision_respiratorio" style="top: 600px; left: 80px; font-size: 6px; width: 300px;"/>
+            <span style="top: 615px; left: 5px; font-size: 6px;">Aparato cardiovascular:</span>
+            <span t-field="o.history_id.revision_cardiovascular" style="top: 615px; left: 80px; font-size: 6px; width: 300px;"/>
+            <span style="top: 630px; left: 5px; font-size: 6px;">Aparato genitourinario:</span>
+            <span t-field="o.history_id.revision_genitourinario" style="top: 630px; left: 80px; font-size: 6px; width: 300px;"/>
+            <span style="top: 645px; left: 5px; font-size: 6px;">Aparato tegumentario:</span>
+            <span t-field="o.history_id.revision_tegumentario" style="top: 645px; left: 80px; font-size: 6px; width: 300px;"/>
+            <span style="top: 660px; left: 5px; font-size: 6px;">Sistema endocrino:</span>
+            <span t-field="o.history_id.revision_endocrino" style="top: 660px; left: 80px; font-size: 6px; width: 300px;"/>
+            <span style="top: 675px; left: 5px; font-size: 6px;">Sistema hematopoyetico:</span>
+            <span t-field="o.history_id.revision_hematopoyetico" style="top: 675px; left: 80px; font-size: 6px; width: 300px;"/>
+            <span style="top: 690px; left: 5px; font-size: 6px;">Sistema nervioso:</span>
+            <span t-field="o.history_id.revision_nervioso" style="top: 690px; left: 80px; font-size: 6px; width: 300px;"/>
+
+            <span t-field="o.history_id.examen_fc" style="top: 745px; left: 6px;"/>
+            <span t-field="o.history_id.examen_fr" style="top: 745px; left: 30px;"/>
+            <span t-field="o.history_id.examen_tension_tension" style="top: 745px; left: 70px;"/>
+            <span t-field="o.history_id.examen_peso" style="top: 745px; left: 150px;"/>
+            <span t-field="o.history_id.examen_talla" style="top: 745px; left: 190px;"/>
+            <span t-field="o.history_id.examen_imc_float" style="top: 745px; left: 222px;"/>
+            <span t-field="o.history_id.examen_perimetro" style="top: 745px; left: 262px;"/>
+            <span t-field="o.history_id.examen_temperatura" style="top: 745px; left: 300px;"/>
+            <span t-field="o.history_id.examen_glucometria" style="top: 745px; left: 340px;"/>
+
+            <t t-if="o.history_id.examen_estado_selec == 'bueno'">
+              <span style="top: 745px; left: 400px;">X</span>
+            </t>
+            <t t-if="o.history_id.examen_estado_selec == 'aceptable'">
+              <span style="top: 745px; left: 440px;">X</span>
+            </t>
+            <t t-if="o.history_id.examen_estado_selec == 'regular'">
+              <span style="top: 745px; left: 480px;">X</span>
+            </t>
+            <t t-if="o.history_id.examen_estado_selec == 'malo'">
+              <span style="top: 745px; left: 530px;">X</span>
+            </t>
+            <t t-if="o.history_id.examen_estado_selec == 'muy_malo'">
+              <span style="top: 745px; left: 580px;">X</span>
+            </t>
+          </div>
+        </t>
+        <t t-call="web.basic_layout">
+          <style>span { position : absolute; font-size: 8px; }</style>
+          <div class="container-fluid">
+            <img class="formato-pag-2" style="               width:99.9%;               height: auto;               position: absolute;               top:0px;               left:0px;               z-index:-1;" src="https://i.ibb.co/BVgRgV2/pdf2.jpg"/>
+
+            <t t-if="o.history_id.examen_piel_selec == 'normal'">
+              <span style="top: 45px; left: 10px;">X</span>
+            </t>
+            <t t-else="">
+              <span style="top: 45px; left: 60px;">X</span>
+            </t>
+            <span t-field="o.history_id.examen_piel_char" style="top: 45px; left: 135px;"/>
+            <t t-if="o.history_id.examen_cabeza_selec == 'normal'">
+              <span style="top: 68px; left: 10px;">X</span>
+            </t>
+            <t t-else="">
+              <span style="top: 68px; left: 60px;">X</span>
+            </t>
+            <span t-field="o.history_id.examen_cabeza_char" style="top: 68px; left: 135px;"/>
+            <t t-if="o.history_id.examen_cardio_selec == 'normal'">
+              <span style="top: 91px; left: 10px;">X</span>
+            </t>
+            <t t-else="">
+              <span style="top: 91px; left: 60px;">X</span>
+            </t>
+            <span t-field="o.history_id.examen_cardio_char" style="top: 91px; left: 135px;"/>
+            <t t-if="o.history_id.examen_abdomen_selec == 'normal'">
+              <span style="top: 112px; left: 10px;">X</span>
+            </t>
+            <t t-else="">
+              <span style="top: 112px; left: 60px;">X</span>
+            </t>
+            <span t-field="o.history_id.examen_abdomen_char" style="top: 112px; left: 135px;"/>
+            <t t-if="o.history_id.examen_urogenital_selec == 'normal'">
+              <span style="top: 132px; left: 10px;">X</span>
+            </t>
+            <t t-else="">
+              <span style="top: 132px; left: 60px;">X</span>
+            </t>
+            <span t-field="o.history_id.examen_urogenital_char" style="top: 132px; left: 135px;"/>
+            <t t-if="o.history_id.examen_extremidades_selec == 'normal'">
+              <span style="top: 152px; left: 10px;">X</span>
+            </t>
+            <t t-else="">
+              <span style="top: 152px; left: 60px;">X</span>
+            </t>
+            <span t-field="o.history_id.examen_extremidades_char" style="top: 152px; left: 135px;"/>
+            <t t-if="o.history_id.examen_neurologico_selec == 'normal'">
+              <span style="top: 172px; left: 10px;">X</span>
+            </t>
+            <t t-else="">
+              <span style="top: 172px; left: 60px;">X</span>
+            </t>
+            <span t-field="o.history_id.examen_neurologico_char" style="top: 172px; left: 135px;"/>
+            <span t-field="o.history_id.impresion_principal" style="top: 208px; left: 55px;"/>
+            <span t-field="o.history_id.impresion_relacionado1" style="top: 223px; left: 55px;"/>
+            <span t-field="o.history_id.impresion_relacionado2" style="top: 239px; left: 55px;"/>
+            <span t-field="o.history_id.impresion_relacionado3" style="top: 258px; left: 55px;"/>
+            <span t-field="o.history_id.impresion_relacionado4" style="top: 273px; left: 55px;"/>
+            <!-- <span t-field="o.history_id.zxc" style="top: 208px; left: 277px;"/> -->
+            <!-- <span t-field="o.history_id.zxc" style="top: 223px; left: 277px;"/> -->
+            <!-- <span t-field="o.history_id.zxc" style="top: 239px; left: 277px;"/> -->
+            <!-- <span t-field="o.history_id.zxc" style="top: 258px; left: 277px;"/> -->
+            <!-- <span t-field="o.history_id.zxc" style="top: 273px; left: 277px;"/> -->
+            <!-- <span t-field="o.history_id.zxc" style="top: 208px; left: 363px;"/> -->
+            <span t-field="o.history_id.plan_manejo" style="top: 304px; left: 5px;"/>
+            <t t-set="medications_applied_in_consultation" t-value="'\n'.join(p.name for p in o.history_id.medications_applied_in_consultation)"/>
+            <span t-esc="medications_applied_in_consultation" style="top: 304px; left: 363px; font-size: 5px"/>
+            <span t-field="o.history_id.plan_recomendacion" style="top: 354px; left: 363px;"/>
+            <!-- <span t-field="o.history_id.zxc" style="top: 437px; left: 1px;"/> -->
+            <span t-field="o.history_id.interconsultas_terapias" style="top: 437px; left: 361px;"/>
+            <span t-field="o.history_id.interconsultas_laboratorios" style="top: 487px; left: 2px;"/>
+            <span t-field="o.history_id.interconsultas_imagenes" style="top: 487px; left: 364px;"/>
+            <span t-field="o.history_id.remisiones_basica" style="top: 521px; left: 96px;"/>
+            <span t-field="o.history_id.remisiones_medicalizada" style="top: 538px; left: 96px;"/>
+            <span t-field="o.history_id.remisiones_urgencias" style="top: 555px; left: 96px;"/>
+            <span t-field="o.history_id.remisiones_others" style="top: 573px; left: 96px;"/>
+            <!-- <span t-field="o.history_id.zxc" style="top: 634px; left: 50px;"/> -->
+            <!-- <span t-field="o.history_id.zxc" style="top: 634px; left: 223px;"/> -->
+            <!-- <span t-field="o.history_id.zxc" style="top: 634px; left: 337px;"/> -->
+            <!-- <span t-field="o.history_id.zxc" style="top: 634px; left: 490px;"/> -->
+          </div>
+        </t>
+      </t>
+    </t>
+  </template>
+</odoo>

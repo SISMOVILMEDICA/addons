@@ -1,0 +1,488 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_ips
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-12 02:04+0000\n"
+"PO-Revision-Date: 2021-04-12 02:04+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_ips
+#: model:ir.actions.report,print_report_name:account_ips.action_report_einvoicing_ips_print
+msgid "(object._get_report_base_filename())"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid ""
+"<b>\n"
+"                                            Observaciones:\n"
+"                                        </b>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<b>Ciudad:</b>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<b>Dirección:</b>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<b>Identificación:</b>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<b>NIT:</b>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<b>Nombre:</b>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<b>Teléfono:</b>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid ""
+"<br/>\n"
+"                                                <b>Régimen:</b>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid ""
+"<br/>\n"
+"                                        <b>Usuario que realizó la factura:</b>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid ""
+"<br/>\n"
+"                                        Firma Autorizada <br/>\n"
+"                                        <b>Fecha de registro:</b>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">Monto</span>\n"
+"                                                    <span groups=\"account.group_show_line_subtotals_tax_included\">Precio total</span>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<span>Cant.</span>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<span>Copago</span>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<span>Código</span>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<span>Disc.%</span>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<span>Item</span>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<span>N. autorización</span>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<span>Precio Unitario</span>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<span>Producto</span>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<span>Source Document</span>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong class=\"mr16\">Subtotal</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid ""
+"<strong>\n"
+"                                                CUFE:\n"
+"                                            </strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>CLIENTE:</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>Ciudad:</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>Copago/Cuota Moderadora</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>DATOS DEL PACIENTE</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>Dirección:</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>EMISOR:</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>Email:</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>FACTURA ELECTRONICA DE VENTA N°</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>Fecha de factura:</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>Fecha de vencimiento:</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>Fecha del servicio:</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>Fecha reporte a la dian:</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>Medio de pago:</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>Modalidad de Contratación:</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>NIT:</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>NOTA CREDITO</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>NOTA DEBITO</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>Número de contrato:</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>Periodo facturado:</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>RECEPTOR:</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>Régimen:</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>Subtotal</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>Teléfono:</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>Total en letras:</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>Total</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "<strong>Ámbito:</strong>"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid ""
+"Aceptado y Recibido\n"
+"                                        <br/>\n"
+"                                        Nombre y Sello, Cliente"
+msgstr ""
+
+#. module: account_ips
+#: model:ir.model.fields,field_description:account_ips.field_account_bank_statement_line__patient_city_id
+#: model:ir.model.fields,field_description:account_ips.field_account_move__patient_city_id
+#: model:ir.model.fields,field_description:account_ips.field_account_payment__patient_city_id
+#: model_terms:ir.ui.view,arch_db:account_ips.invoice_form_inherit_l10n_co_edi
+msgid "Ciudad"
+msgstr ""
+
+#. module: account_ips
+#: model:ir.model,name:account_ips.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.view_move_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: account_ips
+#: model:ir.model.fields,field_description:account_ips.field_account_bank_statement_line__confirm_bool
+#: model:ir.model.fields,field_description:account_ips.field_account_move__confirm_bool
+#: model:ir.model.fields,field_description:account_ips.field_account_payment__confirm_bool
+msgid "Confirm bool"
+msgstr "Booleano para confirmar"
+
+#. module: account_ips
+#: model:ir.model.fields,field_description:account_ips.field_account_move_line__copago
+msgid "Copago"
+msgstr ""
+
+#. module: account_ips
+#: model:ir.model.fields,field_description:account_ips.field_account_bank_statement_line__moderating_fee
+#: model:ir.model.fields,field_description:account_ips.field_account_move__moderating_fee
+#: model:ir.model.fields,field_description:account_ips.field_account_payment__moderating_fee
+msgid "Cuota Moderadora"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.invoice_form_inherit_l10n_co_edi
+msgid "Datos del Paciente"
+msgstr ""
+
+#. module: account_ips
+#: model:ir.model.fields,field_description:account_ips.field_account_bank_statement_line__patient_state_id
+#: model:ir.model.fields,field_description:account_ips.field_account_move__patient_state_id
+#: model:ir.model.fields,field_description:account_ips.field_account_payment__patient_state_id
+#: model_terms:ir.ui.view,arch_db:account_ips.invoice_form_inherit_l10n_co_edi
+msgid "Departamento"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "Dir:"
+msgstr ""
+
+#. module: account_ips
+#: model:ir.model.fields,field_description:account_ips.field_account_bank_statement_line__patient_street
+#: model:ir.model.fields,field_description:account_ips.field_account_move__patient_street
+#: model:ir.model.fields,field_description:account_ips.field_account_payment__patient_street
+msgid "Dirección"
+msgstr ""
+
+#. module: account_ips
+#: model:ir.model.fields,field_description:account_ips.field_account_move__display_name
+#: model:ir.model.fields,field_description:account_ips.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:account_ips.field_res_company__display_name
+msgid "Display Name"
+msgstr "Nombre Público"
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "Email:"
+msgstr ""
+
+#. module: account_ips
+#: model:ir.actions.report,name:account_ips.action_report_einvoicing_ips_print
+msgid "Factura Electrónica IPS"
+msgstr ""
+
+#. module: account_ips
+#: model:ir.model.fields,field_description:account_ips.field_account_bank_statement_line__date_service
+#: model:ir.model.fields,field_description:account_ips.field_account_move__date_service
+#: model:ir.model.fields,field_description:account_ips.field_account_payment__date_service
+msgid "Fecha del Servicio"
+msgstr ""
+
+#. module: account_ips
+#: model:ir.model.fields,field_description:account_ips.field_res_company__signature
+msgid "Firma"
+msgstr ""
+
+#. module: account_ips
+#: model:ir.model.fields,field_description:account_ips.field_account_move__id
+#: model:ir.model.fields,field_description:account_ips.field_account_move_line__id
+#: model:ir.model.fields,field_description:account_ips.field_res_company__id
+msgid "ID"
+msgstr ""
+
+#. module: account_ips
+#: model:ir.model.fields,field_description:account_ips.field_account_bank_statement_line__patient_vat
+#: model:ir.model.fields,field_description:account_ips.field_account_move__patient_vat
+#: model:ir.model.fields,field_description:account_ips.field_account_payment__patient_vat
+#: model_terms:ir.ui.view,arch_db:account_ips.invoice_form_inherit_l10n_co_edi
+msgid "Identificación"
+msgstr ""
+
+#. module: account_ips
+#: model:ir.model,name:account_ips.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento del Libro"
+
+#. module: account_ips
+#: model:ir.model,name:account_ips.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: account_ips
+#: model:ir.model.fields,field_description:account_ips.field_account_move____last_update
+#: model:ir.model.fields,field_description:account_ips.field_account_move_line____last_update
+#: model:ir.model.fields,field_description:account_ips.field_res_company____last_update
+msgid "Last Modified on"
+msgstr "Última Modificación el"
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "Logo"
+msgstr ""
+
+#. module: account_ips
+#: model:ir.model.fields,field_description:account_ips.field_account_bank_statement_line__patient_modality
+#: model:ir.model.fields,field_description:account_ips.field_account_move__patient_modality
+#: model:ir.model.fields,field_description:account_ips.field_account_payment__patient_modality
+msgid "Modalidad"
+msgstr ""
+
+#. module: account_ips
+#: model:ir.model.fields,field_description:account_ips.field_account_bank_statement_line__patient_name
+#: model:ir.model.fields,field_description:account_ips.field_account_move__patient_name
+#: model:ir.model.fields,field_description:account_ips.field_account_payment__patient_name
+msgid "Nombre Paciente"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.invoice_form_inherit_l10n_co_edi
+msgid "Número"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid ""
+"Page:\n"
+"                            <span class=\"page\"/>\n"
+"                            /\n"
+"                            <span class=\"topage\"/>"
+msgstr ""
+
+#. module: account_ips
+#: model:ir.model.fields,field_description:account_ips.field_account_bank_statement_line__patient_country_id
+#: model:ir.model.fields,field_description:account_ips.field_account_move__patient_country_id
+#: model:ir.model.fields,field_description:account_ips.field_account_payment__patient_country_id
+msgid "País"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "Phone:"
+msgstr "Telefono"
+
+#. module: account_ips
+#: model:ir.model.fields,field_description:account_ips.field_account_bank_statement_line__regime
+#: model:ir.model.fields,field_description:account_ips.field_account_move__regime
+#: model:ir.model.fields,field_description:account_ips.field_account_payment__regime
+msgid "Régimen"
+msgstr ""
+
+#. module: account_ips
+#: model:ir.model.fields,field_description:account_ips.field_account_bank_statement_line__patient_phone
+#: model:ir.model.fields,field_description:account_ips.field_account_move__patient_phone
+#: model:ir.model.fields,field_description:account_ips.field_account_payment__patient_phone
+msgid "Teléfono"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.view_move_form
+msgid "There is already a patient with this service"
+msgstr "Este paciente ya tiene este servicio"
+
+#. module: account_ips
+#: model:ir.model.fields,field_description:account_ips.field_account_bank_statement_line__patient_identification_type_id
+#: model:ir.model.fields,field_description:account_ips.field_account_move__patient_identification_type_id
+#: model:ir.model.fields,field_description:account_ips.field_account_payment__patient_identification_type_id
+msgid "Tipo de identificación"
+msgstr ""
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.invoice_form_inherit_l10n_co_edi
+msgid "Type"
+msgstr "Tipo"
+
+#. module: account_ips
+#: model_terms:ir.ui.view,arch_db:account_ips.report_account_move_einvoicing_ips_document
+msgid "Web:"
+msgstr "Web:"

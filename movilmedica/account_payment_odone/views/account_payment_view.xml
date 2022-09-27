@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <menuitem id="account.menu_action_account_payments_receivable" groups="account_payment_odone.group_payment_hidden" />
+
+    <menuitem id="account.menu_action_account_payments_payable" groups="account_payment_odone.group_payment_hidden" />
+</odoo>

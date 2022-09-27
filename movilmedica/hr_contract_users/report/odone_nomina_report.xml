@@ -1,0 +1,64 @@
+<odoo>
+    <data>
+        <!-- formato de papel contratos -->
+        <record id="paperformat_contratos" model="report.paperformat">
+            <field name="name">Contratos formato papel</field>
+            <field name="default" eval="True"/>
+            <field name="format">Letter</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">35</field>
+            <field name="margin_bottom">20</field>
+            <field name="margin_left">2</field>
+            <field name="margin_right">2</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">28</field>
+            <field name="dpi">80</field>
+        </record>
+        <!-- Acta de confidencialidad -->
+        <record id="report_acta_confidencialidad" model="ir.actions.report">
+            <field name="name">Acta de Confidencialidad</field>
+            <field name="model">hr.employee</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">hr_contract_users.report_hr_employee_acta_confidencialidad</field>
+            <field name="report_file">hr_contract_users.report_hr_employee_acta_confidencialidad</field>
+            <field name="paperformat_id" ref="paperformat_contratos" />
+            <!-- <field name="binding_model_id" ref="project.model_project_task" /> -->
+            <!-- <field name="binding_type">report</field> -->
+        </record>
+        <!-- Contrato por Ops-->
+        <record id="report_contrato_ops" model="ir.actions.report">
+            <field name="name">Contrato por OPS</field>
+            <field name="model">hr.employee</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">hr_contract_users.report_hr_employee_contrato_ops</field>
+            <field name="report_file">hr_contract_users.report_hr_employee_contrato_ops</field>
+            <field name="paperformat_id" ref="paperformat_contratos" />
+            <!-- <field name="binding_model_id" ref="project.model_project_task" /> -->
+            <!-- <field name="binding_type">report</field> -->
+        </record>
+        <!-- Reistro por induccion de nuevos contratistas-->
+        <record id="registro_nuevos_contratistas_induccion" model="ir.actions.report">
+            <field name="name">Registro de Inducción Nuevos Contratistas</field>
+            <field name="model">hr.employee</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">hr_contract_users.report_hr_employee_registro_induccion</field>
+            <field name="report_file">hr_contract_users.report_hr_employee_registro_induccion</field>
+            <field name="paperformat_id" ref="paperformat_contratos" />
+            <!-- <field name="binding_model_id" ref="project.model_project_task" /> -->
+            <!-- <field name="binding_type">report</field> -->
+        </record>
+        <!-- Oferta contrato por OPS-->
+        <record id="oferta_contrato_ops" model="ir.actions.report">
+            <field name="name">Oferta contrato OPS</field>
+            <field name="model">hr.employee</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">hr_contract_users.report_hr_employee_oferta_contrato_ops</field>
+            <field name="report_file">hr_contract_users.report_hr_employee_oferta_contrato_ops</field>
+            <field name="paperformat_id" ref="paperformat_contratos" />
+            <!-- <field name="binding_model_id" ref="project.model_project_task" /> -->
+            <!-- <field name="binding_type">report</field> -->
+        </record>
+    </data>
+</odoo>

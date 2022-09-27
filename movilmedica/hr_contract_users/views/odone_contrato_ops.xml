@@ -1,0 +1,1676 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- Template IPS -->
+	<template id="report_hr_employee_contrato_ops">
+		<t t-call="web.html_container">
+			<t t-foreach="docs" t-as="doc">
+				<div class="header o_company_#{doc.company_id.id}_layout" style="border: 0px solid red; width: 100%; font-family: sans-serif; font-size: 12px; height: 105px;">
+					<style type="text/css">
+						.page {
+							padding: 0px 20px;
+						}
+						strong, span, b {
+						color: #3F3F3F;
+						line-height:8px;
+						}
+						.tabla-datos-factura thead td, .tabla-datos-factura tbody td {
+						text-align: center;
+						vertical-align:middle;
+						line-height:9px;
+						font-size:8px;
+						}
+						.tabla-datos-factura thead td {
+						background-color: #7A7979;
+						}
+
+						.tabla-datos-factura thead strong, .tabla-datos-factura thead b {
+						color: white;
+						}
+						h7 {
+						font-size:10px;
+						}
+						h6 {
+						font-size:11px;
+						}
+						.col-4 {
+						padding:1px;
+						margin: 0px 15px 0px 15px;
+						}
+						.col-6, .col-2 {
+						padding:3px;
+						}
+
+						.seccion-journal {
+						font-size:8px;
+						}
+					</style>
+					<div class="container">
+						<div class="row" style="vertical-align:middle">
+							<div class="col-4 text-center">
+								<table class="table tabla-datos-factura table-bordered table-sm">
+									<tr>
+										<td>
+											<img t-if="doc.company_id.logo" t-att-src="image_data_uri(doc.company_id.logo)" style="width: 100%; display: block; margin: auto;" alt="Logo" />
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<h7>
+												<b>
+													NIT:
+												</b>
+												<span t-esc="doc.company_id.partner_id.vat" />
+											</h7>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="col-8 text-center">
+								<h2 alig="center" style="font-size:18px">
+									<b>
+										CONTRATO DE PRESTACIÓN DE SERVICIOS DE
+										<span t-field="doc.job_id.name">
+											<!-- ASISTENTE CONTABLE -->
+										</span>
+										<!-- INDEPENDIENTE -->
+									</b>
+								</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="article" t-att-data-oe-model="doc and doc._name" t-att-data-oe-id="doc and doc.id" t-att-data-oe-lang="doc and doc.env.context.get('lang')">
+					<!--
+					<br/>
+					<br/>
+					-->
+					<div t-attf-class="watermark" class="watermark_report o_company_#{doc.company_id.id}_layout" align="center" style="position:fixed; opacity:0; width: 96%; height: 400px; border: 0px solid red; padding: 30px">
+						<img t-att-src="image_data_uri(doc.company_id.logo)" style="width:80%;" />
+					</div>
+					<div class="page" style="border: 0px solid black;">
+						<style>
+							span, strong, b, p {
+							font-size:12px;
+							}
+						</style>
+						<div class="container">
+							<div class="row">
+								<div class="col-12">
+									<p class="western" align="justify">
+										<span>
+											<span>
+												<span>
+													<span lang="es-ES">
+														Entre los
+													</span>
+												</span>
+												<span>
+													suscritos
+												</span>
+												<span>
+													<span lang="es-ES">
+														a saber:
+													</span>
+												</span>
+												<span>
+													<span lang="es-ES">
+														<b t-field="doc.coach_id.name">
+															<!-- LINA PAOLA BOTERO DAZA -->
+															<!-- Verde Nombres completos de CONTRATANTE Y CONTRATISTA -->
+														</b>
+													</span>
+												</span>
+												<span>
+													<span lang="es-ES">
+														, mayor de
+													</span>
+												</span>
+												<span>
+													edad
+												</span>
+												<span>
+													<span lang="es-ES">
+														,
+													</span>
+												</span>
+												<span>
+													domiciliada
+												</span>
+												<span>
+													<span lang="es-ES">
+														y
+													</span>
+												</span>
+												<span>
+													residente
+												</span>
+												<span>
+													<span lang="es-ES" t-field="doc.coach_id.address_id.city_id">
+														<!-- en Bogotá, D.C., -->
+													</span>
+												</span>
+												<span>
+													identificada
+												</span>
+												<span>
+													<span lang="es-ES">
+														con la
+													</span>
+												</span>
+												<span>
+													cédula
+												</span>
+												<span>
+													<span lang="es-ES">
+														de
+													</span>
+												</span>
+												<span>
+													ciudadania
+													<!-- CLASE DE DOCUMENTO -->
+													<!-- Aquí faltaría el campo tipo de documento en la vista -->
+												</span>
+												<span t-field="doc.coach_id.identification_id">
+													<!-- 52.730.503 -->
+												</span> de
+												<span>
+													Bogota
+												</span>
+												<span>
+													<span lang="es-ES">
+														,
+													</span>
+												</span>
+												<span>
+													quien
+												</span>
+												<span>
+													<span lang="es-ES">
+													</span>
+												</span>
+												<span>
+													obra
+												</span>
+												<span>
+													<span lang="es-ES">
+														en re
+													</span>
+												</span>
+												<span>
+													presentación
+												</span>
+												<span>
+													<span lang="es-ES">
+														de la
+													</span>
+												</span>
+												<span>
+													sociedad
+												</span>
+												<span>
+													<span lang="es-ES">
+													</span>
+												</span>
+												<span>
+													<span lang="es-ES">
+														<b>
+															MOVILMEDICA ATENCION INTEGRAL DOMICILIARIA S.A.S
+														</b>
+													</span>
+												</span>
+												<span>
+													<span lang="es-ES">
+														.
+													</span>
+												</span>
+												<span>
+													<span lang="es-ES">
+														<b>
+														</b>
+													</span>
+												</span>
+												<span>
+													sociedad legalmente constituida, domiciliada en la ciudad de Bogotá, D.C., con NIT 901.318.712
+												</span>
+												<span>
+													,
+												</span>
+												<span>
+													quien en adelante se denominará como
+												</span>
+												<span>
+													<b>
+														EL
+													</b>
+												</span>
+												<span>
+												</span>
+												<span>
+													<b>
+														CONTRATANTE
+													</b>
+												</span>
+												<span>
+													, por una parte, y
+												</span>
+												<span style="font-family: Segoe UI, serif;">
+													<b>
+													</b>
+												</span>
+												<span>
+													<span lang="es-ES">
+														<b t-field="doc.name">
+															<!-- ANGY KATHERINE MANTILLA ACEVEDO -->
+														</b>
+													</span>
+												</span>
+												<span>
+													mayor de edad, identificado(a), con la cédula de
+												</span>
+												<span>
+													ciudadanía
+												</span>
+												<span>
+													número
+												</span>
+												<span t-field="doc.identification_id">
+													<!-- 1.005 -->
+													<!-- NUMERO DE DOCUMENTO -->
+													<!-- .150.550 -->
+												</span>
+												<span>
+													de
+												</span>
+												<span t-field="doc.address_id.city_id">
+													<!-- Bogotá -->
+													<!-- LUGAR DE EXPEDICIPON DE LA CEDULA -->
+												</span>
+												<span>
+													, domiciliado(a) y residente
+												</span>
+												<span>
+													<b>
+													</b>
+												</span>
+												<span>
+													en la ciudad de
+												</span>
+												<span t-field="doc.coach_id.address_id.city_id">
+													<!-- Bogotá -->
+													<!-- LUGAR DE RESIDENCIA DEL CONTRATISTA -->
+												</span>
+												<span>
+													, quien en adelante se denominará como
+												</span>
+												<span>
+													<b>
+														EL
+													</b>
+												</span>
+												<span>
+												</span>
+												<span>
+													<b>
+														CONTRATISTA
+													</b>
+												</span>
+												<span>
+													, hemos convenido en celebrar el presente contrato de prestación de servicios de
+												</span>
+												<span t-field="doc.job_id">
+													<!-- Asistente Contable -->
+												</span>
+												<span>
+													independiente que se regulará por las cláusulas que a continuación se expresan y en general por las disposiciones legales establecidas para este tipo de contrato, previas las siguientes consideraciones:
+												</span>
+											</span>
+										</span>
+									</p>
+									<p align="justify" lang="es-MX" class="western">
+										<span>
+											<span>
+												1.-
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													EL CONTRATISTA
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												de manera independiente y con plena autonomía y con sus propios medios presta servicios como
+											</span>
+										</span>
+										<span>
+											<span>
+												<span lang="es-CO" t-field="doc.job_id">
+													Asistente Contable.
+												</span>
+											</span>
+										</span>
+									</p>
+									<p align="justify" lang="es-MX" class="western">
+										<span>
+											<span>
+												2.-
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													EL CONTRATISTA
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												ha realizado una oferta comercial en su calidad de prestador de servicios independientes para proveer los servicios como
+											</span>
+										</span>
+										<span>
+											<span>
+												<span t-field="o.job_id.name">
+												</span>
+											</span>
+										</span>
+										<span>
+											<span>
+												<span lang="es-CO">
+													para realizar
+												</span>
+											</span>
+										</span>
+										<span>
+											<span>
+												<span lang="es-CO" t-field="doc.job_id.description">
+													<!-- actividades administrativas de archivo, control y elaboración de correspondencia, digitar y registrar las transacciones contables de las operaciones de la compañía y verificar su adecuada contabilización, elaborar nómina y liquidación de seguridad social -->
+													<!-- Aguamarina pertenece a las funciones del contratista -->
+												</span>
+											</span>
+										</span>
+										<span>
+											.
+										</span>
+										<span>
+											<span>
+											</span>
+										</span>
+									</p>
+									<p align="justify" lang="es-MX" class="western">
+										<span>
+											<span>
+												3.-
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													EL CONTRATANTE
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												ha estudiado la oferta comercial y ha decidido aceptarla en los términos contenidos en la misma y que se desarrollan en este contrato de prestación de servicios independientes.
+											</span>
+										</span>
+									</p>
+									<p align="justify" lang="es-MX" class="western">
+										<span>
+											<span>
+												4.- La oferta comercial hará parte integrante del presente contrato de prestación de servicios como
+											</span>
+										</span>
+										<span>
+											<span>
+												<span lang="es-CO" t-field="doc.job_id">
+													<!-- Asistente Contable -->
+												</span>.
+											</span>
+										</span>
+									</p>
+									<p align="justify" lang="es-MX" class="western">
+										<span>
+											<span>
+												<u>
+													<b>
+														CLÁUSULAS:
+													</b>
+												</u>
+											</span>
+										</span>
+									</p>
+									<p align="justify" lang="es-MX" class="western">
+										<span>
+											<span>
+												<b>
+													PRIMERA: OBJETO. EL CONTRATISTA
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												ejerciendo su calidad de prestador de servicios independientes de
+											</span>
+										</span>
+										<span>
+											<span>
+												<span lang="es-CO" t-field="doc.job_id">
+													<!-- Asistente Contable -->
+												</span>
+											</span>
+										</span>
+										<span>
+											<span>
+												, con plena autonomía e independencia, y sin sujeción laboral para con
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													EL CONTRATANTE
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												prestará sus servicios como
+											</span>
+										</span>
+										<span>
+											<span>
+												<span lang="es-CO" t-field="doc.job_id">
+													<!-- Asistente Contable -->
+												</span>
+											</span>
+										</span>
+										<span>
+											<span>
+												para
+											</span>
+										</span>
+										<span>
+											<span>
+												<span lang="es-CO">
+												</span>
+											</span>
+										</span>
+										<span>
+											<span>
+												<span lang="es-CO" t-field="doc.job_id.description">
+													<!-- realizar actividades administrativas de archivo, control y elaboración de correspondencia, digitar y registrar las transacciones contables de las operaciones de la compañía y verificar su adecuada contabilización, elaborar nómina y liquidación de seguridad social -->
+												</span>
+											</span>
+										</span>
+										<span>
+											<span>
+												, atendiendo los términos de la oferta comercial emitida por el
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													CONTRATISTA
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												y aceptada previamente por el
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													CONTRATANTE
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												.
+											</span>
+										</span>
+									</p>
+									<p align="justify" lang="es-MX" class="western">
+										<span>
+											<span>
+												<b>
+													SEGUNDA: DURACION
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												: El término de duración del presente contrato será de
+											</span>
+										</span>
+										<span>
+											<span>
+												seis
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												(06)
+											</span>
+										</span>
+										<span>
+											<span>
+												<!-- Morado Pertenece a la duración del contrato -->
+												meses, contados a partir de la fecha de la firma de este documento.
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													PARAGRAFO:
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												Al vencimiento del término inicial de este contrato, las partes deberán manifestar por escrito su intención de prorrogarlo con una antelación no inferior a quince (15) días de la fecha de vencimiento, so pena de entenderse terminado el contrato por vencimiento del término.
+											</span>
+										</span>
+									</p>
+									<p align="justify">
+										<span>
+											<span>
+												<span>
+													<span lang="es-MX">
+														<b>
+															TERCERA
+														</b>
+													</span>
+												</span>
+												<span>
+													<b>
+														: DETERMINACION DEL VALOR DE HONORARIOS Y FORMA DE PAGO:
+													</b>
+												</span>
+												<span>
+													El valor de los honorarios por los servicios prestados por el
+												</span>
+												<span>
+													<b>
+														CONTRATISTA
+													</b>
+												</span>
+												<span>
+													independiente se pagará al
+												</span>
+												<span>
+												</span>
+												<span>
+													<b>
+														CONTRATISTA
+													</b>
+												</span>
+												<span>
+													a razón de
+												</span>
+												<span>
+													Un millón quinientos mil pesos ($1.500.000) mensuales
+													<!-- Rojo pertenece al valor de los honorarios -->
+												</span>
+												<span>
+													.
+												</span>
+												<span>
+													Esta liquidación será finalmente remitida al
+												</span>
+												<span>
+													<b>
+														CONTRATANTE
+													</b>
+												</span>
+												<span>
+													para los efectos de ordenación del Pago respectivo mes vencido.
+												</span>
+											</span>
+										</span>
+									</p>
+									<p align="justify">
+										<span>
+											<span>
+												<span>
+													<b>
+														PARAGRAFO PRIMERO
+													</b>
+												</span>
+												<span>
+													: Para efectos de formalizar los pagos correspondientes a los honorarios que se liquiden en la forma antes prevista, deberá efectuarse previamente la presentación de una cuenta de cobro por parte de
+												</span>
+												<span>
+													<b>
+														EL
+													</b>
+												</span>
+												<span>
+												</span>
+												<span>
+													<b>
+														CONTRATISTA
+													</b>
+												</span>
+												<span>
+													al
+												</span>
+												<span>
+													<b>
+														CONTRATANTE
+													</b>
+												</span>
+												<span>
+													el primer día hábil siguiente al mes ejecutado.
+												</span>
+											</span>
+										</span>
+									</p>
+									<p align="justify">
+										<span>
+											<span>
+												<span>
+													<b>
+														PARAGRAFO SEGUNDO
+													</b>
+												</span>
+												<span>
+													: Igualmente para formalizar y ordenar el pago de los honorarios,
+												</span>
+												<span>
+													<b>
+														EL CONTRATISTA
+													</b>
+												</span>
+												<span>
+													, deberá efectuar su afiliación y pago de los aportes al régimen de Seguridad Social a que legalmente se encuentra obligado como
+												</span>
+											</span>
+										</span>
+										<span>
+											<span>
+												<span>
+													independiente (Salud, Pensión y ARL) en los porcentajes establecidos en la Ley, siendo esta obligación de su absoluta e individual responsabilidad. Para efecto de acreditación del pago de los aportes a la Seguridad Social de
+												</span>
+												<span>
+													<b>
+														EL CONTRATISTA,
+													</b>
+												</span>
+												<span>
+													ante
+												</span>
+												<span>
+													<b>
+														EL CONTRATANTE
+													</b>
+												</span>
+												<span>
+													, deberá presentar la planilla asistida de aportes o el documento equivalente que soporte el pago, el primer día de cada mes.
+												</span>
+											</span>
+										</span>
+									</p>
+									<p align="justify" lang="es-MX" class="western">
+										<span>
+											<span>
+												<b>
+													CUARTA: CARÁCTER CIVIL DEL CONTRATO.
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												El presente contrato será ejecutado por el
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													CONTRATISTA
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												, de manera independiente, con absoluta autonomía técnica, financiera, administrativa, y bajo su propia y exclusiva responsabilidad; es decir, sin que exista subordinación laboral de manera que tendrá carácter civil y, por ende, no generará, bajo ningún aspecto, remuneraciones salariales, prestaciones, afiliaciones, ni indemnizaciones de naturaleza laboral, tanto para el
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													CONTRATISTA
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												como para el personal que éste utilice en la ejecución del objeto del presente contrato. Los derechos del
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													CONTRATISTA
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												de acuerdo con la naturaleza del contrato se limitarán a exigir el cumplimiento de las obligaciones del
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													CONTRATANTE
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												y el pago de los honorarios estipulados por la prestación del servicio.
+											</span>
+										</span>
+									</p>
+									<p align="justify" lang="es-MX" class="western">
+										<span>
+											<span>
+												<b>
+													QUINTA: EXCLUSIÓN DE LA RELACIÓN LABORAL.
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												Queda claramente entendido que no existirá relación laboral alguna entre
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													EL CONTRATANTE y EL CONTRATISTA
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												, quien expresamente
+											</span>
+										</span>
+										<span>
+											<span>
+												reconoce y acepta que los servicios prestados y regulados por el presente contrato, no conllevan subordinación ni solidaridad de ninguna clase con
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													EL CONTRATANTE
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												, ya que actuará por su propia cuenta con plena autonomía.
+											</span>
+										</span>
+									</p>
+									<p align="justify" lang="es-MX" class="western">
+										<span>
+											<span>
+												<b>
+													SEXTA: COMPROMISOS ENTRE LAS PARTES. A)
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													DEL
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													CONTRATISTA: 1.
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												Se obliga a prestar los servicios contratados para
+											</span>
+										</span>
+										<span>
+											<span>
+												<span lang="es-CO">
+													realizar
+												</span>
+											</span>
+										</span>
+										<span>
+											<span>
+												<span lang="es-CO" t-field="doc.job_id.description">
+													<!-- actividades administrativas de archivo, control y elaboración de correspondencia, digitar y registrar las transacciones contables de las operaciones de la compañía y verificar su adecuada contabilización, elaborar nómina y liquidación de seguridad social -->
+												</span>
+											</span>
+										</span>
+										<span>
+											<span>
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													2.
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												Responder por cualquier perjuicio que cause en ejercicio de su actividad como
+											</span>
+										</span>
+										<span>
+											<span>
+												<span lang="es-CO" t-field="doc.job_id">
+													<!-- Asistente Contable -->
+												</span>
+											</span>
+										</span>
+										<span>
+											<span>
+												a los convenios que tiene el
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													CONTRATANTE
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												.
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													3
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												.
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													EL
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													CONTRATISTA
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												Se obliga a cumplir en forma eficiente y oportuna las actividades propias de su oficio y aquellos compromisos que se generen de acuerdo con la naturaleza del servicio, los cuales están desglosados y explicados en la Oferta Comercial aprobada y que forma parte integral del presente contrato. 4
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													.
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													EL
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													CONTRATISTA
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												debe tener todos los documentos de idoneidad en el área de práctica en regla y los demás requisitos solicitados por el
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													CONTRATANTE.
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													B).
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													DEL
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													CONTRATANTE:
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													1.
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												Cubrir el monto de los honorarios en la forma y oportunidad pactadas.
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													2.
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												Suministrar toda la información y los documentos que requiera el
+											</span>
+										</span>
+										<span>
+											<span>
+												<b>
+													CONTRATISTA
+												</b>
+											</span>
+										</span>
+										<span>
+											<span>
+												para el cumplimiento de las gestiones encomendadas.
+											</span>
+										</span>
+									</p>
+									<p align="justify">
+										<span>
+											<span>
+												<span>
+													<b>
+														SEPTIMA: FORMAS DE TERMINACIÓN.
+													</b>
+												</span>
+												<span>
+													El presente contrato podrá darse por terminado por la ocurrencia de cualquiera de los siguientes eventos:
+												</span>
+												<span>
+													<b>
+														a)
+													</b>
+												</span>
+												<span>
+													Por vencimiento del término pactado y en caso de no prorrogarse el término de duración en la forma prevista en este contrato.
+												</span>
+												<span>
+													<b>
+														b
+													</b>
+												</span>
+												<span>
+													) Por mutuo acuerdo entre las partes.
+												</span>
+												<span>
+													<b>
+														c)
+													</b>
+												</span>
+												<span>
+													Por el incumplimiento de las obligaciones y compromisos derivados del presente contrato.
+												</span>
+												<span>
+													<b>
+														d)
+													</b>
+												</span>
+												<span>
+													En caso de presentarse queja por parte de algún usuario por el servicio prestado por
+												</span>
+												<span>
+													<b>
+														EL CONTRATISTA
+													</b>
+												</span>
+												<span>
+													y que constituya conducta que quebrante los parámetros de idoneidad, eficiencia y calidad del nivel de atención. e
+												</span>
+												<span>
+													<b>
+														)
+													</b>
+												</span>
+												<span>
+													En cualquier tiempo de manera unilateral
+												</span>
+												<span>
+													<b>
+														EL CONTRATANTE
+													</b>
+												</span>
+												<span>
+													puede terminar el presente contrato, sin que se genere ningún tipo de indemnización o pago suplementario en favor de
+												</span>
+												<span>
+													<b>
+														EL CONTRATISTA. PARAGRAFO:
+													</b>
+												</span>
+												<span>
+													El pago a que haya lugar se realizará después de los treinta (30) días posteriores a la terminación del contrato.
+												</span>
+											</span>
+										</span>
+									</p>
+									<p align="justify">
+										<span>
+											<span>
+												<span>
+													<b>
+														OCTAVA: CONFIDENCIALIDAD. El
+													</b>
+												</span>
+												<span>
+												</span>
+												<span>
+													<b>
+														CONTRATANTE
+													</b>
+												</span>
+												<span>
+													está obligado a transmitir y revelar al
+												</span>
+												<span>
+													<b>
+														CONTRATISTA
+													</b>
+												</span>
+												<span>
+													toda la información necesaria para adelantar su labor que en algunos casos será secreta y confidencial en el manejo con los pacientes, clientes, empleados, proveedores y/o terceros que le hayan confiado determinada información.
+												</span>
+												<span>
+													<b>
+														EL
+													</b>
+												</span>
+												<span>
+												</span>
+												<span>
+													<b>
+														CONTRATISTA
+													</b>
+												</span>
+												<span>
+													acepta y conoce toda la información a la cual accede, como a la confidencial secreta que reciba, reconociendo que la misma es parte del patrimonio exclusivo del
+												</span>
+												<span>
+													<b>
+														CONTRATANTE
+													</b>
+												</span>
+												<span>
+													, de sus clientes y/o terceros de los cuales es depositario de secreto o confidencialidad.
+												</span>
+												<span>
+													<b>
+														EL
+													</b>
+												</span>
+												<span>
+												</span>
+												<span>
+													<b>
+														CONTRATISTA
+													</b>
+												</span>
+												<span>
+													afirma saber que el mantenimiento de una absoluta reserva respecto de todas y cada una de estas informaciones constituye una condición esencial de sus relaciones comerciales presentes y futuras con
+												</span>
+												<span>
+													<b>
+														EL
+													</b>
+												</span>
+												<span>
+												</span>
+												<span>
+													<b>
+														CONTRATANTE
+													</b>
+												</span>
+												<span>
+													, dando cumplimiento con ello a lo establecido en la legislación vigente. Debido a lo anterior,
+												</span>
+												<span>
+													<b>
+														EL
+													</b>
+												</span>
+												<span>
+												</span>
+												<span>
+													<b>
+														CONTRATISTA
+													</b>
+												</span>
+												<span>
+													se obliga a utilizar toda la información a la que tenga acceso únicamente en el marco del cumplimiento del objeto del presente contrato y a preservar los secretos del
+												</span>
+												<span>
+													<b>
+														CONTRATANTE
+													</b>
+												</span>
+												<span>
+													, de los clientes y/o de los terceros, manteniéndolos en estricta confidencialidad.
+												</span>
+											</span>
+										</span>
+									</p>
+									<p align="justify">
+										<span>
+											<span>
+												<span>
+													<b>
+														EL
+													</b>
+												</span>
+												<span>
+												</span>
+												<span>
+													<b>
+														CONTRATISTA
+													</b>
+												</span>
+												<span>
+													acepta que en este sentido asume una obligación contractual específica y que, en caso de incumplirla, será suficiente motivo de terminación del presente contrato por incumplimiento generándose así a favor del
+												</span>
+												<span>
+													<b>
+														CONTRATANTE
+													</b>
+												</span>
+												<span>
+													la respectiva acción judicial por daños y perjuicios, o en caso total por los perjuicios causados a terceros sin detrimento de la acción penal que se reserva
+												</span>
+												<span>
+													<b>
+														EL
+													</b>
+												</span>
+												<span>
+												</span>
+												<span>
+													<b>
+														CONTRATANTE
+													</b>
+												</span>
+												<span>
+													de instaurar denuncia por violación de la
+												</span>
+											</span>
+										</span>
+										<span>
+											<span>
+												<span>
+													normatividad penal vigente, así como de los perjuicios que llegare a ocasionar a sus clientes y/o terceros perjudicados con la revelación, divulgación o falta de confidencialidad.
+												</span>
+												<span>
+													<b>
+														EL
+													</b>
+												</span>
+												<span>
+												</span>
+												<span>
+													<b>
+														CONTRATISTA
+													</b>
+												</span>
+												<span>
+													acepta que por la índole específica de las comunicaciones e información y a las que tendrá acceso en el cumplimiento del presente contrato, debe considerar en
+												</span>
+											</span>
+										</span>
+										<span>
+											<span>
+												<span>
+													principio secreto toda la información por vía escrita, oral o electrónica a la cual acceda; a su método de trabajo, negocios, procesos, a la organización interna del
+												</span>
+												<span>
+													<b>
+														CONTRATANTE
+													</b>
+												</span>
+												<span>
+													, o de los clientes, posibles clientes, o proveedores de este y/o terceros que le comunicaren secretos en general.
+												</span>
+												<span>
+													<b>
+														EL
+													</b>
+												</span>
+												<span>
+												</span>
+												<span>
+													<b>
+														CONTRATISTA
+													</b>
+												</span>
+												<span>
+													se obliga a devolver cualquier documentación, publicación, material o antecedente sustentado en cualquier tipo de soporte que constituya una información confidencial o secreta, en el acto de cesar su contrato debido a cualquier circunstancia. Todos los aspectos tratados en esta cláusula de confidencialidad se mantendrán vigentes, aún después de finalizado el presente contrato y hasta por seis (6) meses más, contados a partir de la terminación del presente contrato, lapso durante el cual no perderá exigibilidad dicha cláusula.
+												</span>
+												<span>
+													<b>
+														PARAGRAFO
+													</b>
+												</span>
+												<span>
+													: Se tendrán como excepciones a todo lo clausulado los siguientes literales que se anuncian y que no tendrán la obligación de confidencialidad siempre que se pruebe que: a) La información ya se encontraba en el dominio público al momento de conocerse, producirse o utilizarse, o entró luego en el dominio público sin culpa del
+												</span>
+												<span>
+													<b>
+														CONTRATISTA
+													</b>
+												</span>
+												<span>
+													; b) La información estaba en el conocimiento del
+												</span>
+												<span>
+													<b>
+														CONTRATISTA
+													</b>
+												</span>
+												<span>
+													, sin obligación de guardar confidencialidad, con anterioridad a su relación con
+												</span>
+												<span>
+													<b>
+														EL CONTRATANTE
+													</b>
+												</span>
+												<span>
+													; c) La Información fue desarrollada o recibida legítimamente de terceros por
+												</span>
+												<span>
+													<b>
+														EL CONTRATISTA
+													</b>
+												</span>
+												<span>
+													en forma personal y privada, absolutamente independiente de su relación con
+												</span>
+												<span>
+													<b>
+														EL CONTRATANTE
+													</b>
+												</span>
+												<span>
+													; d) Publicación en web.
+												</span>
+											</span>
+										</span>
+									</p>
+									<p align="justify">
+										<span>
+											<span>
+												<span>
+													<b>
+														NOVENA:
+													</b>
+												</span>
+												<span>
+													Las partes convienen
+												</span>
+												<span>
+													<b>
+													</b>
+												</span>
+												<span>
+													que quedará Prohibido toda forma de Bullying Informático por parte del
+												</span>
+												<span>
+													<b>
+														CONTRATISTA
+													</b>
+												</span>
+												<span>
+													al
+												</span>
+												<span>
+													<b>
+														CONTRATANTE,
+													</b>
+												</span>
+												<span>
+													como tampoco podrá ejercerse acoso a través de los medios informáticos y/o tecnológicos a los empleados de la empresa
+												</span>
+												<span>
+													<b>
+													</b>
+												</span>
+												<span>
+													ni al CONTRATANTE
+												</span>
+												<span>
+													<b>
+														,
+													</b>
+												</span>
+												<span>
+													de ser así se ejercerán las acciones penales según la Ley 1273 del 2009.
+												</span>
+											</span>
+										</span>
+									</p>
+									<p align="justify">
+										<span>
+											<span>
+												<span>
+													<b>
+														DÉCIMA: CESIÓN Y SUBCONTRATACIÓN.
+													</b>
+												</span>
+												<span>
+													<b>
+													</b>
+												</span>
+												<span>
+													<b>
+														El CONTRATISTA
+													</b>
+												</span>
+												<span>
+													no podrá ceder ni subcontratar el presente contrato sin el consentimiento previo y escrito de
+												</span>
+												<span>
+													<b>
+														EL CONTRATANTE.
+													</b>
+												</span>
+											</span>
+										</span>
+									</p>
+									<p align="justify">
+										<span>
+											<span>
+												<span>
+													<b>
+														DÉCIMA PRIMERA: NORMA RECTORA.
+													</b>
+												</span>
+												<span>
+													El presente contrato estará regido por la Legislación Colombiana y será interpretada de buena fe de conformidad con las disposiciones civiles y comerciales.
+												</span>
+											</span>
+										</span>
+									</p>
+									<p align="justify">
+										<span>
+											<span>
+												<span>
+													<b>
+														DECIMA SEGUNDA: MERITO EJECUTIVO.
+													</b>
+												</span>
+												<span>
+													Las obligaciones que emanan del presente contrato quedan revestidas por voluntad de las partes de mérito ejecutivo, y podrán ser exigidas sin necesidad de requerimiento alguno, ni de constituir en mora.
+												</span>
+											</span>
+										</span>
+									</p>
+									<p class="western" align="justify">
+										<span>
+											<span>
+												<span>
+													<b>
+														DÉCIMA TERCERA:
+													</b>
+												</span>
+												<span>
+													<b>
+														INTEGRIDAD.
+													</b>
+												</span>
+												<span>
+													El presente contrato sustituye y deja sin efecto cualquier pacto anterior entre las partes, verbal o escrito, sobre el mismo objeto; por tanto, las partes declaran que este documento será el único que tiene valor entre ellas para regular sus obligaciones y derechos, en relación con el objeto contractual pactado.
+												</span>
+											</span>
+										</span>
+									</p>
+									<p class="western" align="justify">
+										<span>
+											<span>
+												<span>
+													<b>
+														DECIMA CUARTA: CONOCIMIENTO INFORMADO. -
+													</b>
+												</span>
+												<span>
+													Las partes manifiestan que el contenido íntegro del presente contrato fue leído, explicado, conocido comprendido e informado. Las partes manifiestan que conocen y entienden cuáles son sus deberes, obligaciones, riesgos, derechos, los costos y gastos inherentes a la ejecución del contrato, y sus consecuencias legales y mediante su suscripción aceptan su contenido en su integridad. Las partes manifiestan que actúan por cuenta, riesgo e iniciativa propia y que las decisiones que han tomado fueron fruto de la autonomía de la voluntad y libertad contractual y, por lo tanto, conocen los alcances y consecuencias de suscribir y ejecutar el presente contrato.
+												</span>
+											</span>
+										</span>
+									</p>
+									<p align="justify">
+										<span>
+											<span>
+												<span>
+													<b>
+														DECIMA QUINTA:
+													</b>
+												</span>
+												<span>
+												</span>
+												<span>
+													<b>
+														DOMICILIO CONTRACTUAL.
+													</b>
+												</span>
+												<span>
+													Para todos los efectos legales, el domicilio será la ciudad de Bogotá D.C, y las notificaciones serán recibidas por las partes en las direcciones que se registrarán al pie de cada firma.
+												</span>
+											</span>
+										</span>
+									</p>
+									<p align="justify">
+										<span>
+											<span>
+												<span>
+													En constancia de lo anterior, se suscribe el presente documento en Bogotá, a los
+												</span>
+												<span t-field="doc.create_date" t-options='{"widget": "date", "format": "dd"}'>
+												<!-- 7 -->
+												</span> días del mes de
+												<span t-field="doc.create_date" t-options='{"widget": "date", "format": "MMMM"}'>
+												<!-- noviembre -->
+												</span>
+												<span> del año</span>
+												<span t-field="doc.create_date" t-options='{"widget": "date", "format": "YYYY"}'>
+												<!-- 2020 -->
+												</span>
+											</span>
+										</span>
+									</p>
+									<div class="container">
+										<div class="row">
+											<div class="col-6">
+												<p>
+													<b>
+														EL CONTRATANTE:
+													</b>
+													<br/>
+													<br/>
+													<br/>
+													<br/>
+													<br/>
+													<br/>
+													<span>____________________________________________</span><br/>
+													<b>
+														LINA PAOLA BOTERO DAZA
+													</b><br/>
+													<span>C.C. 52.730.503 de Bogotá</span><br/>
+													<span>GERENTE GENERAL Y REPRESENTANTE LEGAL MOVILMEDICA ATENCION INTEGRAL DOMICILIARIA S.A.S</span><br/>
+													<span t-field="doc.company_id.street">
+														<!-- Cra 30#25b19 Bogotá -->
+													</span>
+													<span t-field="doc.company_id.city">
+														<!-- Cra 30#25b19 Bogotá -->
+													</span>
+												</p>
+											</div>
+											<div class="col-6">
+												<p>
+													<b>
+														EL CONTRATISTA:
+													</b>
+													<br/>
+													<br/>
+													<br/>
+													<br/>
+													<br/>
+													<br/>
+													<span>____________________________________________</span><br/>
+													<b t-field="doc.name">
+														<!-- ANGY KATHERINE MANTILLA ACEVEDO -->
+													</b><br/>
+													<span>C.C. </span> <span t-field="doc.identification_id"/> de <span t-field="doc.address_id.city_id"/>
+													<span>Dirección Notificación</span>
+													<span t-field="doc.work_location">
+														<!-- Cra 87k#55-84 sur Bogotá -->
+													</span>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer" align="center">
+					<style>
+						#div_f {
+						font-family: sans-serif;
+						font-size: 9px;
+						line-height:9px;
+						}
+					</style>
+					<div id="div_f" class="text-center" style="border-top: 1px solid black;">
+						<ul class="list-inline mb4">
+							<li t-if="doc.company_id.phone" class="list-inline-item d-inline">
+								Teléfono:
+								<span t-field="doc.company_id.phone" />
+							</li>
+							<li t-if="doc.company_id.website" class="list-inline-item d-inline">
+								Sitio web:
+								<span t-field="doc.company_id.website" />
+							</li>
+							<li t-if="doc.company_id.partner_id.vat" class="list-inline-item d-inline">
+								<t t-esc="doc.company_id.country_id.vat_label or 'Tax ID'" />
+								:
+								<span t-field="doc.company_id.partner_id.vat" />
+								<br />
+							</li>
+							<li t-if="doc.company_id.street" class="list-inline-item d-inline">
+								Dirección:
+								<span t-field="doc.company_id.street" />
+								<span t-field="doc.company_id.street2" />
+								<span t-field="doc.company_id.state_id.name" />
+								<span t-field="doc.company_id.country_id.name" />
+							</li>
+						</ul>
+						<div t-if="report_type == 'pdf'" class="text-muted">
+							Página:
+							<span class="page" />
+							/
+							<span class="topage" />
+						</div>
+					</div>
+				</div>
+			</t>
+		</t>
+	</template>
+</odoo>

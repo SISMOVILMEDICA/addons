@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_clinic_history_recommendation_tree">
+            <field name="name">view_clinic_history_recommendation_tree</field>
+            <field name="model">clinic.history.recommendation</field>
+            <field name="priority" eval="16" />
+            <field name="arch" type="xml">
+                <tree string="Recommendations" editable="bottom">
+                    <field name="active" />
+                    <field name="name" />
+                    <field name="recommendation" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_clinic_history_recommendation_form">
+            <field name="name">view.clinic.history.recommendation.form</field>
+            <field name="model">clinic.history.recommendation</field>
+            <field name="priority" eval="16" />
+            <field name="arch" type="xml">
+                <form string="Recommendation">
+                    <sheet>
+                        <group>
+                            <field name="active" />
+                            <field name="name" />
+                            <field name="recommendation" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_clinic_history_recommendation">
+            <field name="name">Recomendaciones</field>
+            <field name="res_model">clinic.history.recommendation</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_clinic_history_recommendation" parent="industry_fsm.fsm_menu_settings" action="action_clinic_history_recommendation" />
+    </data>
+</odoo>

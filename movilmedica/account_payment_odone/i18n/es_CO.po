@@ -1,0 +1,832 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_payment_odone
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-12 02:17+0000\n"
+"PO-Revision-Date: 2021-08-12 02:17+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_kanban
+msgid "<i class=\"fa fa-clock-o\" role=\"img\" aria-label=\"Date\" title=\"Date\"/>"
+msgstr "<i class=\"fa fa-clock-o\" role=\"img\" aria-label=\"Fecha\" title=\"Fecha\"/>"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__account_id
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_form
+msgid "Account Payable"
+msgstr "Cuentas por Pagar"
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_form
+msgid "Account Receivable"
+msgstr "Cuentas por Cobrar"
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_form
+msgid "Accounting Date"
+msgstr "Fecha Contable"
+
+#. module: account_payment_odone
+#: model:ir.model,name:account_payment_odone.model_account_voucher
+msgid "Accounting Voucher"
+msgstr "Comprobante contable"
+
+#. module: account_payment_odone
+#: model:ir.model,name:account_payment_odone.model_account_voucher_wizard
+msgid "Accounting Voucher Wizard"
+msgstr "Asistente Comprobantes contables"
+
+#. module: account_payment_odone
+#: model:res.groups,name:account_payment_odone.group_account_voucher
+msgid "Accounting Vouchers"
+msgstr "Comprobantes contables"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__message_needaction
+msgid "Action Needed"
+msgstr "Acción requerida"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__voucher_active_id
+msgid "Active"
+msgstr "Activo"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__line_active_ids
+msgid "Active Lines"
+msgstr "Lineas del Activo"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de Actividad  de Excepción"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Ícono de tipo de actvidad"
+
+#. module: account_payment_odone
+#: model:ir.model.fields.selection,name:account_payment_odone.selection__account_voucher__voucher_type__advance
+msgid "Advance"
+msgstr "Anticipo"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__amount
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__amount
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_wizard__amount
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_tree
+msgid "Amount"
+msgstr "Valor"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__amount_active
+msgid "Amount Active"
+msgstr "Monto del Activo"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__amount_passive
+msgid "Amount Passive"
+msgstr "Monto del Pasivo"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__amount_reconcile
+msgid "Amount Reconcile"
+msgstr "Monto de Conciliación"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__amount_voucher
+msgid "Amount Voucher"
+msgstr "Monto del Pago"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_res_company__voucher_reconcile_amount
+#: model:ir.model.fields,field_description:account_payment_odone.field_res_config_settings__voucher_reconcile_amount
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_res_config_settings_form
+msgid "Amount reconcile"
+msgstr "Valor a conciliar"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__analytic_id
+msgid "Analytic Account"
+msgstr "Cuenta analítica"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__analytic_tag_ids
+msgid "Analytic Tags"
+msgstr "Etiquetas analíticas"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__message_attachment_count
+msgid "Attachment Count"
+msgstr "Nº de archivos adjuntos"
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_form
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_wizard_form
+msgid "Cancel"
+msgstr "Canelar"
+
+#. module: account_payment_odone
+#: model:ir.model.fields.selection,name:account_payment_odone.selection__account_voucher__state__cancel
+msgid "Cancelled"
+msgstr "Canelado"
+
+#. module: account_payment_odone
+#: code:addons/account_payment_odone/models/account_voucher.py:0
+#: code:addons/account_payment_odone/models/account_voucher.py:0
+#, python-format
+msgid "Cannot confirm a voucher with differences."
+msgstr "No puede confirmar un pago con diferencias."
+
+#. module: account_payment_odone
+#: model:ir.model,name:account_payment_odone.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__company_id
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__company_id
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_wizard__company_id
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_search
+msgid "Company"
+msgstr "Compañía"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__company_currency_id
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_wizard__company_currency_id
+msgid "Company Currency"
+msgstr "Moneda de la Compañía"
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_form
+msgid "Compute"
+msgstr "Calcular"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,help:account_payment_odone.field_account_voucher__writeoff_amount
+msgid ""
+"Computed as the difference between the amount stated in the voucher and the "
+"sum of allocation on the voucher lines."
+msgstr ""
+"Calculado la diferencia entre la cantidad indicada en el comprobante y la "
+"suma de la asignación en las líneas del comprobante."
+
+#. module: account_payment_odone
+#: model:ir.model,name:account_payment_odone.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__writeoff_comment
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__comment
+msgid "Counterpart Comment"
+msgstr "Comentario de la contrapartida"
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_wizard_form
+msgid "Create Voucher"
+msgstr "Crear Pago"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__create_uid
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__create_uid
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_wizard__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__create_date
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__create_date
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_wizard__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: account_payment_odone
+#: model:ir.model.fields.selection,name:account_payment_odone.selection__account_voucher_line__line_type__credit
+msgid "Credit"
+msgstr "Crédito"
+
+#. module: account_payment_odone
+#: model:ir.model.fields.selection,name:account_payment_odone.selection__account_voucher__voucher_type__cross
+msgid "Cross"
+msgstr "Cruce"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__currency_id
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__currency_id
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_wizard__currency_id
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_search
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: account_payment_odone
+#: model:ir.model.fields.selection,name:account_payment_odone.selection__account_voucher__partner_type__customer
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_form
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_search
+msgid "Customer Vouchers"
+msgstr "Pagos de Cliente"
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_search
+msgid "Customer/Supplier"
+msgstr "Cliente/Proveedor"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__date
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__date_original
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_wizard__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: account_payment_odone
+#: model:ir.model.fields.selection,name:account_payment_odone.selection__account_voucher_line__line_type__debit
+msgid "Debit"
+msgstr "Débito"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__line_type
+msgid "Debit / Credit"
+msgstr "Débito / Crédito"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__name
+msgid "Description"
+msgstr "Descripción"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__account_id
+msgid "Destination Account"
+msgstr "Cuenta de destino"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__writeoff_amount
+msgid "Difference Amount"
+msgstr "Cantidad de diferencia"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_journal__display_name
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_move__display_name
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__display_name
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__display_name
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_wizard__display_name
+#: model:ir.model.fields,field_description:account_payment_odone.field_res_company__display_name
+#: model:ir.model.fields,field_description:account_payment_odone.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: account_payment_odone
+#: model:ir.model.fields.selection,name:account_payment_odone.selection__account_voucher__state__draft
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_search
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__date_due
+msgid "Due Date"
+msgstr "Fecha de Vencimiento"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_bank_statement_import_journal_creation__voucher_debit_account_id
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_journal__voucher_debit_account_id
+msgid "Expense Receipts Account"
+msgstr "Cuenta de recibos de gastos"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_bank_statement_import_journal_creation__voucher_credit_account_id
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_journal__voucher_credit_account_id
+msgid "Expense Vouchers Account"
+msgstr "Cuenta de comprobantes de gastos"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Contactos)"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Contactos)"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,help:account_payment_odone.field_account_voucher__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icono de Font Awesome ej. fa-tasks"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__reconcile
+msgid "Full Reconcile"
+msgstr "Reconciliación total"
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_search
+msgid "Future Activities"
+msgstr "Actividades futuras"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_journal__id
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_move__id
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_move_line__id
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__id
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__id
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_wizard__id
+#: model:ir.model.fields,field_description:account_payment_odone.field_res_company__id
+#: model:ir.model.fields,field_description:account_payment_odone.field_res_config_settings__id
+msgid "ID"
+msgstr ""
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,help:account_payment_odone.field_account_voucher__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: account_payment_odone
+#: model:ir.model.fields,help:account_payment_odone.field_account_voucher__message_needaction
+#: model:ir.model.fields,help:account_payment_odone.field_account_voucher__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado hay nuevos mensajes que requieren su atención."
+
+#. module: account_payment_odone
+#: model:ir.model.fields,help:account_payment_odone.field_account_voucher__message_has_error
+#: model:ir.model.fields,help:account_payment_odone.field_account_voucher__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: account_payment_odone
+#: model:ir.model,name:account_payment_odone.model_account_journal
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__journal_id
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_wizard__journal_id
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_search
+msgid "Journal"
+msgstr "Diario"
+
+#. module: account_payment_odone
+#: model:ir.model,name:account_payment_odone.model_account_move
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__move_id
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: account_payment_odone
+#: model:ir.model,name:account_payment_odone.model_account_move_line
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__move_line_id
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: account_payment_odone
+#: model:ir.model.fields.selection,name:account_payment_odone.selection__account_voucher__writeoff_option__without_writeoff
+msgid "Keep Open"
+msgstr "Mantener abierto"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_journal____last_update
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_move____last_update
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_move_line____last_update
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher____last_update
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line____last_update
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_wizard____last_update
+#: model:ir.model.fields,field_description:account_payment_odone.field_res_company____last_update
+#: model:ir.model.fields,field_description:account_payment_odone.field_res_config_settings____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__write_uid
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__write_uid
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__write_date
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__write_date
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_wizard__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_search
+msgid "Late Activities"
+msgstr "Adjuntos principales"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_wizard__active_bool
+msgid "Many"
+msgstr "Muchos"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,help:account_payment_odone.field_res_company__voucher_reconcile_amount
+#: model:ir.model.fields,help:account_payment_odone.field_res_config_settings__voucher_reconcile_amount
+msgid "Maximum value in crosses"
+msgstr "Máximo valor en cruces"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Envío de Mensaje"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: account_payment_odone
+#: code:addons/account_payment_odone/models/account_voucher.py:0
+#: code:addons/account_payment_odone/models/account_voucher.py:0
+#, python-format
+msgid "New"
+msgstr "Nuevo"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Siguiente plazo de actividad"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Numero de Acciones"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__message_has_error_counter
+msgid "Number of errors"
+msgstr "Numero de errores"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,help:account_payment_odone.field_account_voucher__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,help:account_payment_odone.field_account_voucher__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,help:account_payment_odone.field_account_voucher__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leidos"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__amount_unreconciled
+msgid "Open Balance"
+msgstr "Saldo abierto"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__amount_original
+msgid "Original Amount"
+msgstr "Cantidad original"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__partner_id
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__partner_id
+msgid "Partner"
+msgstr "Asociado"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__partner_type
+msgid "Partner Type"
+msgstr "Tipo de Empresa"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__voucher_passive_id
+msgid "Passive"
+msgstr "Pasivo"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__line_passive_ids
+msgid "Passive Lines"
+msgstr "Lineas de Pasivo"
+
+#. module: account_payment_odone
+#: model:res.groups,name:account_payment_odone.group_payment_hidden
+msgid "Payment Hidden"
+msgstr "Ocultar Pago"
+
+#. module: account_payment_odone
+#: model:ir.model.fields.selection,name:account_payment_odone.selection__account_voucher__state__posted
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_search
+msgid "Posted"
+msgstr "Publicado"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__voucher_reconcile_id
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_form
+msgid "Reconcile"
+msgstr "Conciliar"
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_form
+msgid "Reconcile Information"
+msgstr "Información de Conciliación"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__line_reconcile_ids
+msgid "Reconcile Lines"
+msgstr "Lineas de Conciliar"
+
+#. module: account_payment_odone
+#: model:ir.model.fields.selection,name:account_payment_odone.selection__account_voucher__writeoff_option__with_writeoff
+msgid "Reconcile Voucher Balance"
+msgstr "Conciliar Saldo del Pago"
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_form
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_wizard_form
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,help:account_payment_odone.field_account_voucher__voucher_reference
+#: model:ir.model.fields,help:account_payment_odone.field_account_voucher_wizard__voucher_reference
+msgid ""
+"Reference of the document used to issue this voucher. Eg. check number, file"
+" name, etc."
+msgstr "Referencia del documento utilizado para emitir este bono. P.ej. número de "
+"verificación, nombre de archivo, etc."
+
+#. module: account_payment_odone
+#: code:addons/account_payment_odone/models/account_move.py:0
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_wizard_form
+#, python-format
+msgid "Register Voucher"
+msgstr "Registrar Pago"
+
+#. module: account_payment_odone
+#: model_terms:ir.actions.act_window,help:account_payment_odone.action_account_voucher_customer
+#: model_terms:ir.actions.act_window,help:account_payment_odone.action_account_voucher_supplier
+msgid "Register a voucher"
+msgstr "Registrar un pago"
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_form
+msgid "Remove worthlesste"
+msgstr "Remover sin valor"
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_form
+msgid "Reset To Draft"
+msgstr "Restablecer a Borrador"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario Responsable"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_search
+msgid "Show all records which has next action date is before today"
+msgstr ""
+"Mostrar todos los registros que tienen la próxima fecha de acción antes de "
+"hoy"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__state
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_search
+msgid "Status"
+msgstr "Estado"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,help:account_payment_odone.field_account_voucher__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Vencida: la fecha tope ya ha pasado\n"
+"Hoy: La fecha tope es hoy\n"
+"Planificada: futuras actividades."
+
+#. module: account_payment_odone
+#: model:ir.model.fields.selection,name:account_payment_odone.selection__account_voucher__partner_type__supplier
+msgid "Supplier"
+msgstr "Proveedor"
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_search
+msgid "Supplier Vouchers"
+msgstr "Pago de Proveedores"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,help:account_payment_odone.field_account_voucher__currency_id
+#: model:ir.model.fields,help:account_payment_odone.field_account_voucher_wizard__currency_id
+msgid "The voucher's currency."
+msgstr "Moneda del pago."
+
+#. module: account_payment_odone
+#: model:ir.model.fields,help:account_payment_odone.field_account_voucher__writeoff_option
+msgid ""
+"This field helps you to choose what you want to do with the eventual "
+"difference between the paid amount and the sum of allocated amounts. You can"
+" either choose to keep open this difference on the partner's account, or "
+"reconcile it with the voucher(s)"
+msgstr ""
+
+#. module: account_payment_odone
+#: model:ir.model.fields,help:account_payment_odone.field_account_voucher_line__date_due
+msgid ""
+"This field is used for payable and receivable journal entries. You can put "
+"the limit date for the payment of this line."
+msgstr ""
+"Este campo se utiliza en asientos pendientes de pago y de cobro. Puede "
+"establecer la fecha límite para el pago de esta entrada."
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_search
+msgid "Today Activities"
+msgstr "Actividades de Hoy"
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_form
+msgid "Total Allocation"
+msgstr "Asignación total"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,help:account_payment_odone.field_account_voucher__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad de excepción registrada."
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes sin leer"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Nº de mensajes sin leer"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_line__amount_untax
+msgid "Untax Amount"
+msgstr "Importe base"
+
+#. module: account_payment_odone
+#: model:ir.model.fields.selection,name:account_payment_odone.selection__account_voucher__voucher_type__voucher
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_form
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_search
+msgid "Voucher"
+msgstr "Pago"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__voucher_date
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_search
+msgid "Voucher Date"
+msgstr "Fecha del Pago"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__writeoff_option
+msgid "Voucher Difference"
+msgstr "Diferencia de Pago"
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_form
+msgid "Voucher Information"
+msgstr "Información del Pago"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_move_line__voucher_line_id
+msgid "Voucher Line"
+msgstr "Linea del Pago"
+
+#. module: account_payment_odone
+#: model:ir.model,name:account_payment_odone.model_account_voucher_line
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_line_form
+msgid "Voucher Lines"
+msgstr "Líneas de comprobante"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__voucher_reference
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher_wizard__voucher_reference
+msgid "Voucher Reference"
+msgstr "Tipo de Pago"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__voucher_type
+msgid "Voucher Type"
+msgstr ""
+
+#. module: account_payment_odone
+#: model:ir.actions.act_window,name:account_payment_odone.action_account_voucher_customer
+#: model:ir.actions.act_window,name:account_payment_odone.action_account_voucher_supplier
+#: model:ir.ui.menu,name:account_payment_odone.menu_account_voucher_customer
+#: model:ir.ui.menu,name:account_payment_odone.menu_account_voucher_supplier
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_graph
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_search
+msgid "Vouchers"
+msgstr "Pagos"
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_pivot
+msgid "Vouchers Analysis"
+msgstr "Análisis de Pagos"
+
+#. module: account_payment_odone
+#: model_terms:ir.actions.act_window,help:account_payment_odone.action_account_voucher_customer
+#: model_terms:ir.actions.act_window,help:account_payment_odone.action_account_voucher_supplier
+msgid ""
+"Vouchers are used to register liquidity movements. You can process those "
+"vochers by your own means or by using installed facilities."
+msgstr ""
+"Los pagos se utilizan para registrar movimientos de liquidez. Puede procesar"
+" esos pagos por sus propios medios o utilizando las instalaciones "
+"instaladas."
+
+#. module: account_payment_odone
+#: model:ir.model.fields,field_description:account_payment_odone.field_account_voucher__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: account_payment_odone
+#: model:ir.model.fields,help:account_payment_odone.field_account_voucher__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicaciones del sitio web"
+
+#. module: account_payment_odone
+#: model_terms:ir.ui.view,arch_db:account_payment_odone.view_account_voucher_form
+msgid "Worthlesste"
+msgstr "Sin valor"
+
+#. module: account_payment_odone
+#: code:addons/account_payment_odone/models/account_voucher.py:0
+#: code:addons/account_payment_odone/models/account_voucher.py:0
+#: code:addons/account_payment_odone/models/account_voucher.py:0
+#: code:addons/account_payment_odone/models/account_voucher.py:0
+#, python-format
+msgid "Write-Off"
+msgstr "Desajuste"

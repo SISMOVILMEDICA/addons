@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_clinic_history_cie_rips_tree">
+            <field name="name">view_clinic_history_cie_rips_tree</field>
+            <field name="model">cie.rips</field>
+            <field name="arch" type="xml">
+                <tree string="Diseases">
+                    <field name="name" />
+                    <field name="lower_limit" />
+                    <field name="upper_limit" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_clinic_history_cie_rips_form">
+            <field name="name">view.cie.rips.form</field>
+            <field name="model">cie.rips</field>
+            <field name="arch" type="xml">
+                <form string="Disease">
+                    <sheet>
+                        <h1>
+                            <field name="name" />
+                        </h1>
+                        <group>
+                            <group>
+                                <field name="description" />
+                                <field name="sex" />
+                                <field name="lower_limit" />
+                            </group>
+                            <group>
+                                <field name="code" />
+                                <field name="symbol" />
+                                <field name="upper_limit" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_clinic_history_cie_rips">
+            <field name="name">Enfermedades</field>
+            <field name="res_model">cie.rips</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_clinic_history_cie_rips" parent="industry_fsm.fsm_menu_settings" action="action_clinic_history_cie_rips" />
+    </data>
+</odoo>

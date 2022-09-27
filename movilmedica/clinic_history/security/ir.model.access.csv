@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_clinic_history_user,access.clinic.history.user,model_clinic_history,project.group_project_user,1,1,1,1
+access_clinic_history_recommendation,access_clinic_history_recommendation,model_clinic_history_recommendation,project.group_project_user,1,1,1,0
+access_cie_rips_project_user,access_cie_rips_project_user,cie_rips.model_cie_rips,project.group_project_user,1,0,0,0

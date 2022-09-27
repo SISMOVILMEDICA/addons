@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Extending Partner Form View -->
+    <record id="view_partner_form" model="ir.ui.view">
+       <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <xpath expr="(//field[@name='name'])[4]" position="before">
+                <field name="x_name1" placeholder="First Name"
+                    attrs="{'invisible':[('type','!=','contact')], 'required': [('type','=','contact')]}" />
+                <field name="x_name2" placeholder="Second Name"
+                    attrs="{'invisible':[('type','!=','contact')]}" />
+                <field name="x_lastname1" placeholder="Last Name"
+                    attrs="{'invisible':[('type','!=','contact')], 'required': [('type','=','contact')]}" />
+                <field name="x_lastname2" placeholder="Second Last Name"
+                    attrs="{'invisible':[('type','!=','contact')]}" />
+            </xpath>
+
+            <field name="type" position="before">
+                <field name="x_name1" placeholder="First Name" default_focus="1"
+                    attrs="{'invisible':['|',('company_type', '=', 'company'),('type','!=','contact')], 'required': [('company_type', '=', 'person'),('type','=','contact')]}" />
+                <field name="x_name2" placeholder="Second Name"
+                    attrs="{'invisible':['|',('company_type', '=', 'company'),('type','!=','contact')]}" />
+                <field name="x_lastname1" placeholder="Last Name"
+                    attrs="{'invisible':['|',('company_type', '=', 'company'),('type','!=','contact')], 'required': [('company_type', '=', 'person'),('type','=','contact')]}" />
+                <field name="x_lastname2" placeholder="Second Last Name"
+                    attrs="{'invisible':['|',('company_type', '=', 'company'),('type','!=','contact')]}" />
+                <field name="ciiu" domain="[('type', '=', 'other')]"
+                    attrs="{'invisible':['|',('company_type', '=', 'person'),('type','!=','contact')]}" />
+            </field>
+        </field>
+    </record>
+</odoo>

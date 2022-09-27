@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <record id="product_template_form" model="ir.ui.view">
+            <field name="name">product.template.form</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/div[2]/label[1]" position="before">
+                    <div class="oe_edit_only">
+                        <span class="o_form_label o_td_label">Es CUMS</span>
+                        <field name="is_cums" />
+                    </div>
+                </xpath>
+                <xpath expr="//sheet/div[2]" position="after">
+                    <group col="6" attrs="{'invisible': [('is_cums','=',False)]}">
+                        <field name="atc" placeholder="ATC" nolabel="1" />
+                        <field name="expedient" placeholder="Expediente" nolabel="1" />
+                        <field name="consecutive" placeholder="Consecutivo" nolabel="1" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

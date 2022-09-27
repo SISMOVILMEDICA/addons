@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+    <record model="ir.sequence" id="sequence_voucher">
+        <field name="name">Accounting Voucher</field>
+        <field name="code">account.voucher</field>
+        <field name="padding" eval="3" />
+        <field name="prefix">AV</field>
+    </record>
+</odoo>

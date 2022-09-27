@@ -1,0 +1,11 @@
+// Iconized full screen apps menu
+.o_menu_apps {
+  .dropdown-menu {
+    .o-app-name {
+      color: gray("black");
+      margin-top: 4px;
+      font-size: 1.5rem;
+      text-shadow: none;
+    }
+  }
+}

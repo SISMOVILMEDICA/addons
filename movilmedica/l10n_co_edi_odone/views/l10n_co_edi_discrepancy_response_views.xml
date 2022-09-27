@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="l10n_co_edi_discrepancy_response_view_tree" model="ir.ui.view">
+        <field name="model">l10n_co_edi.discrepancy.response</field>
+        <field name="arch" type="xml">
+            <tree string="Conceptos de corrección">
+                <field name='name'/>
+                <field name='code'/>
+                <field name='type'/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="l10n_co_edi_discrepancy_response_view_form" model="ir.ui.view">
+        <field name="model">l10n_co_edi.discrepancy.response</field>
+        <field name="arch" type="xml">
+            <form string="Conceptos de corrección">
+                <group>
+                    <group>
+                        <field name='name' required='1'/>
+                        <field name='code' required='1'/>
+                    </group>
+                    <group>
+                        <field name='type' required='1'/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- <record id="l10n_co_edi_discrepancy_response_view_search" model="ir.ui.view">
+        <field name="model">l10n_co_edi.discrepancy.response</field>
+        <field name="arch" type="xml">
+            <search string="discrepancy" name='discrepancy'>
+                <field name="name" filter_domain="[('name','ilike',self)]"/>
+                <field name="code" filter_domain="[('code','ilike',self)]"/>
+                <group expand="0" string="Group By" name='group_by'>
+                    <filter string="Tipo" context="{'group_by':'type'}"/>
+                </group>
+            </search>
+        </field>
+    </record> -->
+
+    <record id="l10n_co_edi_discrepancy_response_action" model="ir.actions.act_window">
+        <field name="name">Conceptos de Corrección</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">l10n_co_edi.discrepancy.response</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="l10n_co_edi_discrepancy_response_view_tree"/>
+    </record>
+
+    <menuitem id="l10n_co_edi_discrepancy_response_menu"
+        name="Conceptos de corrección"
+        parent="account.account_account_menu"
+        action="l10n_co_edi_discrepancy_response_action"
+        sequence="0"/>
+</odoo>

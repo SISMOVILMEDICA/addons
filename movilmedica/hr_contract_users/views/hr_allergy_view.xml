@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_hr_allergy_tree">
+            <field name="name">view.hr.allergy.tree</field>
+            <field name="model">hr.allergy</field>
+            <field name="arch" type="xml">
+                <tree string="Allergies" editable="bottom">
+                    <field name="sequence" widget="handle"/>
+                    <field name="active"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_hr_allergy">
+            <field name="name">Allergies</field>
+            <field name="res_model">hr.allergy</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem id="menu_hr_allergy" parent="hr.menu_human_resources_configuration" action="action_hr_allergy"/>
+    </data>
+</odoo>

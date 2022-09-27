@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <report
+                id="clinical_historical_report"
+                model="project.task"
+                string="Historia Clinica general"
+                name="clinic_history.report_clinic_his_view"
+                file="historical.report_clinic_his_view"
+                report_type="qweb-pdf"/>
+
+        <template id="report_clinic_his_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <div class="header" style="margin: 10px;">
+                        <div class="fluid-container" style="font-size: 18px !important;">
+                            <div class="row align-items-center">
+                                <div class="col-4 align-left text-left">
+                                    <img src="/logo.png" style="padding: 0px; margin: 0px; width: auto; height: 40px;"/>
+                                </div>
+                                <div class="col-4 text-center align-center" style="padding-top: 20px;">
+                                    <strong style="font-size: 23px; padding-top: 40px;">Historia Clinica</strong>
+                                </div>
+                                <div class="col-4 text-right align-right" style="font-size: 13px;">
+                                    <div style="color: #555555; margin-top: 20px;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="background: #eeeeee; height: 2px; width: 100%; margin: 20px 0;"/>
+                        </div>
+                    </div>
+                    <t t-call="web.external_layout">
+                        <div class="page" style="font-size: x-small; margin: 10px; page-break-after: always;">
+                            <style>
+                                table{
+                                width: 100%;
+                                text-align: center;
+                                background: #d8d8d8;
+                                border-color: white;
+                                }
+                                th, td {
+                                border: 2px solid; border-color: white;
+                                }
+                            </style>
+                            <table>
+                                <tr>
+                                    <th style="background: #df8400">
+                                        <span>ATENCION NUMERO</span>
+                                    </th>
+                                    <td>
+                                        <span t-field="doc.name"/>
+                                    </td>
+                                    <th style="background: #df8400">
+                                        <span>AUTORIZACION</span>
+                                    </th>
+                                    <td>
+                                        <span t-field="doc.file_number"/>
+                                    </td>
+                                    <th style="background: #df8400">
+                                        <span>MOVIL</span>
+                                    </th>
+                                    <td>
+                                        <span t-field="doc.partner_mobile"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="vertical-align: middle;" rowspan="3">
+                                        <span>NOMBRE DEL MEDICO</span>
+                                    </th>
+                                    <td style="vertical-align: middle;" rowspan="3">
+                                        <span t-field="doc.user_id.name"/>
+                                    </td>
+                                    <th style="text-align: left;">
+                                        <span>HORA DESPACHO:</span>
+                                    </th>
+                                    <td>
+                                        <span t-field="doc.create_date"/>
+                                    </td>
+                                    <th style="text-align: left;">
+                                        <span>ACOMPAÑANTE:</span>
+                                    </th>
+                                    <td>
+                                        <span t-field="doc.history_id.motivo_acompanante"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: left;">
+                                        <span>HORA LLEGADA:</span>
+                                    </th>
+                                    <td>
+                                        <span t-field="doc.history_id.create_date"/>
+                                    </td>
+                                    <th style="text-align: left;">
+                                        <span>PARENTESCO:</span>
+                                    </th>
+                                    <td>
+                                        <span t-field="doc.history_id.motivo_parentesco"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="text-align: left;">
+                                        <span>HORA SALIDA:</span>
+                                    </th>
+                                    <td>
+                                        <span t-field="doc.planned_date_end"/>
+                                    </td>
+                                    <th style="text-align: left;">
+                                        <span>MENOR DE EDAD:</span>
+                                    </th>
+                                    <td>
+                                        <span t-field="doc.history_id.aplica_prenatales_neonatales_vacunacion"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <table>
+                                <tr style="background: #df8400">
+                                    <th colspan="4">
+                                        <span>NOMBRE COMPLETO</span>
+                                    </th>
+                                    <th>
+                                        <span>DOCUMENTO DE IDENTIDAD</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <span t-field="doc.partner_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.partner_vat"/>
+                                    </td>
+                                </tr>
+                                <tr style="background: #df8400">
+                                    <th>
+                                        <span>EDAD</span>
+                                    </th>
+                                    <th>
+                                        <span>SEXO</span>
+                                    </th>
+                                    <th>
+                                        <span>FECHA DE NACIMIENTO:</span>
+                                    </th>
+                                    <th>
+                                        <span>FECHA DE ATENCION:</span>
+                                    </th>
+                                    <th>
+                                        <span>DIRECCION DE RESIDENCIA:</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span t-field="doc.partner_age"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.partner_gender"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.partner_birthdate"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.planned_date_begin"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.partner_street"/>
+                                    </td>
+                                </tr>
+                                <tr style="background: #df8400">
+                                    <th>
+                                        <span>CONVENIO</span>
+                                    </th>
+                                    <th>
+                                        <span>ESTADO CIVIL</span>
+                                    </th>
+                                    <th>
+                                        <span>TELEFONO</span>
+                                    </th>
+                                    <th colspan="2">
+                                        <span>CORREO ELECTRONICO</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span t-field="doc.project_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.partner_martial_status"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.partner_phone"/>
+                                    </td>
+                                    <td colspan="2">
+                                        <span t-field="doc.partner_email"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <table>
+                                <tr>
+                                    <th style="background: white">
+                                        <span>A. MOTIVO DE LA CONSULTA</span>
+                                    </th>
+                                    <th style="background: white">
+                                        <span>B. ENFERMEDAD ACTUAL</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td style="height: 70px;">
+                                        <span t-field="doc.history_id.motivo_consulta"/>
+                                    </td>
+                                    <td style="height: 70px;">
+                                        <span t-field="doc.history_id.motivo_enfermedad"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <div>
+                                <span>C. ANTECEDENTES</span>
+                            </div>
+                            <table style="border: 1px; border-width: 10px">
+                                <tr>
+                                    <th style="background: #df8400; width: 20%;">
+                                        <span>QUIRURGICOS</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 20%;">
+                                        <span>FAMILIARES</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 20%;">
+                                        <span>OBTETRICOS Y/O GINECOLOGICOS</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 20%;">
+                                        <span>PATOLOGICOS</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 20%;">
+                                        <span>FARMACOLOGICOS</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span t-field="doc.history_id.antecedentes_quirugicos"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.history_id.antecedentes_familiares"/>
+                                    </td>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <td style="text-align: left;" colspan="4"><span>MENARQUIA:</span></td>
+                                                <td colspan="4"><span
+                                                        t-field="doc.history_id.antecedentes_menarquia"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left;" colspan="2">
+                                                    <span>FUR:</span>
+                                                </td>
+                                                <td colspan="2">
+                                                    <span t-field="doc.history_id.antecedentes_fur"/>
+                                                </td>
+                                                <td style="text-align: left;" colspan="2">
+                                                    <span>FUP:</span>
+                                                </td>
+                                                <td colspan="2">
+                                                    <span t-field="doc.history_id.antecedentes_fup"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="8"><span>FORMULA OBSTETRICA:</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 12.5%">G:<span
+                                                        t-field="doc.history_id.antecedentes_obstetrica_a"/></td>
+                                                <td style="width: 12.5%">V:<span
+                                                        t-field="doc.history_id.antecedentes_obstetrica_b"/></td>
+                                                <td style="width: 12.5%">P:<span
+                                                        t-field="doc.history_id.antecedentes_obstetrica_c"/></td>
+                                                <td style="width: 12.5%">C:<span
+                                                        t-field="doc.history_id.antecedentes_obstetrica_d"/></td>
+                                                <td style="width: 12.5%">A:<span
+                                                        t-field="doc.history_id.antecedentes_obstetrica_e"/></td>
+                                                <td style="width: 12.5%">M:<span
+                                                        t-field="doc.history_id.antecedentes_obstetrica_f"/></td>
+                                                <td style="width: 25%">N/A:</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left;" colspan="4"><span>METODO DE
+                                                    PLANIFICACION:</span></td>
+                                                <td colspan="4"><span
+                                                        t-field="doc.history_id.antecedentes_metodo"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left;" colspan="4"><span>FECHA ULTIMA
+                                                    CITOLOGIA:</span></td>
+                                                <td colspan="4"><span
+                                                        t-field="doc.history_id.antecedentes_citologia"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left;" colspan="4"><span>FECHA ULTIMA
+                                                    MAMOGRAFIA:</span></td>
+                                                <td colspan="4"><span
+                                                        t-field="doc.history_id.antecedentes_mamografia"/></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td style="vertical-align: bottom; text-align: left;">
+                                        <span>NOXA:<span t-field="doc.history_id.antecedentes_noxa"/></span>
+                                    </td>
+                                    <td style="vertical-align: bottom; text-align: left;">
+                                        <span>ESQUEMA DE VACUNACION:<span
+                                                t-field="doc.history_id.antecedentes_esquema_vacunacion"/></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="background: #df8400; width: 20%;">
+                                        <span>HOSPITALARIOS</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 20%;">
+                                        <span>ALERGICOS</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 20%;">
+                                        <span>PSICOSOCIALES</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 20%;">
+                                        <span>TOXICOLOGICOS</span>
+                                    </th>
+                                    <th style="background: #df8400; width: 20%;">
+                                        <span>NIÑO MENOR DE 5 AÑOS PRENATALES, NEONATALES Y VACUNACION</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span t-field="doc.history_id.antecedentes_hospitalarios"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.history_id.antecedentes_alergicos"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.history_id.antecedentes_psicosociales"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="doc.history_id.antecedentes_toxicologicos"/>
+                                    </td>
+                                    <td>
+                                        <table>
+                                            <tr>
+                                                <td style="text-align: left;"><span>PESO AL
+                                                    NACER:</span></td>
+                                                <td><span t-field="doc.history_id.antecedentes_peso"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left;"><span>GESTACION
+                                                    No:</span></td>
+                                                <td><span t-field="doc.history_id.antecedentes_gestacion"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left;"><span>PARTO:</span></td>
+                                                <td><span t-field="doc.history_id.antecedentes_parto"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left;"><span>TERMINO:</span></td>
+                                                <td><span t-field="doc.history_id.antecedentes_termino"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left;"><span>COMPLICACIONES AL
+                                                    NACER:</span></td>
+                                                <td><span t-field="doc.history_id.antecedentes_complicaciones"/></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left;"><span>
+                                                    INMUNIZACIONES:</span></td>
+                                                <td><span t-field="doc.history_id.antecedentes_inmunizaciones"/></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br/>
+                            <div>
+                                <span>D. REVISION POR SISTEMAS</span>
+                            </div>
+                            <div style="height: 130px; background: #d8d8d8;">
+                                <span>Aparato digestivo:<span t-field="doc.history_id.revision_digestivo"/></span><br/>
+                                <span>Aparato respiratorio:<span
+                                        t-field="doc.history_id.revision_respiratorio"/></span><br/>
+                                <span>Aparato cardiovascular:<span
+                                        t-field="doc.history_id.revision_cardiovascular"/></span><br/>
+                                <span>Aparato genitourinario:<span
+                                        t-field="doc.history_id.revision_genitourinario"/></span><br/>
+                                <span>Aparato tegumentario:<span
+                                        t-field="doc.history_id.revision_tegumentario"/></span><br/>
+                                <span>Sistema endocrino:<span t-field="doc.history_id.revision_endocrino"/></span><br/>
+                                <span>Sistema hematopoyetico:<span
+                                        t-field="doc.history_id.revision_hematopoyetico"/></span><br/>
+                                <span>Sistema nervioso:<span t-field="doc.history_id.revision_nervioso"/></span>
+                            </div>
+                            <br/>
+                            <div>
+                                <span>E. EXAMEN FISICO</span>
+                            </div>
+                            <table>
+                                <tr>
+                                    <th style="background: #df8400;" colspan="9">
+                                        <span>SIGNOS VITALES</span>
+                                    </th>
+                                    <th style="background: #df8400;" colspan="5">
+                                        <span>ESTADO GENERAL</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td style="background: #5e737e"><span>FC</span></td>
+                                    <td style="background: #5e737e"><span>FR</span></td>
+                                    <td style="background: #5e737e"><span>TENSION ARTERIAL</span></td>
+                                    <td style="background: #5e737e"><span>PESO (KG)</span></td>
+                                    <td style="background: #5e737e"><span>TALLA</span></td>
+                                    <td style="background: #5e737e"><span>IMC</span></td>
+                                    <td style="background: #5e737e"><span>PERIMETRO ABDOMINAL</span></td>
+                                    <td style="background: #5e737e"><span>Tº</span></td>
+                                    <td style="background: #5e737e"><span>GLUCOMETRIA</span></td>
+                                    <td style="background: #5e737e"><span>BUENO</span></td>
+                                    <td style="background: #5e737e"><span>ACEPTABLE</span></td>
+                                    <td style="background: #5e737e"><span>REGULAR</span></td>
+                                    <td style="background: #5e737e"><span>MALO</span></td>
+                                    <td style="background: #5e737e"><span>MUY MALO</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span t-field="doc.history_id.examen_fc"/></td>
+                                    <td><span t-field="doc.history_id.examen_fr"/></td>
+                                    <td><span t-field="doc.history_id.examen_tension"/>/<span
+                                            t-field="doc.history_id.examen_tension_tension"/></td>
+                                    <td><span t-field="doc.history_id.examen_peso"/></td>
+                                    <td><span t-field="doc.history_id.examen_talla"/></td>
+                                    <td><span t-field="doc.history_id.examen_imc_float"/><span
+                                            t-field="doc.history_id.examen_imc_selection"/></td>
+                                    <td><span t-field="doc.history_id.examen_perimetro"/></td>
+                                    <td><span t-field="doc.history_id.examen_temperatura"/></td>
+                                    <td><span t-field="doc.history_id.examen_glucometria"/></td>
+                                    <td><t t-if="doc.history_id.examen_estado_selec == 'bueno'"><span>X</span></t></td>
+                                    <td><t t-if="doc.history_id.examen_estado_selec == 'aceptable'"><span>
+                                        X</span></t></td>
+                                    <td><t t-if="doc.history_id.examen_estado_selec == 'regular'"><span>
+                                        X</span></t></td>
+                                    <td><t t-if="doc.history_id.examen_estado_selec == 'malo'"><span>X</span></t></td>
+                                    <td><t t-if="doc.history_id.examen_estado_selec == 'muy_malo'"><span>
+                                        X</span></t></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="page" style="font-size: x-small; margin: 10px; page-break-after: always;">
+                            <table style="border: 2px solid; border-color: white;">
+                                <tr>
+                                    <td style="width: 30%; background: #df8400;">
+                                        <span>PIEL Y FANERAS</span>
+                                    </td>
+                                    <td rowspan="2"><span t-field="doc.history_id.examen_piel_char"/></td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 30%;">
+                                        <span t-field="doc.history_id.examen_piel_selec"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="background: #df8400;">
+                                        <span>CABEZA Y ORGANOS DE LOS SENTIDOS</span>
+                                    </td>
+                                    <td rowspan="2"><span t-field="doc.history_id.examen_cabeza_char"/></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span t-field="doc.history_id.examen_cabeza_selec"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="background: #df8400;">
+                                        <span>CARDIO RESPIRATORIO</span>
+                                    </td>
+                                    <td rowspan="2"><span t-field="doc.history_id.examen_cardio_char"/></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span t-field="doc.history_id.examen_cardio_selec"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="background: #df8400;">
+                                        <span>ABDOMEN</span>
+                                    </td>
+                                    <td rowspan="2"><span t-field="doc.history_id.examen_abdomen_char"/></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span t-field="doc.history_id.examen_abdomen_selec"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="background: #df8400;">
+                                        <span>UROGENITAL</span>
+                                    </td>
+                                    <td rowspan="2"><span t-field="doc.history_id.examen_urogenital_char"/></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span t-field="doc.history_id.examen_urogenital_selec"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="background: #df8400;">
+                                        <span>EXTREMIDADES Y OSTEOARTICULAR</span>
+                                    </td>
+                                    <td rowspan="2"><span t-field="doc.history_id.examen_extremidades_char"/></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span t-field="doc.history_id.examen_extremidades_selec"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="background: #df8400;">
+                                        <span>NEUROLOGICO</span>
+                                    </td>
+                                    <td rowspan="2"><span t-field="doc.history_id.examen_neurologico_char"/></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span t-field="doc.history_id.examen_neurologico_selec"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <th colspan="4" style="background: #df8400; width: 60%">
+                                        <span>F. IMPRESION DIAGNOSTICA:</span>
+                                    </th>
+                                    <th style="background: #df8400">
+                                        <span>G. ANALISIS, RESULTADO DE LABORATORIO CLINICO
+                                            E IMAGENES DIAGNOSTICAS</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <span>PRINCIPAL</span>
+                                    </th>
+                                    <td>
+                                        <span t-field="doc.history_id.impresion_principal.description"/>
+                                    </td>
+                                    <th>
+                                        CODIGO
+                                    </th>
+                                    <td>
+                                        <span t-field="doc.history_id.impresion_principal.code"/>
+                                    </td>
+                                    <td rowspan="5">
+                                        <span># VALOR #</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <span>RELACIONADO 1</span>
+                                    </th>
+                                    <td>
+                                        <span t-field="doc.history_id.impresion_relacionado1.description"/>
+                                    </td>
+                                    <th>
+                                        CODIGO
+                                    </th>
+                                    <td>
+                                        <span t-field="doc.history_id.impresion_relacionado1.code"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <span>RELACIONADO 2</span>
+                                    </th>
+                                    <td>
+                                        <span t-field="doc.history_id.impresion_relacionado2.description"/>
+                                    </td>
+                                    <th>
+                                        CODIGO
+                                    </th>
+                                    <td>
+                                        <span t-field="doc.history_id.impresion_relacionado2.code"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <span>RELACIONADO 3</span>
+                                    </th>
+                                    <td>
+                                        <span t-field="doc.history_id.impresion_relacionado3.description"/>
+                                    </td>
+                                    <th>
+                                        CODIGO
+                                    </th>
+                                    <td>
+                                        <span t-field="doc.history_id.impresion_relacionado3.code"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <span>RELACIONADO 4</span>
+                                    </th>
+                                    <td>
+                                        <span t-field="doc.history_id.impresion_relacionado3.description"/>
+                                    </td>
+                                    <th>
+                                        CODIGO
+                                    </th>
+                                    <td>
+                                        <span t-field="doc.history_id.impresion_relacionado4.code"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <th style="background: #df8400; width: 60%">
+                                        <span>H. PLAN DE MANEJO Y TRATAMIENTO</span>
+                                    </th>
+                                    <th style="background: #df8400">
+                                        <span>I. MEDICAMENTOS ADMINISTRADOS EN CONSULTA</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3">
+                                        <span t-field="doc.history_id.plan_manejo"/>
+                                    </td>
+                                    <td style="height: 40px;">
+                                        <span t-field="doc.history_id.medications_applied_in_consultation"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th style="background: #df8400">
+                                        <span>J. RECOMENDACIONES</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td style="height: 40px;">
+                                        <span t-field="doc.history_id.plan_recomendacion"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <th colspan="2" style="background: #df8400">
+                                        <span>K. INTERCONSULTAS</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; height: 50px; width: 60%">
+                                        <span>ESPECIALIDADES:<span t-field="doc.history_id.interconsultas"/></span>
+                                    </td>
+                                    <td style="text-align: left; height: 50px;">
+                                        <span>TERAPIAS<span t-field="doc.history_id.interconsultas_terapias"/></span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <th colspan="2" style="background: #df8400">
+                                        <span>L. AYUDAS DIAGNOSTICAS</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left; height: 50px; width: 60%">
+                                        <span>LABORATORIOS:<span
+                                                t-field="doc.history_id.interconsultas_laboratorios"/></span>
+                                    </td>
+                                    <td style="text-align: left; height: 50px;">
+                                        <span>IMAGENES DIAGNOSTICAS:<span
+                                                t-field="doc.history_id.interconsultas_imagenes"/></span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <th style="background: #df8400">
+                                        <span>M. REMISIONES</span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left;">
+                                        <strong><span>AMBULACIA BASICA: </span></strong><span
+                                            t-field="doc.history_id.remisiones_basica"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left;">
+                                        <strong><span>AMBULACIA MEDICALIZADA: </span></strong><span
+                                            t-field="doc.history_id.remisiones_medicalizada"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left;">
+                                        <strong><span>URGENCIAS: </span></strong><span
+                                            t-field="doc.history_id.remisiones_urgencias"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left;">
+                                        <strong><span>OTROS: </span></strong><span
+                                            t-field="doc.history_id.remisiones_others"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div style="width: 100%; text-align: center; background: #df8400">
+                                <span>MEDICO QUE ORDENA</span>
+                            </div>
+                            <br/>
+                            <div style="width: 100%; height: 40px; display: flex; justify-content: space-between;">
+                                <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small;">
+                                    <t t-field="doc.user_id.employee_id.signature_file">
+                                        <img t-att-src="image_data_uri(doc.user_id.employee_id.signature_file)"
+                                             style="max-height: 4cm; max-width: 8cm;"/>
+                                    </t><br/>
+                                    <div style="text-align: center;">______________________</div>
+                                    <div style="text-align: center;">Firmado por:<span
+                                            t-field="doc.user_id.name"/></div>
+                                    <div>C.C. <span t-field="doc.user_id.employee_id.identification_id"/></div>
+                                </div>
+                                <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small;">
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <span t-field="doc.user_id.employee_id.specialties_ids"/>
+                                    <div style="text-align: center;">______________________</div>
+                                    <div style="text-align: center;">Profesion</div>
+                                </div>
+                                <div style="height: 38px; width: 32%; float: left; margin-right: 10px; font-size: x-small;">
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <div style="text-align: center;">______________________</div>
+                                    <div style="text-align: center;">Registro</div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

@@ -1,0 +1,294 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_contract_users
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-27 17:22+0000\n"
+"PO-Revision-Date: 2021-05-27 17:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_contract_users
+#: model:ir.model.fields.selection,name:hr_contract_users.selection__hr_employee__blood_type__abp
+msgid "AB+"
+msgstr ""
+
+#. module: hr_contract_users
+#: model:ir.model.fields.selection,name:hr_contract_users.selection__hr_employee__blood_type__abn
+msgid "AB-"
+msgstr ""
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_allergy__active
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_document__active
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_document_type__active
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_illness__active
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_specialty__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: hr_contract_users
+#: model:ir.actions.act_window,name:hr_contract_users.action_hr_allergy
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee__allergies_ids
+#: model:ir.ui.menu,name:hr_contract_users.menu_hr_allergy
+#: model_terms:ir.ui.view,arch_db:hr_contract_users.view_hr_allergy_tree
+msgid "Allergies"
+msgstr "Alergias"
+
+#. module: hr_contract_users
+#: model:ir.model,name:hr_contract_users.model_hr_allergy
+msgid "Allergy"
+msgstr "Alergia"
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee__bank_ids
+msgid "Banks"
+msgstr "Bancos"
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee__blood_type
+msgid "Blood type"
+msgstr "Tipo de Sangre"
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_allergy__create_uid
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_document__create_uid
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_document_type__create_uid
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee_document__create_uid
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_illness__create_uid
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_specialty__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_allergy__create_date
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_document__create_date
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_document_type__create_date
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee_document__create_date
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_illness__create_date
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_specialty__create_date
+msgid "Created on"
+msgstr "Creado"
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_allergy__display_name
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_document__display_name
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_document_type__display_name
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee_document__display_name
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_illness__display_name
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_specialty__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee_document__document_id
+msgid "Document"
+msgstr "Documento"
+
+#. module: hr_contract_users
+#: model:ir.model,name:hr_contract_users.model_hr_document
+#: model:ir.model,name:hr_contract_users.model_hr_employee_document
+msgid "Document Employee"
+msgstr "Documento del Empleado"
+
+#. module: hr_contract_users
+#: model:ir.model,name:hr_contract_users.model_hr_document_type
+msgid "Document Type"
+msgstr "Tipo de Documento"
+
+#. module: hr_contract_users
+#: model:ir.actions.act_window,name:hr_contract_users.action_hr_document_type
+#: model:ir.ui.menu,name:hr_contract_users.menu_hr_document_type
+#: model_terms:ir.ui.view,arch_db:hr_contract_users.view_hr_document_type_tree
+msgid "Document Types"
+msgstr "Tipos de Documento"
+
+#. module: hr_contract_users
+#: model:ir.actions.act_window,name:hr_contract_users.action_hr_document
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee__documents_ids
+#: model:ir.ui.menu,name:hr_contract_users.menu_hr_document
+#: model:ir.ui.menu,name:hr_contract_users.menu_hr_document_parent
+#: model_terms:ir.ui.view,arch_db:hr_contract_users.view_hr_document_tree
+#: model_terms:ir.ui.view,arch_db:hr_contract_users.view_hr_employee_form
+msgid "Documents"
+msgstr "Documentos"
+
+#. module: hr_contract_users
+#: model:ir.model,name:hr_contract_users.model_hr_employee
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee_document__employee_id
+#: model_terms:ir.ui.view,arch_db:hr_contract_users.view_hr_employee_form
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: hr_contract_users
+#: model_terms:ir.ui.view,arch_db:hr_contract_users.view_hr_employee_form
+msgid "Employee Information"
+msgstr "Información del Empleado"
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee__employee_type
+msgid "Employee Type"
+msgstr "Tipo de Empleado"
+
+#. module: hr_contract_users
+#: model:ir.model.fields.selection,name:hr_contract_users.selection__hr_employee__employee_type__external
+msgid "External"
+msgstr "Externo"
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee_document__file_data
+msgid "File"
+msgstr "Archivo"
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee_document__file_name
+msgid "File Name"
+msgstr "Nombre del Archivo"
+
+#. module: hr_contract_users
+#: model_terms:ir.ui.view,arch_db:hr_contract_users.view_hr_employee_form
+msgid "Health"
+msgstr "Salud"
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_allergy__id
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_document__id
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_document_type__id
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee__id
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee_document__id
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_illness__id
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_specialty__id
+msgid "ID"
+msgstr ""
+
+#. module: hr_contract_users
+#: model:ir.actions.act_window,name:hr_contract_users.action_hr_illness
+#: model:ir.model,name:hr_contract_users.model_hr_illness
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee__illness_ids
+#: model:ir.ui.menu,name:hr_contract_users.menu_hr_illness
+#: model_terms:ir.ui.view,arch_db:hr_contract_users.view_hr_illness_tree
+msgid "Illness"
+msgstr "Enfermedad"
+
+#. module: hr_contract_users
+#: model:ir.model.fields.selection,name:hr_contract_users.selection__hr_employee__employee_type__internal
+msgid "Internal"
+msgstr "Interno"
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_allergy____last_update
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_document____last_update
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_document_type____last_update
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee____last_update
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee_document____last_update
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_illness____last_update
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_specialty____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_allergy__write_uid
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_document__write_uid
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_document_type__write_uid
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee_document__write_uid
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_illness__write_uid
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_specialty__write_uid
+msgid "Last Updated by"
+msgstr "Actualizado por"
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_allergy__write_date
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_document__write_date
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_document_type__write_date
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee_document__write_date
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_illness__write_date
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_specialty__write_date
+msgid "Last Updated on"
+msgstr "Actualizado"
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee__employee_modality
+msgid "Modality"
+msgstr "Modalidad"
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_allergy__name
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_document__name
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_document_type__name
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee_document__name
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_illness__name
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_specialty__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: hr_contract_users
+#: model:ir.model.fields.selection,name:hr_contract_users.selection__hr_employee__employee_modality__presence
+msgid "Presence"
+msgstr "Presencial"
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee__employee_rut
+msgid "RUT"
+msgstr ""
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_allergy__sequence
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_document_type__sequence
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_illness__sequence
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_specialty__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee__signature_file
+#: model_terms:ir.ui.view,arch_db:hr_contract_users.view_hr_employee_form
+msgid "Signature"
+msgstr "Firma"
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee__signature_name
+msgid "Signature name"
+msgstr "Nombre de la firma"
+
+#. module: hr_contract_users
+#: model:ir.actions.act_window,name:hr_contract_users.action_hr_specialty
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee__specialties_ids
+#: model:ir.ui.menu,name:hr_contract_users.menu_hr_specialty
+#: model_terms:ir.ui.view,arch_db:hr_contract_users.view_hr_specialty_tree
+msgid "Specialties"
+msgstr "Especialidades"
+
+#. module: hr_contract_users
+#: model:ir.model,name:hr_contract_users.model_hr_specialty
+#: model_terms:ir.ui.view,arch_db:hr_contract_users.view_hr_specialty_form
+msgid "Specialty"
+msgstr "Especialidad"
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee__stamp_file
+msgid "Stamp"
+msgstr "Sello"
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee__stamp_name
+msgid "Stamp name"
+msgstr "Nombre del sello"
+
+#. module: hr_contract_users
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_document__type_id
+#: model:ir.model.fields,field_description:hr_contract_users.field_hr_employee_document__type_id
+msgid "Type"
+msgstr "Tipo"
+
+#. module: hr_contract_users
+#: model:ir.model.fields.selection,name:hr_contract_users.selection__hr_employee__employee_modality__virtual
+msgid "Virtual"
+msgstr "Virtual"

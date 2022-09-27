@@ -1,0 +1,405 @@
+<odoo>
+  <data>
+    <record id="view_clinic_history_search" model="ir.ui.view">
+      <field name="name">view.clinic.history.search</field>
+      <field name="model">clinic.history</field>
+      <field name="arch" type="xml">
+        <search string="Histories">
+          <field name="name" string="History"/>
+        </search>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_clinic_history_tree">
+      <field name="name">view_clinic_history_tree</field>
+      <field name="model">clinic.history</field>
+      <field name="priority" eval="16"/>
+      <field name="arch" type="xml">
+        <tree string="Clinic history">
+          <field name="name"/>
+          <field name="specialty_id"/>
+          <field name="state"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_clinic_history_form">
+      <field name="name">view.clinic.history.form</field>
+      <field name="model">clinic.history</field>
+      <field name="priority" eval="16"/>
+      <field name="arch" type="xml">
+        <form string="History clinic">
+          <header>
+            <button name="action_done" string="Done" type="object" class="oe_highlight" states="draft"/>
+            <field name="state" widget="statusbar"/>
+          </header>
+          <sheet>
+            <group>
+              <group name="group_banner_left">
+                <field name="name" readonly="True"/>
+                <field name="specialty_id" readonly="True"/>
+              </group>
+              <group name="group_banner_right">
+                <field name="birthdate"/>
+                <field name="age"/>
+              </group>
+            </group>
+            <notebook>
+              <page string="Motivo de consulta y enfermedad actual">
+                <group>
+                  <group string="Motivo de consulta">
+                    <field name="motivo_consulta" nolabel="1" required="True"/>
+                  </group>
+                  <group string="Enfermedad actual">
+                    <field name="motivo_enfermedad" nolabel="1" required="True"/>
+                  </group>
+                  <group string="Acompañante">
+                    <field name="motivo_acompanante" nolabel="1" required="False"/>
+                  </group>
+                  <group string="Parentesco">
+                    <field name="motivo_parentesco" nolabel="1" required="False"/>
+                  </group>
+                </group>
+              </page>
+              <page string="Antecedentes">
+                <group>
+                  <group string="Quirúrgicos">
+                    <field name="antecedentes_quirugicos" nolabel="1" required="True"/>
+                  </group>
+                  <group string="Familiares">
+                    <field name="antecedentes_familiares" nolabel="1" required="True"/>
+                  </group>
+                  <group string="Patológicos">
+                    <field name="antecedentes_patologicos" nolabel="1" required="True"/>
+                  </group>
+                  <group string="Farmacológicos">
+                    <field name="antecedentes_famarcologicos" nolabel="1" required="True"/>
+                  </group>
+                  <group string="Hospitalarios">
+                    <field name="antecedentes_hospitalarios" nolabel="1" required="True"/>
+                  </group>
+                  <group string="Alérgicos">
+                    <field name="antecedentes_alergicos" nolabel="1" required="True"/>
+                  </group>
+                  <group string="Toxicológicos">
+                    <field name="antecedentes_toxicologicos" nolabel="1" required="True"/>
+                  </group>
+                  <group string="Noxa">
+                    <field name="antecedentes_noxa" nolabel="1" required="True"/>
+                  </group>
+                  <group string="Psicosociales">
+                    <field name="antecedentes_psicosociales" nolabel="1" required="True"/>
+                  </group>
+                  <group string="Esquema de vacunación">
+                    <field name="antecedentes_esquema_vacunacion" nolabel="1" required="True"/>
+                  </group>
+                  <group string="Obstétricos y/o ginecológicos">
+                    <field name="aplica_obstetricos_ginecologicos"/>
+                    <label for="antecedentes_menarquia" attrs="{'invisible':[('aplica_obstetricos_ginecologicos', '=', False)], 'required':[('aplica_obstetricos_ginecologicos', '=', True)]}"/>
+                    <div class="o_row" attrs="{'invisible':[('aplica_obstetricos_ginecologicos', '=', False)], 'required':[('aplica_obstetricos_ginecologicos', '=', True)]}">
+                      <field name="antecedentes_menarquia"/>
+                      <span>años</span>
+                    </div>
+                    <field name="antecedentes_fur" attrs="{'invisible':[('aplica_obstetricos_ginecologicos', '=', False)], 'required':[('aplica_obstetricos_ginecologicos', '=', True)]}"/>
+                    <field name="antecedentes_fup" attrs="{'invisible':[('aplica_obstetricos_ginecologicos', '=', False)], 'required':[('aplica_obstetricos_ginecologicos', '=', True)]}"/>
+                    <span class="o_form_label o_td_label" attrs="{'invisible':[('aplica_obstetricos_ginecologicos', '=', False)]}">Fórmula obstétrica</span>
+                    <div attrs="{'invisible':[('aplica_obstetricos_ginecologicos', '=', False)]}">
+                      <field name="antecedentes_obstetrica_a" placeholder="G" nolabel="1" attrs="{'required':[('aplica_obstetricos_ginecologicos', '=', True)]}" style="text-align: center; float: left; width: 16.6%;"/>
+                      <field name="antecedentes_obstetrica_b" placeholder="V" nolabel="1" attrs="{'required':[('aplica_obstetricos_ginecologicos', '=', True)]}" style="text-align: center; float: left; width: 16.6%;"/>
+                      <field name="antecedentes_obstetrica_c" placeholder="P" nolabel="1" attrs="{'required':[('aplica_obstetricos_ginecologicos', '=', True)]}" style="text-align: center; float: left; width: 16.6%;"/>
+                      <field name="antecedentes_obstetrica_d" placeholder="C" nolabel="1" attrs="{'required':[('aplica_obstetricos_ginecologicos', '=', True)]}" style="text-align: center; float: left; width: 16.6%;"/>
+                      <field name="antecedentes_obstetrica_e" placeholder="A" nolabel="1" attrs="{'required':[('aplica_obstetricos_ginecologicos', '=', True)]}" style="text-align: center; float: left; width: 16.6%;"/>
+                      <field name="antecedentes_obstetrica_f" placeholder="M" nolabel="1" attrs="{'required':[('aplica_obstetricos_ginecologicos', '=', True)]}" style="text-align: center; float: left; width: 16.6%;"/>
+                    </div>
+                    <field name="antecedentes_metodo" attrs="{'invisible':[('aplica_obstetricos_ginecologicos', '=', False)], 'required':[('aplica_obstetricos_ginecologicos', '=', True)]}"/>
+                    <field name="antecedentes_citologia" attrs="{'invisible':[('aplica_obstetricos_ginecologicos', '=', False)], 'required':[('aplica_obstetricos_ginecologicos', '=', True)]}"/>
+                    <field name="antecedentes_mamografia" attrs="{'invisible':[('aplica_obstetricos_ginecologicos', '=', False)], 'required':[('aplica_obstetricos_ginecologicos', '=', True)]}"/>
+                  </group>
+                  <group string="Niño menor de 5 años prenatales, neonatales y vacunación">
+                    <field name="aplica_prenatales_neonatales_vacunacion"/>
+                    <label for="antecedentes_peso" attrs="{'invisible':[('aplica_prenatales_neonatales_vacunacion', '=', False)]}"/>
+                    <div class="o_row" attrs="{'invisible':[('aplica_prenatales_neonatales_vacunacion', '=', False)]}">
+                      <field name="antecedentes_peso" attrs="{'required':[('aplica_prenatales_neonatales_vacunacion', '=', True)]}"/>
+                      <span>g</span>
+                    </div>
+                    <field name="antecedentes_neurodesarrollo" attrs="{'invisible':[('aplica_prenatales_neonatales_vacunacion', '=', False)], 'required':[('aplica_prenatales_neonatales_vacunacion', '=', True)]}"/>
+                    <field name="antecedentes_gestacion" attrs="{'invisible':[('aplica_prenatales_neonatales_vacunacion', '=', False)], 'required':[('aplica_prenatales_neonatales_vacunacion', '=', True)]}"/>
+                    <field name="antecedentes_parto" attrs="{'invisible':[('aplica_prenatales_neonatales_vacunacion', '=', False)], 'required':[('aplica_prenatales_neonatales_vacunacion', '=', True)]}"/>
+                    <field name="antecedentes_termino" attrs="{'invisible':[('aplica_prenatales_neonatales_vacunacion', '=', False)], 'required':[('aplica_prenatales_neonatales_vacunacion', '=', True)]}"/>
+                    <field name="antecedentes_complicaciones" attrs="{'invisible':[('aplica_prenatales_neonatales_vacunacion', '=', False)], 'required':[('aplica_prenatales_neonatales_vacunacion', '=', True)]}"/>
+                    <field name="antecedentes_inmunizaciones" attrs="{'invisible':[('aplica_prenatales_neonatales_vacunacion', '=', False)], 'required':[('aplica_prenatales_neonatales_vacunacion', '=', True)]}"/>
+                  </group>
+                </group>
+              </page>
+              <page string="Revisión por sistemas">
+                <group>
+                  <group string="Aparato digestivo">
+                    <field name="revision_digestivo" nolabel="1" required="True"/>
+                  </group>
+                  <group string="Aparato respiratorio">
+                    <field name="revision_respiratorio" nolabel="1" required="True"/>
+                  </group>
+                  <group string="Aparato cardiovascular">
+                    <field name="revision_cardiovascular" nolabel="1" required="True"/>
+                  </group>
+                  <group string="Aparato genitourinario">
+                    <field name="revision_genitourinario" nolabel="1" required="True"/>
+                  </group>
+                  <group string="Aparato tegumentario">
+                    <field name="revision_tegumentario" nolabel="1" required="True"/>
+                  </group>
+                  <group string="Sistema endocrino">
+                    <field name="revision_endocrino" nolabel="1" required="True"/>
+                  </group>
+                  <group string="Sistema hematopoyetico">
+                    <field name="revision_hematopoyetico" nolabel="1" required="True"/>
+                  </group>
+                  <group string="Sistema nervioso">
+                    <field name="revision_nervioso" nolabel="1" required="True"/>
+                  </group>
+                </group>
+              </page>
+              <page string="Examen físico">
+                <group>
+                  <group string="Signos vitales">
+                    <label for="examen_fc"/>
+                    <div class="o_row">
+                      <field name="examen_fc" required="True"/>
+                      <span>lat/min</span>
+                    </div>
+                    <label for="examen_fr"/>
+                    <div class="o_row">
+                      <field name="examen_fr" required="True"/>
+                      <span>res/min</span>
+                    </div>
+                    <label for="examen_tension"/>
+                    <div class="o_row">
+                      <field name="examen_tension" required="True"/>
+                      /
+                      <field name="examen_tension_tension" required="True"/>
+                      <span>mmHg</span>
+                    </div>
+                    <label for="examen_peso"/>
+                    <div class="o_row">
+                      <field name="examen_peso" required="True"/>
+                      <span>Kg</span>
+                    </div>
+                    <label for="examen_talla"/>
+                    <div class="o_row">
+                      <field name="examen_talla" required="True"/>
+                      <span>cm</span>
+                    </div>
+                    <label for="examen_imc_float"/>
+                    <div class="o_row">
+                      <field name="examen_imc_float" required="True"/>
+                      <field name="examen_imc_selection" required="True"/>
+                    </div>
+                    <label for="examen_perimetro"/>
+                    <div class="o_row">
+                      <field name="examen_perimetro" required="True"/>
+                      <span>cm</span>
+                    </div>
+                    <label for="examen_temperatura"/>
+                    <div class="o_row">
+                      <field name="examen_temperatura" required="True"/>
+                      <span>°C</span>
+                    </div>
+                    <label for="examen_glucometria"/>
+                    <div class="o_row">
+                      <field name="examen_glucometria" required="True"/>
+                      <span>mg/dl</span>
+                    </div>
+                    <label for="examen_saturacion_oxigeno"/>
+                    <div class="o_row">
+                      <field name="examen_saturacion_oxigeno" required="True"/>
+                      %
+                    </div>
+                  </group>
+                  <group string="Estado general">
+                    <label for="examen_estado_selec"/>
+                    <div class="o_row">
+                      <field name="examen_estado_selec" required="True" widget="radio"/>
+                    </div>
+                  </group>
+                </group>
+                <field name="examen_observaciones" nolabel="1" placeholder="Observaciones" required="True"/>
+                <group>
+                  <group>
+                    <label for="examen_piel_selec"/>
+                    <div class="o_row">
+                      <field name="examen_piel_selec" required="True" widget="radio"/>
+                      <field name="examen_piel_char"/>
+                    </div>
+                  </group>
+                  <group>
+                    <label for="examen_cabeza_selec"/>
+                    <div class="o_row">
+                      <field name="examen_cabeza_selec" required="True" widget="radio"/>
+                      <field name="examen_cabeza_char"/>
+                    </div>
+                  </group>
+                  <group>
+                    <label for="examen_cardio_selec"/>
+                    <div class="o_row">
+                      <field name="examen_cardio_selec" required="True" widget="radio"/>
+                      <field name="examen_cardio_char"/>
+                    </div>
+                  </group>
+                  <group>
+                    <label for="examen_abdomen_selec"/>
+                    <div class="o_row">
+                      <field name="examen_abdomen_selec" required="True" widget="radio"/>
+                      <field name="examen_abdomen_char"/>
+                    </div>
+                  </group>
+                  <group>
+                    <label for="examen_urogenital_selec"/>
+                    <div class="o_row">
+                      <field name="examen_urogenital_selec" required="True" widget="radio"/>
+                      <field name="examen_urogenital_char"/>
+                    </div>
+                  </group>
+                  <group>
+                    <label for="examen_extremidades_selec"/>
+                    <div class="o_row">
+                      <field name="examen_extremidades_selec" required="True" widget="radio"/>
+                      <field name="examen_extremidades_char"/>
+                    </div>
+                  </group>
+                  <group>
+                    <label for="examen_neurologico_selec"/>
+                    <div class="o_row">
+                      <field name="examen_neurologico_selec" required="True" widget="radio"/>
+                      <field name="examen_neurologico_char"/>
+                    </div>
+                  </group>
+                </group>
+              </page>
+              <page string="Impresión diagnóstica">
+                <group name="group_cie_rips" string="CIE11">
+                  <field name="impresion_principal" required="True"/>
+                  <field name="impresion_relacionado1"/>
+                  <field name="impresion_relacionado2"/>
+                  <field name="impresion_relacionado3"/>
+                  <field name="impresion_relacionado4"/>
+                </group>
+                <group name="group_incapacidad" string="Incapacidad">
+                  <field name="incapacidad"/>
+                </group>
+                <group attrs="{'invisible': [('incapacidad','=',False)]}">
+                  <group>
+                    <span class="o_form_label o_td_label" name="label_dates">Duración</span>
+                    <div name="div_dates">
+                      <field name="incapacidad_desde" attrs="{'required': [('incapacidad','=',True)]}" nolabel="1" placeholder="Inicio" style="text-align: center; float: left; width: 50%;"/>
+                      <field name="incapacidad_hasta" attrs="{'required': [('incapacidad','=',True)]}" nolabel="1" placeholder="Fin" style="text-align: center; float: left; width: 50%;"/>
+                    </div>
+                    <field name="incapacidad_dias" attrs="{'required': [('incapacidad','=',True)]}"/>
+                    <field name="incapacidad_dias_char" attrs="{'required': [('incapacidad','=',True)]}"/>
+                    <field name="incapacidad_need_excuse" invisible="1"/>
+                    <field name="incapacidad_excuse" attrs="{'invisible': [('incapacidad_need_excuse','=',False)], 'required': [('incapacidad_need_excuse','=',True)]}"/>
+                  </group>
+                </group>
+              </page>
+              <page string="Análisis" invisible="1">
+                <group>
+                  <group string="Análisis">
+                    <field name="analisis_general" nolabel="1" placeholder="Análisis general" required="True"/>
+                  </group>
+                  <group string="Resultados de laboratorios">
+                    <field name="analisis_resultados" nolabel="1" placeholder="Resultados de laboratorios" required="True"/>
+                  </group>
+                </group>
+              </page>
+              <page string="Análisis y Plan de manejo">
+                <group>
+                  <group string="Plan de manejo">
+                    <field name="plan_manejo" nolabel="1" required="True"/>
+                  </group>
+                  <group string="Medicamentos aplicados en consulta">
+                    <field name="medications_applied_in_consultation" nolabel="1">
+                      <tree editable="bottom">
+                        <field name="name"/>
+                      </tree>
+                    </field>
+                  </group>
+                  <group string="Recomendaciones">
+                    <label for="plan_recomendaciones"/>
+                    <div class="o_row">
+                      <field name="plan_recomendaciones" required="True" widget="many2many_checkboxes"/>
+                    </div>
+                    <field name="plan_recomendacion" required="True"/>
+                  </group>
+                </group>
+              </page>
+              <page string="Ordenes médicas" name="page_ordenes_medicas">
+                <group>
+                  <group col="1">
+                    <group string="Medicamentos PBS" col="1">
+                      <field name="medicines_pbs" nolabel="1"/>
+                    </group>
+                    <group string="Terapias" name="group_terapias" col="1">
+                      <field name="interconsultas_terapias" nolabel="1" required="True"/>
+                    </group>
+                  </group>
+                  <group col="1" name="group_left_ordenes_medicas">
+                    <group string="Medicamentos NO PBS" col="1">
+                      <field name="medicines_no_pbs" nolabel="1"/>
+                    </group>
+                    <group string="Laboratorio clínico" name="group_laboratorio_clinico" col="1">
+                      <field name="interconsultas_laboratorios" nolabel="1" required="True"/>
+                    </group>
+                  </group>
+                  <group col="1" name="group_right_ordenes_medicas">
+                    <group string="Interconsultas" name="group_interconsultas" col="1">
+                      <field name="interconsultas" nolabel="1" required="True"/>
+                    </group>
+                    <group string="Imagenología" name="group_imagenologia" col="1">
+                      <field name="interconsultas_imagenes" nolabel="1" required="True"/>
+                    </group>
+                  </group>
+                </group>
+              </page>
+              <page string="Remisiones">
+                <group>
+                  <label for="need_remisiones_basica"/>
+                  <div class="o_row">
+                    <field name="need_remisiones_basica"/>
+                    <field name="remisiones_basica" nolabel="1" attrs="{'invisible': [('need_remisiones_basica', '=', False)], 'required': [('need_remisiones_basica', '=', True)]}" placeholder="Observaciones"/>
+                  </div>
+                  <label for="need_remisiones_medicalizada"/>
+                  <div class="o_row">
+                    <field name="need_remisiones_medicalizada"/>
+                    <field name="remisiones_medicalizada" nolabel="1" attrs="{'invisible': [('need_remisiones_medicalizada', '=', False)], 'required': [('need_remisiones_medicalizada', '=', True)]}" placeholder="Observaciones"/>
+                  </div>
+                  <label for="need_remisiones_urgencias"/>
+                  <div class="o_row">
+                    <field name="need_remisiones_urgencias"/>
+                    <field name="remisiones_urgencias" nolabel="1" attrs="{'invisible': [('need_remisiones_urgencias', '=', False)], 'required': [('need_remisiones_urgencias', '=', True)]}" placeholder="Observaciones"/>
+                  </div>
+                  <label for="need_remisiones_others"/>
+                  <div class="o_row">
+                    <field name="need_remisiones_others"/>
+                    <field name="remisiones_others" nolabel="1" attrs="{'invisible': [('need_remisiones_others', '=', False)], 'required': [('need_remisiones_others', '=', True)]}" placeholder="Observaciones"/>
+                  </div>
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_clinic_history">
+      <field name="name">Clinic history</field>
+      <field name="res_model">clinic.history</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_clinic_history_form">
+      <field name="name">Clinic history</field>
+      <field name="res_model">clinic.history</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="view_clinic_history_form"/>
+    </record>
+  </data>
+</odoo>

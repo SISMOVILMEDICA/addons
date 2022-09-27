@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sequence_view_edi_resolution" model="ir.ui.view">
+            <field name="model">ir.sequence</field>
+            <field name="inherit_id" ref="base.sequence_view"/>
+            <field name="arch" type="xml">
+                <field name="implementation" position="after">
+                    <field name="edi_resolution_control"/>
+                    <field name="edi_type" attrs="{'invisible': [('edi_resolution_control', '!=', True)], 'required': [('edi_resolution_control', '=', True)]}"/>
+                </field>
+                <field name="implementation" position="attributes">
+                    <attribute name="attrs">{'readonly': [('edi_resolution_control', '=', True)]}</attribute>
+                </field>
+                <field name="suffix" position="attributes">
+                    <attribute name="attrs">{'readonly': [('edi_resolution_control', '=', True)]}</attribute>
+                </field>
+                <field name="use_date_range" position="attributes">
+                    <attribute name="attrs">{'readonly': [('edi_resolution_control', '=', True)]}</attribute>
+                </field>
+                <field name="padding" position="attributes">
+                    <attribute name="attrs">{'readonly': [('edi_resolution_control', '=', True)]}</attribute>
+                </field>
+                <field name="number_increment" position="attributes">
+                    <attribute name="attrs">{'readonly': [('edi_resolution_control', '=', True)]}</attribute>
+                </field>
+                <field name="date_from" position="before">
+                    <field name="active_resolution" readonly="1"/>
+                    <field name="prefix" readonly="1"/>
+                    <field name="edi_resolution" attrs="{'required': [('parent.edi_resolution_control', '=', True)]}"/>
+                    <field name="number_from" attrs="{'required': [('parent.edi_resolution_control', '=', True)]}"/>
+                    <field name="number_to" attrs="{'required': [('parent.edi_resolution_control', '=', True)]}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

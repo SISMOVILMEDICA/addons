@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <record id="mail_template_clinic_historiy" model="mail.template">
+            <field name="name">EMAIL TEMPLATE</field>
+            <field name="model_id" ref="project.model_project_task" />
+            <field name="email_from"></field>
+            <field name="email_to">${object.partner_id.email}</field>
+            <field name="report_template" ref="clinic_history.historia_clinica_general" />
+            <field name="subject">Historia clinica</field>
+            <field name="body_html">
+                <![CDATA[
+                <p>
+                    Apreciado ${(object.partner_id.name)},<br/><br/>
+                    Adjunto encontrara el archivo PDF de su historia clinica<br/>
+                </p>
+                Atentamente,<br/>
+                ${(object.env.company.name)} ]]>
+            </field>
+        </record>
+    </data>
+</odoo>

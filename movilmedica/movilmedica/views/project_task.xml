@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="project_task_view_form" model="ir.ui.view">
+    <field name="name">project.task.view.form</field>
+    <field name="model">project.task</field>
+    <field name="arch" type="xml">
+      <form class="o_form_project_tasks">
+        <field name="company_id" invisible="1"/>
+        <field name="encode_uom_in_days" invisible="1"/>
+        <field name="company_id" invisible="1"/>
+        <field name="display_timesheet_timer" invisible="1"/>
+        <field name="timer_pause" invisible="1"/>
+        <field name="display_timer_start_primary" invisible="1"/>
+        <field name="display_timer_start_secondary" invisible="1"/>
+        <field name="display_timer_stop" invisible="1"/>
+        <field name="display_timer_pause" invisible="1"/>
+        <field name="display_timer_resume" invisible="1"/>
+        <field name="history_id" invisible="1"/>
+        <header>
+          <button name="create_history" string="Create history" type="object" class="oe_highlight" attrs="{'invisible': [('history_id', '!=', False)]}"/>
+          <button class="btn-primary" name="action_timer_start" type="object" string="Start" attrs="{'invisible': ['|', ('display_timer_start_primary', '=', False), ('encode_uom_in_days', '=', True)]}" groups="hr_timesheet.group_hr_timesheet_user" icon="fa-clock-o"/>
+          <button class="btn-secondary" name="action_timer_start" type="object" string="Start" attrs="{'invisible': ['|', ('display_timer_start_secondary', '=', False), ('encode_uom_in_days', '=', True)]}" groups="hr_timesheet.group_hr_timesheet_user" icon="fa-clock-o"/>
+          <button class="btn-primary btn-danger o_fsm_stop" name="action_timer_stop" type="object" string="Stop" attrs="{'invisible': ['|', ('display_timer_stop', '=', False), ('encode_uom_in_days', '=', True)]}" groups="hr_timesheet.group_hr_timesheet_user" icon="fa-clock-o"/>
+          <button class="btn-primary" name="action_timer_pause" type="object" string="Pause" attrs="{'invisible': ['|', ('display_timer_pause', '=', False), ('encode_uom_in_days', '=', True)]}" groups="hr_timesheet.group_hr_timesheet_user"/>
+          <button class="btn-primary btn-info" name="action_timer_resume" type="object" string="Resume" attrs="{'invisible': ['|', ('display_timer_resume', '=', False), ('encode_uom_in_days', '=', True)]}" groups="hr_timesheet.group_hr_timesheet_user"/>
+          <field name="timer_start" widget="timer_timer" class="text-danger ml-auto h2 ml-4 font-weight-bold" groups="hr_timesheet.group_hr_timesheet_user"/>
+          <field name="stage_id" class="ml-2" widget="statusbar" options="{'clickable': '1', 'fold_field': 'fold'}" attrs="{'invisible': [('project_id', '=', False)]}"/>
+        </header>
+
+        <sheet>
+          <div class="oe_button_box" name="button_box">
+            <button name="action_history" string="History" type="object" class="oe_highlight" icon="fa-tasks" attrs="{'invisible': [('history_id', '=', False)]}"/>
+          </div>
+          <div class="oe_title pr-0">
+            <h1>
+              <field name="name" class="o_task_name text-truncate" placeholder="Task Title..." readonyl="1"/>
+            </h1>
+          </div>
+          <group>
+            <group id="left_part" col="1">
+              <group string="Información de Convenio">
+                <field name="planned_date_begin" string="Fecha de Atención"/>
+                <field name="project_id" string="Convenio"/>
+                <field name="sub_agreement"/>
+                <field name="file_number" string="Expediente / Autorización"/>
+                <field name="authorizer"/>
+                <field name="specialty_id" string="Tipo de consulta"/>
+                <label for="pay_co"/>
+                <div class="o_row">
+                  <field name="pay_co"/>
+                  <field name="type_pay_co" attrs="{'invisible': [('pay_co', '=', False)], 'required': [('pay_co', '=', True)]}" nolabel="1"/>
+                </div>
+                <field name="pin_pay_co" attrs="{'invisible': ['|', ('pay_co', '=', False), ('type_pay_co', '!=', 'pin')], 'required': [('type_pay_co', '=', 'pin')]}"/>
+                <field name="authorization_pay_co" attrs="{'invisible': ['|', ('pay_co', '=', False), ('type_pay_co', '!=', 'pin')], 'required': [('type_pay_co', '=', 'pin')]}"/>
+                <field name="cash_pay_co" attrs="{'invisible': ['|', ('pay_co', '=', False), ('type_pay_co', '!=', 'cash')], 'required': [('type_pay_co', '=', 'cash')]}"/>
+              </group>
+              <group>
+                <field name="users_ids" invisible="1"/>
+                <field name="user_id" string="Profesional" class="o_task_user_field" domain="[('share', '=', False),('id', 'in', users_ids), ('specialties_ids', 'in', specialty_id)]"/>
+              </group>
+              <group>
+                <field name="driver_id"/>
+              </group>
+              <field name="product_available_ids" invisible="1"/>
+              <group string="Servicios">
+                <field name="product_extra_ids" nolabel="1">
+                  <tree editable="bottom">
+                    <field name="product_id" domain="[('id', 'in', parent.product_available_ids)]"/>
+                  </tree>
+                </field>
+              </group>
+              <group string="Información de Consulta">
+                <field name="initial_reason_for_consultation"/>
+              </group>
+            </group>
+            <group id="right_part" col="1">
+              <group string="Contacto">
+                <field name="partner_id" string="Contacto" domain="[('category_id.name', 'ilike', 'Paciente')]"/>
+                <field name="partner_identification_type_id"/>
+                <field name="partner_vat"/>
+                <field name="partner_gender"/>
+                <field name="partner_birthdate"/>
+                <label for="partner_age"/>
+                <div class="o_row">
+                  <field name="partner_age"/>
+                  años
+                </div>
+                <field name="partner_martial_status"/>
+                <field name="partner_affiliation"/>
+                <field name="partner_phone" widget="phone" required="1"/>
+                <field name="partner_mobile" widget="phone"/>
+                <field name="partner_email" widget="email"/>
+                <field name="partner_street" string="Dirección"/>
+                <field name="partner_neighborhood_id"/>
+                <field name="partner_locality_id"/>
+                <field name="partner_city_id"/>
+              </group>
+              <group>
+                <field name="patient_need_responsable"/>
+                <field name="responsable_name" attrs="{'invisible': [('patient_need_responsable', '=', False)], 'required': [('patient_need_responsable', '=', True)]}"/>
+                <field name="responsable_vat" attrs="{'invisible': [('patient_need_responsable', '=', False)], 'required': [('patient_need_responsable', '=', True)]}"/>
+                <field name="responsable_relationship" attrs="{'invisible': [('patient_need_responsable', '=', False)], 'required': [('patient_need_responsable', '=', True)]}"/>
+                <field name="responsable_mobile" attrs="{'invisible': [('patient_need_responsable', '=', False)], 'required': [('patient_need_responsable', '=', True)]}"/>
+              </group>
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="project_task_view_tree" model="ir.ui.view">
+    <field name="name">project.task.view.form</field>
+    <field name="model">project.task</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="project_id"/>
+        <field name="partner_id"/>
+        <field name="partner_vat"/>
+        <field name="user_id"/>
+        <field name="create_date"/>
+        <field name="planned_date_begin"/>
+        <field name="stage_id"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="industry_fsm.project_task_action_fsm_view_form" model="ir.actions.act_window.view">
+    <field name="sequence" eval="10"/>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="project_task_view_form"/>
+    <field name="act_window_id" ref="industry_fsm.project_task_action_fsm"/>
+  </record>
+
+  <record id="industry_fsm.project_task_action_fsm_view_tree" model="ir.actions.act_window.view">
+    <field name="sequence" eval="0"/>
+    <field name="view_mode">tree</field>
+    <field name="view_id" ref="project_task_view_tree"/>
+    <field name="act_window_id" ref="industry_fsm.project_task_action_fsm"/>
+  </record>
+
+  <record id="project_task_view_search_fsm_inherit_sale" model="ir.ui.view">
+    <field name="name">project.task.view.search</field>
+    <field name="model">project.task</field>
+    <field name="inherit_id" ref="industry_fsm_sale.project_task_view_search_fsm_inherit_sale"/>
+    <field name="arch" type="xml">
+      <field name="name" position="after">
+        <field name="partner_id" string="Nombre"/>
+        <field name="partner_vat"/>
+        <field name="file_number"/>
+      </field>
+      <field name="name" position="replace"/>
+      <field name="partner_id" position="replace"/>
+      <field name="user_id" position="replace"/>
+      <field name="active" position="replace"/>
+      <filter name="my_tasks" position="replace"/>
+      <filter name="schedule" position="replace"/>
+      <filter name="todo" position="replace"/>
+      <filter name="inactive" position="replace"/>
+      <filter name="planned_today" position="replace"/>
+      <filter name="planned_future" position="replace"/>
+
+      <filter name="to_invoice" position="replace"/>
+      <field name="invoice_status" position="replace"/>
+
+    </field>
+  </record>
+</odoo>

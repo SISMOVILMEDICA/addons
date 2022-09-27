@@ -1,0 +1,472 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* industry_fsm_movilmedica
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-06 17:42+0000\n"
+"PO-Revision-Date: 2021-05-06 17:42+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_partner__type
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_users__type
+msgid "Address Type"
+msgstr "Tipo de dirección"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__partner_affiliation
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_partner__patient_affiliation
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_users__patient_affiliation
+msgid "Affiliation type"
+msgstr "Tipo de afiliación"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__partner_age
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_partner__patient_age
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_users__patient_age
+msgid "Age"
+msgstr "Edad"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__pay_amount
+msgid "Amount Pay"
+msgstr "Valor de pago"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__assign_bool
+#: model_terms:ir.ui.view,arch_db:industry_fsm_movilmedica.view_project_task_form
+msgid "Assign"
+msgstr "Asignar"
+
+#. module: industry_fsm_movilmedica
+#: model:project.task.type,name:industry_fsm_movilmedica.planning_project_stage_2
+msgid "Assigned"
+msgstr "Asignado"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_clinic_history__project_diagnostics_ids
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_project__diagnostics_ids
+msgid "Ayudas Diagnosticas"
+msgstr ""
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields.selection,name:industry_fsm_movilmedica.selection__res_partner__patient_affiliation__beneficiary
+msgid "Beneficiary"
+msgstr "Beneficiario"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model,name:industry_fsm_movilmedica.model_calendar_event
+msgid "Calendar Event"
+msgstr "Calendario de eventos"
+
+#. module: industry_fsm_movilmedica
+#: model:project.task.type,name:industry_fsm_movilmedica.planning_project_stage_4
+msgid "Cancel"
+msgstr "Cancelado"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_locality__city_id
+msgid "City"
+msgstr "Ciudad"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model,name:industry_fsm_movilmedica.model_clinic_history
+msgid "Clinic history"
+msgstr "Historia clinica"
+
+#. module: industry_fsm_movilmedica
+#: model_terms:ir.ui.view,arch_db:industry_fsm_movilmedica.view_clinic_history_form
+msgid "Coming"
+msgstr "LLegada"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_clinic_history__date_coming
+msgid "Coming date"
+msgstr "Hora de llegada"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model,name:industry_fsm_movilmedica.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_project__contract_id
+msgid "Contract"
+msgstr "Contrato"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model,name:industry_fsm_movilmedica.model_customer_contract
+msgid "Contratos de clientes"
+msgstr ""
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields.selection,name:industry_fsm_movilmedica.selection__res_partner__patient_affiliation__contributor
+msgid "Contributor"
+msgstr "Cotizante"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__pay_co
+msgid "Copay"
+msgstr "Copago"
+
+#. module: industry_fsm_movilmedica
+#: model_terms:ir.ui.view,arch_db:industry_fsm_movilmedica.view_project_task_form
+msgid "Create history"
+msgstr "Crear historia"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_locality__create_uid
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_neighborhood__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_locality__create_date
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_neighborhood__create_date
+msgid "Created on"
+msgstr "Creado"
+
+#. module: industry_fsm_movilmedica
+#: model_terms:ir.ui.view,arch_db:industry_fsm_movilmedica.view_project_task_form
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_clinic_history__diagnostics_ids
+msgid "Diagnostic"
+msgstr "Ayuda Diagnostica"
+
+#. module: industry_fsm_movilmedica
+#: model_terms:ir.ui.view,arch_db:industry_fsm_movilmedica.view_project_task_form
+msgid "Dirección"
+msgstr ""
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_calendar_event__display_name
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_clinic_history__display_name
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_customer_contract__display_name
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_hr_specialty__display_name
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_project__display_name
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__display_name
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_locality__display_name
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_neighborhood__display_name
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_partner__display_name
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_users__display_name
+msgid "Display Name"
+msgstr "Nombre Público"
+
+#. module: industry_fsm_movilmedica
+#: model_terms:ir.ui.view,arch_db:industry_fsm_movilmedica.view_clinic_history_form
+msgid "Exit"
+msgstr "Salida"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_clinic_history__date_exit
+msgid "Exit date"
+msgstr "Hora de salida"
+
+#. module: industry_fsm_movilmedica
+#: model:project.task.type,name:industry_fsm_movilmedica.planning_project_stage_5
+msgid "Fail"
+msgstr "Fallida"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields.selection,name:industry_fsm_movilmedica.selection__res_partner__patient_gender__female
+msgid "Female"
+msgstr "Femenino"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_clinic_history__file_number
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__file_number
+msgid "File number"
+msgstr "Número de expediente"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__fleet_name
+msgid "Fleet"
+msgstr "Vehiculo"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields.selection,name:industry_fsm_movilmedica.selection__project_task__date_light__green
+msgid "Green"
+msgstr "Verde"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__history_ids
+msgid "Histories"
+msgstr "Historias"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__history_id
+#: model_terms:ir.ui.view,arch_db:industry_fsm_movilmedica.view_project_task_form
+msgid "History"
+msgstr "Historia"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_calendar_event__id
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_clinic_history__id
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_customer_contract__id
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_hr_specialty__id
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_project__id
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__id
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_locality__id
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_neighborhood__id
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_partner__id
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_users__id
+msgid "ID"
+msgstr ""
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__partner_vat
+msgid "Identification Number"
+msgstr "Número de Identificación"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,help:industry_fsm_movilmedica.field_project_task__partner_vat
+msgid "Identification Number for selected type"
+msgstr "Número de identificación para el tipo seleccionado"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__partner_identification_type_id
+msgid "Identification Type"
+msgstr "Tipo de Identificación"
+
+#. module: industry_fsm_movilmedica
+#: model:project.task.type,legend_normal:industry_fsm_movilmedica.planning_project_stage_2
+#: model:project.task.type,legend_normal:industry_fsm_movilmedica.planning_project_stage_3
+#: model:project.task.type,legend_normal:industry_fsm_movilmedica.planning_project_stage_4
+#: model:project.task.type,legend_normal:industry_fsm_movilmedica.planning_project_stage_5
+msgid "In Progress"
+msgstr "En Progreso"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,help:industry_fsm_movilmedica.field_res_partner__type
+#: model:ir.model.fields,help:industry_fsm_movilmedica.field_res_users__type
+msgid ""
+"Invoice & Delivery addresses are used in sales orders. Private addresses are"
+" only visible by authorized users."
+msgstr ""
+"Las direcciones de facturación y de entrega son usadas en órdenes de venta. "
+"Las direcciones privadas sólo son visibles por usuarios autorizados."
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_calendar_event____last_update
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_clinic_history____last_update
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_customer_contract____last_update
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_hr_specialty____last_update
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_project____last_update
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task____last_update
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_locality____last_update
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_neighborhood____last_update
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_partner____last_update
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_users____last_update
+msgid "Last Modified on"
+msgstr "Última Modificación el"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_locality__write_uid
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_neighborhood__write_uid
+msgid "Last Updated by"
+msgstr "Actualizado por"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_locality__write_date
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_neighborhood__write_date
+msgid "Last Updated on"
+msgstr "Actualizado"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__date_light
+msgid "Light Date"
+msgstr ""
+
+#. module: industry_fsm_movilmedica
+#: model:ir.actions.act_window,name:industry_fsm_movilmedica.action_res_locality
+#: model:ir.model,name:industry_fsm_movilmedica.model_res_locality
+#: model:ir.ui.menu,name:industry_fsm_movilmedica.menu_res_locality
+#: model_terms:ir.ui.view,arch_db:industry_fsm_movilmedica.view_res_locality_tree
+msgid "Localities"
+msgstr "Localidades"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__partner_locality_id
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_neighborhood__locality_id
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_partner__locality_id
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_users__locality_id
+#: model_terms:ir.ui.view,arch_db:industry_fsm_movilmedica.view_res_partner_form
+msgid "Locality"
+msgstr "Localidad"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields.selection,name:industry_fsm_movilmedica.selection__res_partner__patient_gender__male
+msgid "Male"
+msgstr "Masculino"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__partner_mobile
+msgid "Mobile"
+msgstr "Móvil"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__partner_name
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_locality__name
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_neighborhood__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__partner_neighborhood_id
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_partner__neighborhood_id
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_users__neighborhood_id
+#: model_terms:ir.ui.view,arch_db:industry_fsm_movilmedica.view_res_partner_form
+msgid "Neighborhood"
+msgstr "Barrio"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.actions.act_window,name:industry_fsm_movilmedica.action_res_neighborhood
+#: model:ir.model,name:industry_fsm_movilmedica.model_res_neighborhood
+#: model:ir.ui.menu,name:industry_fsm_movilmedica.menu_res_neighborhood
+#: model_terms:ir.ui.view,arch_db:industry_fsm_movilmedica.view_res_neighborhood_tree
+msgid "Neighborhoods"
+msgstr "Barrios"
+
+#. module: industry_fsm_movilmedica
+#: code:addons/industry_fsm_movilmedica/models/project_task.py:0
+#: code:addons/industry_fsm_movilmedica/models/project_task.py:0
+#, python-format
+msgid "New"
+msgstr "Nuevo"
+
+#. module: industry_fsm_movilmedica
+#: model:project.task.type,legend_blocked:industry_fsm_movilmedica.planning_project_stage_2
+#: model:project.task.type,legend_blocked:industry_fsm_movilmedica.planning_project_stage_3
+#: model:project.task.type,legend_blocked:industry_fsm_movilmedica.planning_project_stage_4
+#: model:project.task.type,legend_blocked:industry_fsm_movilmedica.planning_project_stage_5
+msgid "Not validated"
+msgstr "No validada"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__observation
+msgid "Observation"
+msgstr "Observación"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__project_partner_id
+msgid "Partner"
+msgstr "Paciente"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields.selection,name:industry_fsm_movilmedica.selection__res_partner__type__patient
+#: model_terms:ir.ui.view,arch_db:industry_fsm_movilmedica.view_project_task_form
+#: model_terms:ir.ui.view,arch_db:industry_fsm_movilmedica.view_res_partner_form
+msgid "Patient"
+msgstr "Paciente"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__partner_gender
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_partner__patient_gender
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_users__patient_gender
+msgid "Patient Gender"
+msgstr "Genero"
+
+#. module: industry_fsm_movilmedica
+#: model:project.task.type,name:industry_fsm_movilmedica.planning_project_stage_3
+msgid "Progress"
+msgstr "Progreso"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model,name:industry_fsm_movilmedica.model_project_project
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_clinic_history__project_id
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: industry_fsm_movilmedica
+#: model:project.task.type,legend_done:industry_fsm_movilmedica.planning_project_stage_2
+#: model:project.task.type,legend_done:industry_fsm_movilmedica.planning_project_stage_3
+#: model:project.task.type,legend_done:industry_fsm_movilmedica.planning_project_stage_4
+#: model:project.task.type,legend_done:industry_fsm_movilmedica.planning_project_stage_5
+msgid "Ready"
+msgstr "Preparado"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields.selection,name:industry_fsm_movilmedica.selection__project_task__date_light__red
+msgid "Red"
+msgstr "Rojo"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_calendar_event__specialties_ids
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_customer_contract__specialties_ids
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_project__specialties_ids
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__specialties_ids
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_users__specialties_ids
+msgid "Specialties"
+msgstr "Especialidades"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model,name:industry_fsm_movilmedica.model_hr_specialty
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__specialty_id
+msgid "Specialty"
+msgstr "Especialidad"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__partner_street
+msgid "Street"
+msgstr "Calle"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model,name:industry_fsm_movilmedica.model_project_task
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_clinic_history__task_id
+msgid "Task"
+msgstr "Tarea"
+
+#. module: industry_fsm_movilmedica
+#: model_terms:ir.ui.view,arch_db:industry_fsm_movilmedica.view_project_task_form
+msgid "Telefono"
+msgstr ""
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,help:industry_fsm_movilmedica.field_project_task__partner_identification_type_id
+msgid "The type of identification"
+msgstr "Tipo de identificación"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__name
+msgid "Title"
+msgstr "Título"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__partner_uom_id
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_partner__patient_uom_id
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_res_users__patient_uom_id
+msgid "UoM"
+msgstr "UdM"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model,name:industry_fsm_movilmedica.model_res_users
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_project_task__users_ids
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields,field_description:industry_fsm_movilmedica.field_hr_specialty__action_char
+msgid "View"
+msgstr "Vista"
+
+#. module: industry_fsm_movilmedica
+#: model:ir.model.fields.selection,name:industry_fsm_movilmedica.selection__project_task__date_light__yellow
+msgid "Yellow"
+msgstr "Amarillo"
+
+#. module: industry_fsm_movilmedica
+#: code:addons/industry_fsm_movilmedica/models/project_task.py:0
+#, python-format
+msgid "You have been assigned a task"
+msgstr "Se le asignó una tarea"

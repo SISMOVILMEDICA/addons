@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <record id="customer_contract_form" model="ir.ui.view">
+            <field name="name">customer.contract.form</field>
+            <field name="model">customer.contract</field>
+            <field name="arch" type="xml">
+                <form string="Contrato de clientes">
+                    <header>
+                        <button name="%(customer_contract_create_annex_action)d" type="action" string="Crear Otrosí" />
+                        <button name="%(customer_contract_delete_annex_action)d" type="action" string="Eliminar Otrosí" />
+                        <button name="%(customer_contract_create_report_budget_action)d" type="action" string="Crear Documentos" attrs="{'invisible':[('type_company','=','prv')]}" />
+                        <button name="%(customer_contract_delete_report_budget_action)d" type="action" string="Eliminar Documentos" attrs="{'invisible':[('type_company','=','prv')]}" />
+                    </header>
+                    <sheet>
+                        <div name="title">
+                            <h1>
+                                <field name="name" placeholder="Número" />
+                            </h1>
+                        </div>
+                        <group name="group_general">
+                            <group name="group_general_1">
+                                <field name="partner_id" />
+                                <span class="o_form_label o_td_label" name="label_dates">Duración</span>
+                                <div name="div_dates">
+                                    <field name="start_date" nolabel="1" placeholder="Inicio" style="text-align: center; float: left; width: 50%;" />
+                                    <field name="end_date" nolabel="1" placeholder="Fin" style="text-align: center; float: left; width: 50%;" />
+                                </div>
+                            </group>
+                            <group name="group_general_2">
+                                <field name="type_company" />
+                                <field name="amount" />
+                                <field name="diagnostics_ids" widget="many2many_tags" />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="page_description" string="Descripción">
+                                <field name="description" />
+                            </page>
+                            <page name="page_documents" string="Documentos" attrs="{'invisible':[('type_company','=','prv')]}">
+                                <group>
+                                    <group name="group_cdps" string="Certificados de disponibilidad presupuestal">
+                                        <field name="report_budget_cdp_ids" nolabel="1" />
+                                    </group>
+                                    <group name="group_rps" string="Registros Presupuestal de Compromiso">
+                                        <field name="report_budget_rp_ids" nolabel="1" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page name="page_annexes" string="Otrosí">
+                                <group>
+                                    <group name="group_title_annex_time" string="Prórroga">
+                                        <field name="annex_time_ids" nolabel="1" context="{'tree_view_ref': 'customer_contract.customer_contract_annex_time_tree'}" />
+                                    </group>
+                                    <group name="group_title_annex_money" string="Adición">
+                                        <field name="annex_money_ids" nolabel="1" context="{'tree_view_ref': 'customer_contract.customer_contract_annex_money_tree'}" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page name="page_polices" string="Pólizas">
+                                <field name="policy_ids" />
+                            </page>
+                            <page name="page_products" string="Productos">
+                                <field name="products_ids" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="customer_contract_tree" model="ir.ui.view">
+            <field name="name">customer.contract.tree</field>
+            <field name="model">customer.contract</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="partner_id" />
+                    <field name="amount" />
+                    <field name="start_date" />
+                    <field name="end_date" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="customer_contract_action" model="ir.actions.act_window">
+            <field name="name">Contratos de clientes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">customer.contract</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="customer_contract_menu_act" name="Contratos de clientes" parent="customer_contract_menu_categ" action="customer_contract_action" sequence="5" />
+    </data>
+</odoo>

@@ -1,0 +1,41 @@
+<odoo>
+  <data>
+    <record id="view_clinic_history_search" model="ir.ui.view">
+      <field name="name">view.clinic.history.search</field>
+      <field name="model">clinic.history</field>
+      <field name="inherit_id" ref="clinic_history.view_clinic_history_search"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='name']" position="attributes">
+          <attribute name="filter_domain">['|', ('name','ilike',self), ('file_number','ilike',self)]</attribute>
+        </xpath>
+      </field>
+    </record>
+
+    <record id="view_clinic_history_form" model="ir.ui.view">
+      <field name="name">view.clinic.history.form</field>
+      <field name="model">clinic.history</field>
+      <field name="inherit_id" ref="clinic_history.view_clinic_history_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//header" position="inside">
+          <button name="action_format_send" string="Enviar mail" type="object" class="oe_highlight" states="done"/>
+
+          <button name="button_coming" string="Coming" type="object" class="oe_highlight" attrs="{'invisible': [('date_coming','!=',False)]}"/>
+          <button name="button_exit" string="Exit" type="object" attrs="{'invisible': ['|',('date_exit','!=',False),('date_coming','=',False)]}"/>
+        </xpath>
+        <xpath expr="//button[@name='action_done']" position="attributes">
+          <attribute name="attrs">{'invisible': [('date_coming','=',False)]}</attribute>
+        </xpath>
+        <xpath expr="//group[@name='group_banner_right']" position="inside">
+          <field name="task_id" invisible="True"/>
+          <field name="project_id" invisible="True"/>
+          <field name="date_coming" invisible="True"/>
+          <field name="date_exit" invisible="True"/>
+          <field name="project_partner_id" invisible="True"/>
+        </xpath>
+        <xpath expr="//notebook/page[@name='page_ordenes_medicas']/group/group[@name='group_left_ordenes_medicas']/group[@name='group_laboratorio_clinico']" position="inside">
+          <field name="interconsultas_laboratorios_cups" nolabel="1" domain="[('partner_id','=', project_partner_id)]" style="width: 95%" context="{'tree_view_ref':'industry_fsm_movilmedica.customer_contract_cups_tree'}"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

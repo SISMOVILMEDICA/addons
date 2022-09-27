@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="1">
+        <record id="specialty_one" model="hr.specialty">
+            <field name="name">Especialidad</field>
+        </record>
+    </data>
+</odoo>

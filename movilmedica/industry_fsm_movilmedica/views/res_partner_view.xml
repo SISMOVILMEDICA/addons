@@ -1,0 +1,40 @@
+<odoo>
+  <data>
+    <record id="view_res_partner_form" model="ir.ui.view">
+      <field name="name">view.res.partner.form</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//sheet/group/group[1]/div/field[@name='country_id']" position="before">
+          <field name="neighborhood_id" domain="[('locality_id', '=', locality_id)]" placeholder="Neighborhood"/>
+          <field name="locality_id" placeholder="Locality"/>
+        </xpath>
+        <field name="function" position="after">
+          <field name="patient_gender"/>
+          <field name="patient_martial_status"/>
+          <field name="patient_birthdate"/>
+          <field name="patient_age_years"/>
+        </field>
+        <xpath expr="//notebook" position="inside">
+          <page string="Patient">
+            <group>
+              <group>
+                <field name="patient_affiliation"/>
+              </group>
+            </group>
+          </page>
+        </xpath>
+
+        <xpath expr="//field[@name='child_ids']/form/sheet/group/group[1]/div/div/field[@name='country_id']" position="before">
+          <field name="locality_id" placeholder="Locality"/>
+          <field name="neighborhood_id" domain="[('locality_id', '=', locality_id)]" placeholder="Neighborhood"/>
+        </xpath>
+        <xpath expr="//field[@name='child_ids']/form/sheet/group/group[2]/field[@name='mobile']" position="after">
+          <field name="patient_affiliation"/>
+          <field name="patient_gender"/>
+          <field name="patient_age_years"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

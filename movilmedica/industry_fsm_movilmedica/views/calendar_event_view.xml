@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+        <record id="view_calendar_event_search" model="ir.ui.view">
+            <field name="name">view.calendar.event.search</field>
+            <field name="model">calendar.event</field>
+            <field name="inherit_id" ref="calendar.view_calendar_event_search" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='show_as']" position="after">
+                    <field name="specialties_ids" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_calendar_event_form" model="ir.ui.view">
+            <field name="name">view.calendar.event.form</field>
+            <field name="model">calendar.event</field>
+            <field name="inherit_id" ref="calendar.view_calendar_event_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@name='page_details']/group/group[1]" position="replace">
+                    <group>
+                        <field name="start" string="Desde" required="1" />
+                        <field name="stop" string="Hasta" required="1" />
+                    </group>
+                </xpath>
+                <xpath expr="//sheet/div[2]" position="replace">
+                    <div class="oe_edit_only">
+                        <label for="name" />
+                    </div>
+                    <h1>
+                        <field name="name" placeholder="Asunto" />
+                    </h1>
+                    <label for="user_id" string="Responsable" class="oe_edit_only" />
+                    <h2>
+                        <field name="user_id" />
+                    </h2>
+                </xpath>
+                <xpath expr="//notebook/page[@name='page_misc']" position="replace" />
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <record id="customer_contract_cups_tree" model="ir.ui.view">
+            <field name="name">customer.contract.cups.tree</field>
+            <field name="model">customer.contract.cups</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="code" />
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

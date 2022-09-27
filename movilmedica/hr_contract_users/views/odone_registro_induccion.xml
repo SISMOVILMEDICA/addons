@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<template id="report_hr_employee_registro_induccion">
+		<t t-call="web.html_container">
+			<t t-foreach="docs" t-as="doc">
+				<div class="header o_company_#{doc.company_id.id}_layout" style="border: 0px solid red; width: 100%; font-family: sans-serif; font-size: 12px; height: 105px;">
+					<style type="text/css">
+						.page {
+							padding: 0px 20px;
+						}
+						strong, span, b {
+						color: #3F3F3F;
+						line-height:8px;
+						}
+						.tabla-movilmedica thead td, .tabla-movilmedica tbody td {
+						text-align: center;
+						vertical-align:middle;
+						line-height:9px;
+						font-size:10px;
+						}
+						.tabla-movilmedica thead td {
+						background-color: #7A7979;
+						}
+
+						.tabla-movilmedica thead strong, .tabla-movilmedica thead b {
+						color: white;
+						}
+					</style>
+					<div class="container">
+						<div class="row" style="vertical-align:middle">
+							<div class="col-4 text-center">
+								<table class="table tabla-movilmedica table-bordered table-sm">
+									<tr>
+										<td>
+											<img t-if="doc.company_id.logo" t-att-src="image_data_uri(doc.company_id.logo)" style="width: 100%; display: block; margin: auto;" alt="Logo" />
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<h7>
+												<b>
+													NIT:
+												</b>
+												<span t-esc="doc.company_id.partner_id.vat" />
+											</h7>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div class="col-8 text-center">
+								<table class="table tabla-movilmedica table-bordered table-sm">
+									<tr>
+										<td>
+											<b>CÓDIGO:</b>
+										</td>
+										<td>
+											FR-TH-007
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<b>VERSIÓN:</b>
+										</td>
+										<td>
+											001
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<b>FECHA DE APROBACIÓN:</b>
+										</td>
+										<td>
+											07 ENERO 2020
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="article" t-att-data-oe-model="doc and doc._name" t-att-data-oe-id="doc and doc.id" t-att-data-oe-lang="doc and doc.env.context.get('lang')">
+					<!--
+					<br/>
+					<br/>
+					-->
+					<div t-attf-class="watermark" class="watermark_report o_company_#{doc.company_id.id}_layout" align="center" style="position:fixed; opacity:0; width: 96%; height: 400px; border: 0px solid red; padding: 30px">
+						<img t-att-src="image_data_uri(doc.company_id.logo)" style="width:80%;" />
+					</div>
+					<div class="page" style="border: 0px solid black;">
+						<style>
+							span, strong, b, p {
+							font-size:12px;
+							}
+							.tabla-datos-empleado {
+								width:100%;
+							}
+							.tabla-movilmedica thead td, .tabla-movilmedica tbody td, .tabla-movilmedica thead th, .tabla-movilmedica tbody th {
+						text-align: center;
+						vertical-align:middle;
+						line-height:12px;
+						font-size:12px;
+						}
+						.tabla-movilmedica thead td {
+						background-color: #7A7979;
+						}
+
+						.tabla-movilmedica thead strong, .tabla-movilmedica thead b {
+						color: white;
+						}
+						</style>
+						<div class="container">
+							<div class="row">
+								<div class="col-12">
+									<b>
+										REGISTRO DE INDUCCIÓN Y RE – INDUCCIÓN
+									</b>
+									<table class="tabla-datos-empleado">
+										<tr>
+											<td colspan="2">
+												<b>Nombre: </b> <span t-field="doc.name"/>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<b>Cargo: </b><span t-field="doc.job_id"/>
+											</td>
+											<td>
+												<b>Fecha de ingreso: </b>
+												<span t-field="doc.create_date" t-options='{"widget": "date", "format": "dd"}'>
+												<!-- DIA -->
+												</span> <span>de</span>
+												<span t-field="doc.create_date" t-options='{"widget": "date", "format": "MMMM"}'>
+												<!-- MES -->
+												</span>
+												<span t-field="doc.create_date" t-options='{"widget": "date", "format": "YYYY"}'>
+												<!-- 2021 -->
+												</span>
+											</td>
+										</tr>
+									</table>
+									<p align="justify">
+										Estimad@ colaborador le damos la bienvenida a nuestra organización IPS Movilmédica S.A.S. Queremos compartir con usted algunos procedimientos administrativos de nuestra organización que facilitará su integración a la misma.  Para ello deseamos que conozca
+									</p>
+									<table class="table tabla-movilmedica table-bordered table-sm">
+										<thead>
+											<tr>
+												<th class="text-center">ACTIVIDAD</th>
+												<th class="text-center">DESCRIPCIÓN</th>
+												<th class="text-center">RESPONSABLE</th>
+												<th class="text-center">FIRMA Y FECHA</th>
+											</tr>
+										</thead>
+										<tr>
+											<td>Gestión Talento Humano </td>
+											<td class="text-left">
+													<span>Presentación de la empresa.</span>
+													<br/>
+													<span>Procesos administrativos.</span>
+													<br/>
+													<span>Manejo de pago seguridad social</span>
+													<br/>
+													<span>Inducción al cargo:</span>
+													<br/>
+													<span>Procesos y procedimientos para inicio de la prestación del servicio. </span>
+													<br/>
+													<span>Misión y Visión Movilmedica</span>
+											</td>
+											<td>Coordinador Talento Humano</td>
+											<td>*</td>
+										</tr>
+										<tr>
+											<td>
+												Dirección de Gestión de Calidad
+											</td>
+											<td class="text-left">
+												<span>Procesos y procedimientos </span>
+													<br/>
+													<span>Seguridad del Paciente</span>
+													<br/>
+													<span>Procedimiento de calidad</span>
+													<br/>
+													<span>Bioseguridad</span>
+													<br/>
+													<span>Reglamento Interno de trabajo</span>
+													<br/>
+													<span>SST</span>
+													<br/>
+													<span>Estructura Organizacional</span>
+											</td>
+											<td>
+												Director Calidad
+											</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>
+												Enfermería
+											</td>
+											<td class="text-left">
+												<span>Procedimientos relacionados con la parte asistencial de enfermería</span>
+													<br/>
+													<span>Turnos de prestación del servicio.</span>
+													<br/>
+													<span>Socialización de protocolos.</span>
+											</td>
+											<td>
+												Coordinador de Enfermería
+											</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>
+												Sistemas
+											</td>
+											<td  class="text-left">
+												Manejo de la red y equipos informáticos disponibles.<br/>
+												Responsabilidades y obligaciones en torno al manejo de la información.<br/>
+												Asignación de usuario y contraseña.<br/>
+											</td>
+											<td>
+												Coordinación de sistemas
+											</td>
+											<td></td>
+										</tr>
+									</table>
+									<table class="table tabla-movilmedica table-bordered table-sm">
+										<thead>
+											<tr>
+												<th></th>
+												<th>Elaborado</th>
+												<th>Revisado</th>
+												<th>Aprobado</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th>
+													Nombre
+												</th>
+												<td>
+													Lina Paola Botero Daza
+												</td>
+												<td>
+													Lina Paola Botero Daza
+												</td>
+												<td>
+													Lina Paola Botero Daza
+												</td>
+											</tr>
+											<tr>
+												<th>
+													Cargo
+												</th>
+												<td>
+													Lina Paola Botero Daza
+												</td>
+												<td>
+													Lina Paola Botero Daza
+												</td>
+												<td>
+													Lina Paola Botero Daza
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer" align="center">
+					<style>
+						#div_f {
+						font-family: sans-serif;
+						font-size: 9px;
+						line-height:9px;
+						}
+					</style>
+					<div id="div_f" class="text-center" style="border-top: 1px solid black;">
+						<ul class="list-inline mb4">
+							<li t-if="doc.company_id.phone" class="list-inline-item d-inline">
+								Teléfono:
+								<span t-field="doc.company_id.phone" />
+							</li>
+							<li t-if="doc.company_id.website" class="list-inline-item d-inline">
+								Sitio web:
+								<span t-field="doc.company_id.website" />
+							</li>
+							<li t-if="doc.company_id.partner_id.vat" class="list-inline-item d-inline">
+								<t t-esc="doc.company_id.country_id.vat_label or 'Tax ID'" />
+								:
+								<span t-field="doc.company_id.partner_id.vat" />
+								<br />
+							</li>
+							<li t-if="doc.company_id.street" class="list-inline-item d-inline">
+								Dirección:
+								<span t-field="doc.company_id.street" />
+								<span t-field="doc.company_id.street2" />
+								<span t-field="doc.company_id.state_id.name" />
+								<span t-field="doc.company_id.country_id.name" />
+							</li>
+						</ul>
+						<div t-if="report_type == 'pdf'" class="text-muted">
+							Página:
+							<span class="page" />
+							/
+							<span class="topage" />
+						</div>
+					</div>
+				</div>
+			</t>
+		</t>
+	</template>
+</odoo>

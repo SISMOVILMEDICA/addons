@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_account_journal_form" model="ir.ui.view">
+        <field name="name">view.account.journal.form</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_debit_account_id']" position="after">
+                <field name="voucher_debit_account_id" />
+            </xpath>
+            <xpath expr="//field[@name='payment_credit_account_id']" position="after">
+                <field name="voucher_credit_account_id" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

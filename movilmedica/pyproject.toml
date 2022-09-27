@@ -1,0 +1,78 @@
+[tool.black]
+line-length = 100
+target-version = ['py37']
+
+[tool.flake8]
+max-line-length = 100
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+combine_as_imports = true
+use_parentheses = true
+line_length = 100
+known_odoo = "odoo"
+known_odoo_addons = "odoo.addons"
+sections = "FUTURE,STDLIB,THIRDPARTY,ODOO,ODOO_ADDONS,FIRSTPARTY,LOCALFOLDER"
+known_third_party = "setuptools"
+default_section = "THIRDPARTY"
+
+[tool.mypy]
+python_version = "3.7"
+
+[[tool.mypy.overrides]]
+module = [
+    "babel.*",
+    "dateutil.*",
+    "jinja2.*",
+    "lxml.*",
+    "num2words.*",
+    "odoo.*",
+    "OpenSSL.*",
+    "openupgradelib.*",
+    "psycopg2.*",
+    "qrcode.*",
+    "requests.*",
+    "unidecode.*",
+    "xades.*",
+    "xlrd.*",
+    "xlsxwriter.*",
+    "xmlsig.*",
+]
+ignore_missing_imports = true
+
+[tool.pylint.master]
+load-plugins = "pylint_odoo"
+
+[tool.pylint.odoolint]
+readme_template_url = "https://github.com/OCA/maintainer-tools/blob/master/template/module/README.rst"
+manifest_required_keys = "license"
+manifest_deprecated_keys = "description,active"
+license_allowed = "OPL-1"
+valid_odoo_versions = "13.0"
+
+[tool.pylint.messages]
+disable = "C0114,C0114,C8101,C0115,R0201,C0116,E0401,E1101,W0212,R0913,R0902,C0103,W0511"
+
+[tool.pylint.similarities]
+min-similarity-lines = "11"
+ignore-docstrings = "yes"
+ignore-comments = "yes"
+ignore-imports = "yes"
+
+[tool.poetry]
+name = "movil"
+version = "0.1.0"
+description = ""
+authors = ["Moises Navarro <moisalejandro@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+xades = "^0.2.4"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

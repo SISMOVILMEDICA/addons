@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_hr_illness_tree">
+            <field name="name">view.hr.illness.tree</field>
+            <field name="model">hr.illness</field>
+            <field name="arch" type="xml">
+                <tree string="Illness" editable="bottom">
+                    <field name="sequence" widget="handle"/>
+                    <field name="active"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_hr_illness">
+            <field name="name">Illness</field>
+            <field name="res_model">hr.illness</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem id="menu_hr_illness" parent="hr.menu_human_resources_configuration" action="action_hr_illness"/>
+    </data>
+</odoo>

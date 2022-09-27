@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_res_locality_search">
+            <field name="name">view.res.locality.tree</field>
+            <field name="model">res.locality</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="city_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_res_locality_tree">
+            <field name="name">view.res.locality.tree</field>
+            <field name="model">res.locality</field>
+            <field name="arch" type="xml">
+                <tree string="Localities" editable="bottom">
+                    <field name="name"/>
+                    <field name="city_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_res_locality">
+            <field name="name">Localities</field>
+            <field name="res_model">res.locality</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem id="menu_res_locality" parent="contacts.menu_localisation" sequence="10" action="action_res_locality"/>
+    </data>
+</odoo>

@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+        <!-- Document Type -->
+        <record model="ir.ui.view" id="view_hr_document_type_tree">
+            <field name="name">view.hr.document.type.tree</field>
+            <field name="model">hr.document.type</field>
+            <field name="arch" type="xml">
+                <tree string="Document Types" editable="bottom">
+                    <field name="sequence" widget="handle"/>
+                    <field name="active"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_hr_document_type">
+            <field name="name">Document Types</field>
+            <field name="res_model">hr.document.type</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem id="menu_hr_document_parent" parent="hr.menu_human_resources_configuration" name="Documents"/>
+
+        <menuitem id="menu_hr_document_type" parent="menu_hr_document_parent" action="action_hr_document_type"/>
+
+        <!-- Document -->
+        <record model="ir.ui.view" id="view_hr_document_tree">
+            <field name="name">view.hr.document.tree</field>
+            <field name="model">hr.document</field>
+            <field name="arch" type="xml">
+                <tree string="Documents" editable="bottom">
+                    <field name="active"/>
+                    <field name="type_id" />
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_hr_document">
+            <field name="name">Documents</field>
+            <field name="res_model">hr.document</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem id="menu_hr_document" parent="menu_hr_document_parent" action="action_hr_document"/>
+    </data>
+</odoo>

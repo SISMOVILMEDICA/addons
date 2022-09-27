@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_customer_contract_diagnostic_tree">
+            <field name="name">view_customer_contract_diagnostic_tree</field>
+            <field name="model">customer.contract.diagnostic</field>
+            <field name="arch" type="xml">
+                <tree string="Ayudas Diagnosticas" editable="top">
+                    <field name="active" />
+                    <field name="code" />
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_customer_contract_diagnostic_form">
+            <field name="name">view.customer.contract.diagnostic.form</field>
+            <field name="model">customer.contract.diagnostic</field>
+            <field name="arch" type="xml">
+                <form string="Ayuda Diagnostica">
+                    <sheet>
+                        <group>
+                            <field name="active" />
+                            <field name="code" />
+                            <field name="name" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

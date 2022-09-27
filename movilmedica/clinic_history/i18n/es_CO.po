@@ -1,0 +1,745 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* clinic_history
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-06 17:39+0000\n"
+"PO-Revision-Date: 2021-05-06 17:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_abdomen_char
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_abdomen_selec
+msgid "Abdomen"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__examen_estado_selec__aceptable
+msgid "Aceptable"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__message_needaction
+msgid "Action Needed"
+msgstr "Acción requerida"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de Actividad  de Excepción"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__activity_state
+msgid "Activity State"
+msgstr "Estado de la actividad"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Ícono de tipo de actvidad"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__antecedentes_alergicos
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Alergicos"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__remisiones_basica
+msgid "Ambulancia basica"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__remisiones_medicalizada
+msgid "Ambulancia medicalizada"
+msgstr ""
+
+#. module: clinic_history
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Analisis, resultados de laboratorio clinico e imagenes diagnosticas"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__examen_abdomen_selec__anormal
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__examen_cabeza_selec__anormal
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__examen_cardio_selec__anormal
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__examen_extremidades_selec__anormal
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__examen_neurologico_selec__anormal
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__examen_piel_selec__anormal
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__examen_urogenital_selec__anormal
+msgid "Anormal"
+msgstr ""
+
+#. module: clinic_history
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Antecedentes"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__message_attachment_count
+msgid "Attachment Count"
+msgstr "Nº de archivos adjuntos"
+
+#. module: clinic_history
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__examen_estado_selec__bueno
+msgid "Bueno"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_cabeza_char
+msgid "Cabeza"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_cabeza_selec
+msgid "Cabeza y organos de los sentidos"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_cardio_char
+msgid "Cardio"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_cardio_selec
+msgid "Cardio respiratorio"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__antecedentes_parto__cesarea
+msgid "Cesarea"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.actions.act_window,name:clinic_history.action_clinic_history
+#: model:ir.actions.act_window,name:clinic_history.action_clinic_history_form
+#: model:ir.model,name:clinic_history.model_clinic_history
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_tree
+msgid "Clinic history"
+msgstr "Historia clinica"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__antecedentes_complicaciones
+msgid "Complicaciones al nacer"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__incapacidad_desde
+msgid "Desde"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__state__done
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Done"
+msgstr "Hecho"
+
+#. module: clinic_history
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__state__draft
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_estado_char
+msgid "Estado"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_estado_selec
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Estado general"
+msgstr ""
+
+#. module: clinic_history
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Examen fisico"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_extremidades_char
+msgid "Extremidades"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_extremidades_selec
+msgid "Extremidades y osteoarticular"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_fc
+msgid "FC"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_fr
+msgid "FR"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__antecedentes_fup
+msgid "FUP"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__antecedentes_fur
+msgid "FUR"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__antecedentes_familiares
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Familiares"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__antecedentes_famarcologicos
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Farmacologicos"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__antecedentes_citologia
+msgid "Fecha ultima citologia"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__antecedentes_mamografia
+msgid "Fecha ultima mamografia"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Contactos)"
+
+#. module: clinic_history
+#: model:ir.model.fields,help:clinic_history.field_clinic_history__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icono de Font Awesome ej. fa-tasks"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__antecedentes_formula
+msgid "Formula obstetrica"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__antecedentes_gestacion
+msgid "Gestacion No."
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_glucometria
+msgid "Glucometria"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__incapacidad_hasta
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Hasta"
+msgstr ""
+
+#. module: clinic_history
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_search
+msgid "Histories"
+msgstr "Historias"
+
+#. module: clinic_history
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_search
+msgid "History"
+msgstr "Historia"
+
+#. module: clinic_history
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "History clinic"
+msgstr "Historia clinica"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__antecedentes_hospitalarios
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Hospitalarios"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_imc
+msgid "IMC"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: clinic_history
+#: model:ir.model.fields,help:clinic_history.field_clinic_history__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: clinic_history
+#: model:ir.model.fields,help:clinic_history.field_clinic_history__message_needaction
+#: model:ir.model.fields,help:clinic_history.field_clinic_history__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado hay nuevos mensajes que requieren su atención."
+
+#. module: clinic_history
+#: model:ir.model.fields,help:clinic_history.field_clinic_history__message_has_error
+#: model:ir.model.fields,help:clinic_history.field_clinic_history__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si se encuentra marcado, algunos mensajes tienen error de envío."
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__interconsultas_imagenes
+msgid "Imagenes diagnosticas"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__impresion
+msgid "Impresion"
+msgstr ""
+
+#. module: clinic_history
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Impresion diagnostica"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__incapacidad
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Incapacidad"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__antecedentes_inmunizaciones
+msgid "Inmunizaciones"
+msgstr ""
+
+#. module: clinic_history
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Interconsultas"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__message_is_follower
+msgid "Is Follower"
+msgstr "Es un seguidor"
+
+#. module: clinic_history
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Kg"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__interconsultas_laboratorios
+msgid "Laboratorios"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjuntos principales"
+
+#. module: clinic_history
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__examen_estado_selec__malo
+msgid "Malo"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__antecedentes_menarquia
+msgid "Menarquia"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__message_has_error
+msgid "Message Delivery error"
+msgstr "Error de Envío de Mensaje"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__antecedentes_metodo
+msgid "Metodo de planificacion"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__motivo
+msgid "Motivo"
+msgstr ""
+
+#. module: clinic_history
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Motivo de consulta y enfermedad actual"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__examen_estado_selec__muy_malo
+msgid "Muy malo"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_neurologico_char
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_neurologico_selec
+msgid "Neurologico"
+msgstr ""
+
+#. module: clinic_history
+#: code:addons/clinic_history/models/clinic_history.py:0
+#: code:addons/clinic_history/models/clinic_history.py:0
+#, python-format
+msgid "New"
+msgstr "Nuevo"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Siguiente plazo de actividad"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: clinic_history
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Niño menor de 5 años prenatales, neonatales y vacunacion"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__examen_abdomen_selec__normal
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__examen_cabeza_selec__normal
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__examen_cardio_selec__normal
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__examen_extremidades_selec__normal
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__examen_neurologico_selec__normal
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__examen_piel_selec__normal
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__examen_urogenital_selec__normal
+msgid "Normal"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__message_has_error_counter
+msgid "Number of errors"
+msgstr "Numero de errores"
+
+#. module: clinic_history
+#: model:ir.model.fields,help:clinic_history.field_clinic_history__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: clinic_history
+#: model:ir.model.fields,help:clinic_history.field_clinic_history__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de envío"
+
+#. module: clinic_history
+#: model:ir.model.fields,help:clinic_history.field_clinic_history__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leidos"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__incapacidad_dias
+msgid "Numero de dias"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__plan_sesiones
+msgid "Numero de sesiones"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__incapacidad_dias_char
+msgid "Numero en letras"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_observaciones
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Observaciones"
+msgstr ""
+
+#. module: clinic_history
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Obstetricos y/o ginecologicos"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__partner_id
+msgid "Partner"
+msgstr "Paciente"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__antecedentes_parto
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__antecedentes_parto__parto
+msgid "Parto"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__antecedentes_patologicos
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Patologicos"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_perimetro
+msgid "Perimetro abdominal"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_peso
+msgid "Peso"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__antecedentes_peso
+msgid "Peso al nacer"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_piel_char
+msgid "Piel"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_piel_selec
+msgid "Piel y faneras"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__plan
+msgid "Plan"
+msgstr ""
+
+#. module: clinic_history
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Plan de manejo y tratamiento"
+msgstr ""
+
+#. module: clinic_history
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid ""
+"Plan de manejo, tratamiento, laboratorio clinico, imagenologia y terapia"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__antecedentes_termino__pretermino
+msgid "Pretermino"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__impresion_principal
+msgid "Principal"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__procedimientos
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Procedimientos"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__antecedentes_quirugicos
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Quirugicos"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__examen_estado_selec__regular
+msgid "Regular"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__impresion_relacionado1
+msgid "Relacionado 1"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__impresion_relacionado2
+msgid "Relacionado 2"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__impresion_relacionado3
+msgid "Relacionado 3"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__impresion_relacionado4
+msgid "Relacionado 4"
+msgstr ""
+
+#. module: clinic_history
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Remisiones"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__analisis
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__revision
+msgid "Revision"
+msgstr ""
+
+#. module: clinic_history
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Revision por sistemas"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error de entrega del SMS"
+
+#. module: clinic_history
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Signos vitales"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__specialty_id
+msgid "Specialty"
+msgstr "Especialidad"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__state
+msgid "State"
+msgstr "Estado"
+
+#. module: clinic_history
+#: model:ir.model.fields,help:clinic_history.field_clinic_history__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Vencida: la fecha tope ya ha pasado\n"
+"Hoy: La fecha tope es hoy\n"
+"Planificada: futuras actividades."
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_talla
+msgid "Talla"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_temperatura
+msgid "Temperatura"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_tension_tension
+msgid "Tension"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_tension
+msgid "Tension arterial"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__plan_terapia
+msgid "Terapia"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__interconsultas_terapias
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Terapias"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__antecedentes_termino
+#: model:ir.model.fields.selection,name:clinic_history.selection__clinic_history__antecedentes_termino__termino
+msgid "Termino"
+msgstr ""
+
+#. module: clinic_history
+#: code:addons/clinic_history/models/clinic_history.py:0
+#, python-format
+msgid "This is your medical history"
+msgstr "Esta es su histori medica"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__antecedentes_toxicologicos
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "Toxicologicos"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,help:clinic_history.field_clinic_history__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad de excepción registrada."
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes sin leer"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Nº de mensajes sin leer"
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__remisiones_urgencias
+msgid "Urgencias"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_urogenital_char
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__examen_urogenital_selec
+msgid "Urogenital"
+msgstr ""
+
+#. module: clinic_history
+#: model:ir.model.fields,field_description:clinic_history.field_clinic_history__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: clinic_history
+#: model:ir.model.fields,help:clinic_history.field_clinic_history__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicaciones del sitio web"
+
+#. module: clinic_history
+#: model_terms:ir.ui.view,arch_db:clinic_history.view_clinic_history_form
+msgid "cm"
+msgstr ""

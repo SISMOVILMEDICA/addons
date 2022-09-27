@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="0">
+        <!-- account.journal inherit form view -->
+        <record id="view_account_journal_edi_form" model="ir.ui.view">
+            <field name="name">account.journal.inherit.view.form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='bank_account']/group/group/field[@name='refund_sequence']" position="attributes">
+                    <attribute name="attrs">{}</attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='currency_id']" position="after">
+                    <field name="is_einvoicing" attrs="{'invisible': [('type','!=','sale')]}"/>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page string="Facturación Electrónica" name="einvoicing" attrs="{'invisible': [('is_einvoicing','!=',True)]}">
+                        <group>
+                            <group>
+                                <field name="remaining_numbers" attrs="{'required': [('is_einvoicing','=',True)]}"/>
+                                <field name="remaining_days" attrs="{'required': [('is_einvoicing','=',True)]}"/>
+                                <field name="edi_technical_key" attrs="{'required': [('is_einvoicing','=',True)]}"/>
+                            </group>
+                            <group></group>
+                        </group>
+                        <group>
+                            <field name="resolution_text" nolabel="1" placeholder="Información sobre resolución de facturación electrónica."/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_account_journal_seq_form" model="ir.ui.view">
+            <field name="name">account.journal.inherit.view.form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="od_journal_sequence.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='sequence']/group" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='sequence']" position="inside">
+                    <group>
+                        <group name="sequence" string="Secuencia">
+                            <label for="sequence_number_next"/>
+                            <div>
+                                <field name="sequence_number_next" style="padding-right: 1.0em"/>
+                                <field name="sequence_id" required="0" attrs="{'readonly': 1}" groups="base.group_no_one"/>
+                            </div>
+                        </group>
+                        <group name="refund_sequence" string="Secuencia Rectificativa">
+                            <field name="refund_sequence" groups="base.group_no_one"/>
+                            <label for="refund_sequence_number_next" attrs="{'invisible': [('refund_sequence', '!=', True)]}"/>
+                            <div attrs="{'invisible': [('refund_sequence', '!=', True)]}">
+                                <field name="refund_sequence_number_next" style="padding-right: 1.0em"/>
+                                <field name="refund_sequence_id" required="0" attrs="{'readonly': 1}" groups="base.group_no_one"/>
+                            </div>
+                        </group>
+                        <group name="debit_sequence" string="Secuencia de Nota Débito">
+                            <field name="debit_note_sequence" groups="base.group_no_one"/>
+                            <label for="debit_note_sequence_number_next" attrs="{'invisible': [('debit_note_sequence', '!=', True)]}"/>
+                            <div attrs="{'invisible': [('debit_note_sequence', '!=', True)]}">
+                                <field name="debit_note_sequence_number_next" style="padding-right: 1.0em"/>
+                                <field name="debit_note_sequence_id" required="0" attrs="{'readonly': 1}" groups="base.group_no_one"/>
+                            </div>
+                            <button name="create_journal_sequence" string="Establecer secuencias" type="object" class="oe_highlight"
+                                    attrs="{'invisible': [('sequence_id','!=',False), ('refund_sequence_id','!=',False), ('debit_note_sequence_id','!=',False)]}"/>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

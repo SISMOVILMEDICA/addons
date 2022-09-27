@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="clinic_history_view_form" model="ir.ui.view">
+    <field name="name">clinic.history.view.form.inherit.movilmedica</field>
+    <field name="model">clinic.history</field>
+    <field name="inherit_id" ref="clinic_history.view_clinic_history_form"/>
+    <field name="arch" type="xml">
+      <field name="birthdate" position="before">
+        <field name="partner_id"/>
+      </field>
+
+      <field name="birthdate" position="attributes">
+        <attribute name="invisible">1</attribute>
+      </field>
+    </field>
+  </record>
+</odoo>

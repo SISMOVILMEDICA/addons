@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_res_config_settings_form" model="ir.ui.view">
+        <field name="name">view.res.config.settings.form</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='pay_invoice_online_setting_container']" position="inside">
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_left_pane" />
+                    <div class="o_setting_right_pane">
+                        <label for="voucher_reconcile_amount" />
+                        <div class="text-muted">
+                                Amount reconcile
+                            </div>
+                        <field name="voucher_reconcile_amount" />
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
